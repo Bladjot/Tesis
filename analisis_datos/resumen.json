@@ -1,0 +1,28 @@
+{
+  "files": 20,
+  "read_success": 20,
+  "size_bytes": 2108217483,
+  "samples": 18168617,
+  "hours": 10.093676111111108,
+  "duration_min_s": 1805.026,
+  "duration_max_s": 1855.646,
+  "sfreqs": [
+    500.0
+  ],
+  "channel_order_consistent": true,
+  "channel_types_consistent": true,
+  "nonfinite": 0,
+  "constant_channels": [],
+  "duplicate_file_hashes": [],
+  "annotation_counts": {
+    "model trained": 19
+  },
+  "emg_minmax": [
+    -22320.900390625,
+    29398.67578125
+  ],
+  "angle_minmax": [
+    0.5607346892356873,
+    179.9832305908203
+  ]
+}

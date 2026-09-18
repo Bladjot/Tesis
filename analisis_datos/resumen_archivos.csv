@@ -1,0 +1,21 @@
+﻿archivo,bytes,muestras,segundos,Hz,canales,no_finitos,canales_constantes,anotaciones,sha256
+Subject_01.fif,105180917,906449,1812.898,500.0,29,0,,"[{""onset_s"": 914.23999, ""duration_s"": 0.0, ""description"": ""model trained""}]",5d50391e5d810be815abc7e0a6867e776f026ccff3f7236c134dfa165224e9a3
+Subject_02.fif,104951412,904472,1808.944,500.0,29,0,,[],1e1fb31aa1223b2a9f35b41bb90bf7d3f026e6580402bfd5ae7e71841bcc9b84
+Subject_03.fif,105939997,912991,1825.982,500.0,29,0,,"[{""onset_s"": 922.559998, ""duration_s"": 0.0, ""description"": ""model trained""}]",000d9cf7e630033bc6c9e16ee0ad8e9d80ac17aca125c14abe09ba710f054acf
+Subject_04.fif,106340773,916445,1832.89,500.0,29,0,,"[{""onset_s"": 907.052002, ""duration_s"": 0.0, ""description"": ""model trained""}]",a5c27b7afdbb9c5b95a3fe69d54ace138c5e29c6ba9959ba13b4eea8ce71b6c0
+Subject_05.fif,105108749,905827,1811.654,500.0,29,0,,"[{""onset_s"": 908.40802, ""duration_s"": 0.0, ""description"": ""model trained""}]",680b09a60218f8f1735d91ff3c3a89c51f23d89a51caba910dd43f72b2901c46
+Subject_06.fif,105080445,905583,1811.166,500.0,29,0,,"[{""onset_s"": 908.440002, ""duration_s"": 0.0, ""description"": ""model trained""}]",4881eb4bdeef9bd578c1d69c7ea59e76c2cc69c1a81006f1f1c0faaac0ce2fad
+Subject_07.fif,105002693,904913,1809.826,500.0,29,0,,"[{""onset_s"": 908.976013, ""duration_s"": 0.0, ""description"": ""model trained""}]",465196871e5ae57f2847b47bc081ab2df3f6c497506dc20d04c9b715cbd1a411
+Subject_08.fif,105672205,910683,1821.366,500.0,29,0,,"[{""onset_s"": 910.135986, ""duration_s"": 0.0, ""description"": ""model trained""}]",bc5b06d713ed2bc33cf406cfb41e1caa573dd4a79280ed320777ccc681806685
+Subject_09.fif,104724229,902513,1805.026,500.0,29,0,,"[{""onset_s"": 907.679993, ""duration_s"": 0.0, ""description"": ""model trained""}]",60821cf3d112a0962fc1eab4d7d83bb1a9851a50fb8e0b7b95c65ffe8ebc85b5
+Subject_10.fif,105180221,906443,1812.886,500.0,29,0,,"[{""onset_s"": 908.528015, ""duration_s"": 0.0, ""description"": ""model trained""}]",ea7c5e8279250937f946cc9f27fc8657ca60705a7527c7bf3d7be1afddde9b81
+Subject_11.fif,106568429,918407,1836.814,500.0,29,0,,"[{""onset_s"": 907.44397, ""duration_s"": 0.0, ""description"": ""model trained""}]",ea9b03e0d1b452a91da8e727ab92f7ce6a8d84e8eef31f32497a4b296647de35
+Subject_12.fif,107660989,927823,1855.646,500.0,29,0,,"[{""onset_s"": 907.263977, ""duration_s"": 0.0, ""description"": ""model trained""}]",87a385a2b86348c921a42d5f5e3447386ce4afcb0a4e47b0bee9c8fb023cd889
+Subject_13.fif,104917069,904175,1808.35,500.0,29,0,,"[{""onset_s"": 907.716003, ""duration_s"": 0.0, ""description"": ""model trained""}]",693b8468687cd6b4311122a3553c6949e26b7343a0471396267890c9c67780c8
+Subject_14.fif,104905701,904077,1808.154,500.0,29,0,,"[{""onset_s"": 907.588013, ""duration_s"": 0.0, ""description"": ""model trained""}]",e0062290f51417180dc6ab34fc244571c46bdb8accc7ec5d0fbf00e0fa5a23e3
+Subject_15.fif,104985757,904767,1809.534,500.0,29,0,,"[{""onset_s"": 910.695984, ""duration_s"": 0.0, ""description"": ""model trained""}]",b8981032c2388b51d90f87a3ff50cac68cfa493cc5b1c008af0b69196eab7a71
+Subject_16.fif,105212485,906721,1813.442,500.0,29,0,,"[{""onset_s"": 912.320007, ""duration_s"": 0.0, ""description"": ""model trained""}]",c84f79638c15d7e596d03c0c69aa35b0f6fe812a6b0a312ae43d8c9cfa39f271
+Subject_17.fif,105054213,905357,1810.714,500.0,29,0,,"[{""onset_s"": 908.900024, ""duration_s"": 0.0, ""description"": ""model trained""}]",35dd2ca19a75c5af72d1d64079889b1fa43145647999abf0fc397cbbc98c8fb8
+Subject_18.fif,104932149,904305,1808.61,500.0,29,0,,"[{""onset_s"": 906.700012, ""duration_s"": 0.0, ""description"": ""model trained""}]",b3641d3fc39cd21170ce86dcc60c5f4d4fefb4efa406e30e5cdf7b0c1926b93f
+Subject_19.fif,105297877,907457,1814.914,500.0,29,0,,"[{""onset_s"": 912.484009, ""duration_s"": 0.0, ""description"": ""model trained""}]",a0829b76da80f6a17b2fb2021d2b3f5a5b6ad98b98b6bd24f22a98fb83589ce5
+Subject_20.fif,105501173,909209,1818.418,500.0,29,0,,"[{""onset_s"": 909.528015, ""duration_s"": 0.0, ""description"": ""model trained""}]",cbd410ab7eade78b3b6ff90ecac6ce032e29ea0c71458ef646c6ca6303a4ddb6

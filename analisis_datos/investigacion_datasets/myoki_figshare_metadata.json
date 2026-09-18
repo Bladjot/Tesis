@@ -1,0 +1,637 @@
+{
+  "files": [
+    {
+      "id": 56030717,
+      "name": "Participant_information.xlsx",
+      "size": 12908,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56030717",
+      "supplied_md5": "f3cb3b5122449581f386052e83d93330",
+      "computed_md5": "f3cb3b5122449581f386052e83d93330",
+      "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "id": 56030726,
+      "name": "Task_categorization.xlsx",
+      "size": 21143,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56030726",
+      "supplied_md5": "c4b142239e8ff3c49e9a35db7f67cfd4",
+      "computed_md5": "c4b142239e8ff3c49e9a35db7f67cfd4",
+      "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "id": 56030732,
+      "name": "Glove_calibration.xlsx",
+      "size": 12503,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56030732",
+      "supplied_md5": "92a5b792634e7e88e0bb805400c8d5c7",
+      "computed_md5": "92a5b792634e7e88e0bb805400c8d5c7",
+      "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "id": 56030735,
+      "name": "Database_comparison.xlsx",
+      "size": 10557,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56030735",
+      "supplied_md5": "a77d050a6857e047b2ac15c07c603524",
+      "computed_md5": "a77d050a6857e047b2ac15c07c603524",
+      "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "id": 56030738,
+      "name": "Database_comparison.py",
+      "size": 3944,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56030738",
+      "supplied_md5": "feb957ebbdb6ea5eb7a80936fffa6c67",
+      "computed_md5": "feb957ebbdb6ea5eb7a80936fffa6c67",
+      "mimetype": "text/x-script.python"
+    },
+    {
+      "id": 56030744,
+      "name": "Synchronicity_test.mat",
+      "size": 48961776,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56030744",
+      "supplied_md5": "4fd6f51b66abb1c0a08357f748dd0ab6",
+      "computed_md5": "4fd6f51b66abb1c0a08357f748dd0ab6",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56030849,
+      "name": "NinaproDB7_replica.mat",
+      "size": 1908493416,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56030849",
+      "supplied_md5": "7bd18573b79dd8bedab3c7fc162a6fce",
+      "computed_md5": "7bd18573b79dd8bedab3c7fc162a6fce",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56030945,
+      "name": "P01.mat",
+      "size": 3816461856,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56030945",
+      "supplied_md5": "afd86364ed4bd3a3f029665972e45d24",
+      "computed_md5": "afd86364ed4bd3a3f029665972e45d24",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56031497,
+      "name": "P02.mat",
+      "size": 3551648448,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56031497",
+      "supplied_md5": "c34a885e400cbb0d3f149f1f8219e758",
+      "computed_md5": "c34a885e400cbb0d3f149f1f8219e758",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56031680,
+      "name": "P03.mat",
+      "size": 3563498880,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56031680",
+      "supplied_md5": "eff51c182dba13c09991cc1a1d415bde",
+      "computed_md5": "eff51c182dba13c09991cc1a1d415bde",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56032337,
+      "name": "P04.mat",
+      "size": 3915509088,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56032337",
+      "supplied_md5": "66964d30858939f0583d80c9fa59198e",
+      "computed_md5": "66964d30858939f0583d80c9fa59198e",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56053151,
+      "name": "P05.mat",
+      "size": 4001234280,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56053151",
+      "supplied_md5": "93e8385e41c2805618a218b174ad9039",
+      "computed_md5": "93e8385e41c2805618a218b174ad9039",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56053715,
+      "name": "P06.mat",
+      "size": 4050371488,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56053715",
+      "supplied_md5": "03f3bc0aa559c1a45f262223ed44ce57",
+      "computed_md5": "03f3bc0aa559c1a45f262223ed44ce57",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56053859,
+      "name": "P07.mat",
+      "size": 4148621672,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56053859",
+      "supplied_md5": "538269ba9e68165af470b310249f1535",
+      "computed_md5": "538269ba9e68165af470b310249f1535",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56054363,
+      "name": "P08.mat",
+      "size": 3765999808,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56054363",
+      "supplied_md5": "b30d1b21995a0267c2bf7480a1e8be7b",
+      "computed_md5": "b30d1b21995a0267c2bf7480a1e8be7b",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56055776,
+      "name": "P09.mat",
+      "size": 3870286784,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56055776",
+      "supplied_md5": "6ac813eca27dba69d6a6cc7cc4edf110",
+      "computed_md5": "6ac813eca27dba69d6a6cc7cc4edf110",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56058860,
+      "name": "P10.mat",
+      "size": 4171483776,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56058860",
+      "supplied_md5": "9d71cea7dc742552bdb330749674818d",
+      "computed_md5": "9d71cea7dc742552bdb330749674818d",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56059088,
+      "name": "P11.mat",
+      "size": 4007035968,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56059088",
+      "supplied_md5": "e145c645a09d7a2cb345ade2168e5887",
+      "computed_md5": "e145c645a09d7a2cb345ade2168e5887",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56060057,
+      "name": "P12.mat",
+      "size": 3894930048,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56060057",
+      "supplied_md5": "aeb054387f5b9ff16a48cc442c6756c0",
+      "computed_md5": "aeb054387f5b9ff16a48cc442c6756c0",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56061311,
+      "name": "P13.mat",
+      "size": 4735701160,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56061311",
+      "supplied_md5": "ac4cbe9af21bb14c6cbe9ddcdec412e9",
+      "computed_md5": "ac4cbe9af21bb14c6cbe9ddcdec412e9",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56061620,
+      "name": "P14.mat",
+      "size": 4647582792,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56061620",
+      "supplied_md5": "4f4e93622e3bfce801edc81c0cf77726",
+      "computed_md5": "4f4e93622e3bfce801edc81c0cf77726",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56062361,
+      "name": "P15.mat",
+      "size": 3780667520,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56062361",
+      "supplied_md5": "d5e961c5e78d812762a058840f3c5831",
+      "computed_md5": "d5e961c5e78d812762a058840f3c5831",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56062421,
+      "name": "P16.mat",
+      "size": 3791764032,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56062421",
+      "supplied_md5": "b37ac0114f639b7bc5c3bb494eb8c9a4",
+      "computed_md5": "b37ac0114f639b7bc5c3bb494eb8c9a4",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56063483,
+      "name": "P17.mat",
+      "size": 3804371360,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56063483",
+      "supplied_md5": "1e13eec559e6d0ef6fc13597d8d1b178",
+      "computed_md5": "1e13eec559e6d0ef6fc13597d8d1b178",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56064446,
+      "name": "P18.mat",
+      "size": 3160867904,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56064446",
+      "supplied_md5": "494e917d3d3f74f92875f8e8ead307b0",
+      "computed_md5": "494e917d3d3f74f92875f8e8ead307b0",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56065799,
+      "name": "P19.mat",
+      "size": 3612534432,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56065799",
+      "supplied_md5": "3594a7bc44fbb3bf2f71843e5ff6ec14",
+      "computed_md5": "3594a7bc44fbb3bf2f71843e5ff6ec14",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56066045,
+      "name": "P20.mat",
+      "size": 4768826024,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56066045",
+      "supplied_md5": "341ed0e963bf8969c86ffda570433b95",
+      "computed_md5": "341ed0e963bf8969c86ffda570433b95",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56066627,
+      "name": "P21.mat",
+      "size": 3984427296,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56066627",
+      "supplied_md5": "0e76cba2babad824e86be892c3a8a0e0",
+      "computed_md5": "0e76cba2babad824e86be892c3a8a0e0",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56067155,
+      "name": "P22.mat",
+      "size": 3663091240,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56067155",
+      "supplied_md5": "459914d2fae275389cc16aaa181f3144",
+      "computed_md5": "459914d2fae275389cc16aaa181f3144",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56082032,
+      "name": "P23.mat",
+      "size": 3639035240,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56082032",
+      "supplied_md5": "9df69109a586dded339f1b9f7cd79fa0",
+      "computed_md5": "9df69109a586dded339f1b9f7cd79fa0",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56082971,
+      "name": "P24.mat",
+      "size": 4333377704,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56082971",
+      "supplied_md5": "69abc662db713bf566ed0ee940fff4bb",
+      "computed_md5": "69abc662db713bf566ed0ee940fff4bb",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56084003,
+      "name": "P25.mat",
+      "size": 4310531040,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56084003",
+      "supplied_md5": "6e88a28a32c51ffdd33bd6d56c6e90d3",
+      "computed_md5": "6e88a28a32c51ffdd33bd6d56c6e90d3",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56085023,
+      "name": "P26.mat",
+      "size": 4340487424,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56085023",
+      "supplied_md5": "06ed5261aefb20a063400d20d2bb894a",
+      "computed_md5": "06ed5261aefb20a063400d20d2bb894a",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56085974,
+      "name": "P27.mat",
+      "size": 4949415072,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56085974",
+      "supplied_md5": "9337e973672c1811751e1a0a233bd81f",
+      "computed_md5": "9337e973672c1811751e1a0a233bd81f",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56087393,
+      "name": "P28.mat",
+      "size": 4599593368,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56087393",
+      "supplied_md5": "54a35de8f2cfc12071623c5628317eac",
+      "computed_md5": "54a35de8f2cfc12071623c5628317eac",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56089232,
+      "name": "P29.mat",
+      "size": 4227563992,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56089232",
+      "supplied_md5": "e3dfc9c547244c49b490309a637f11fa",
+      "computed_md5": "e3dfc9c547244c49b490309a637f11fa",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56125970,
+      "name": "P30.mat",
+      "size": 4897076352,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56125970",
+      "supplied_md5": "34bc0558e9e6ecb1bae6def351947a75",
+      "computed_md5": "34bc0558e9e6ecb1bae6def351947a75",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56127092,
+      "name": "P31.mat",
+      "size": 4092471392,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56127092",
+      "supplied_md5": "7dad96baf73e230250566f1db4b647bc",
+      "computed_md5": "7dad96baf73e230250566f1db4b647bc",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56127284,
+      "name": "P32.mat",
+      "size": 4617301888,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56127284",
+      "supplied_md5": "2370d1edc8d8901da1c71bad11270726",
+      "computed_md5": "",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56128274,
+      "name": "P33.mat",
+      "size": 4219060504,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56128274",
+      "supplied_md5": "5edc9a6ea8bc4cf9237d67b9d0bee6da",
+      "computed_md5": "5edc9a6ea8bc4cf9237d67b9d0bee6da",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56129420,
+      "name": "P34.mat",
+      "size": 4265844512,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56129420",
+      "supplied_md5": "c8b545e82ea3738dc80e484035df6898",
+      "computed_md5": "c8b545e82ea3738dc80e484035df6898",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "id": 56131370,
+      "name": "P35.mat",
+      "size": 4307345464,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/56131370",
+      "supplied_md5": "043267b5fa06c77353c788ae5890185d",
+      "computed_md5": "043267b5fa06c77353c788ae5890185d",
+      "mimetype": "application/octet-stream"
+    }
+  ],
+  "folder_structure": {},
+  "authors": [
+    {
+      "id": 20459432,
+      "full_name": "Daniel Andreas",
+      "first_name": "Daniel",
+      "last_name": "Andreas",
+      "is_active": true,
+      "url_name": "Daniel_Andreas",
+      "orcid_id": ""
+    },
+    {
+      "id": 20977476,
+      "full_name": "Dominik Werner",
+      "first_name": "Dominik",
+      "last_name": "Werner",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": "0009-0005-8326-1349"
+    },
+    {
+      "id": 20977485,
+      "full_name": "Zhongshi Hou",
+      "first_name": "Zhongshi",
+      "last_name": "Hou",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": "0009-0009-2746-7050"
+    },
+    {
+      "id": 20977492,
+      "full_name": "Anany Dwivedi",
+      "first_name": "Anany",
+      "last_name": "Dwivedi",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": "0000-0003-3262-6676"
+    },
+    {
+      "id": 20977494,
+      "full_name": "Claudio Castellini",
+      "first_name": "Claudio",
+      "last_name": "Castellini",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": "0000-0002-7346-2180"
+    },
+    {
+      "id": 20977497,
+      "full_name": "Philipp Beckerle",
+      "first_name": "Philipp",
+      "last_name": "Beckerle",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": "0000-0001-5703-6029"
+    }
+  ],
+  "custom_fields": [
+    {
+      "name": "Research Data Support",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Complete where RDS data are part of RDS submission"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Manuscript #",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Manuscript Identifier from eJP"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    }
+  ],
+  "figshare_url": "https://springernature.figshare.com/articles/dataset/MyoKi_A_database_of_multimodal_myography_and_hand_kinematics_during_realistic_daily_life_activities/28696778",
+  "download_disabled": false,
+  "description": "The MyoKi databse contains data from 35 participants performing 74 different tasks, each repeated 6 times. Each participant's data contains 12-channel EMG, 9-channel IMU (each channel with 3-axis accelerometer and 3-axis gyroscope) distributed across the right arm, and joint angles of 18 finger and wrist joints. Additional 24-channel FMG data was acquired for participants P26 to P35. A detailed file structure is available in the data descriptor.",
+  "funding": null,
+  "funding_list": [],
+  "version": 1,
+  "status": "public",
+  "size": 145463536055,
+  "created_date": "2025-08-29T07:03:27Z",
+  "modified_date": "2025-08-29T07:03:28Z",
+  "is_public": true,
+  "is_confidential": false,
+  "is_metadata_record": false,
+  "confidential_reason": "",
+  "metadata_reason": "",
+  "license": {
+    "value": 52,
+    "name": "CC BY",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "tags": [
+    "force myography",
+    "hand kinematics",
+    "daily-life activities",
+    "robotic hand control",
+    "prosthetic hand control",
+    "electromyography signal acquisition",
+    "multimodal data",
+    "inertial measurement unit",
+    "neural network algorithm"
+  ],
+  "keywords": [
+    "force myography",
+    "hand kinematics",
+    "daily-life activities",
+    "robotic hand control",
+    "prosthetic hand control",
+    "electromyography signal acquisition",
+    "multimodal data",
+    "inertial measurement unit",
+    "neural network algorithm"
+  ],
+  "categories": [
+    {
+      "id": 532,
+      "title": "Biomechanical Engineering",
+      "parent_id": 5,
+      "path": "",
+      "source_id": "",
+      "taxonomy_id": 10
+    },
+    {
+      "id": 535,
+      "title": "Rehabilitation Engineering",
+      "parent_id": 5,
+      "path": "",
+      "source_id": "",
+      "taxonomy_id": 10
+    },
+    {
+      "id": 342,
+      "title": "Motor Control",
+      "parent_id": 142,
+      "path": "",
+      "source_id": "",
+      "taxonomy_id": 10
+    },
+    {
+      "id": 365,
+      "title": "Sensory Systems",
+      "parent_id": 142,
+      "path": "",
+      "source_id": "",
+      "taxonomy_id": 10
+    },
+    {
+      "id": 340,
+      "title": "Biomechanics",
+      "parent_id": 142,
+      "path": "",
+      "source_id": "",
+      "taxonomy_id": 10
+    }
+  ],
+  "references": [
+    "https://doi.org/10.1038/s41597-025-05852-6"
+  ],
+  "has_linked_file": false,
+  "citation": "Andreas, Daniel; Werner, Dominik; Hou, Zhongshi; Dwivedi, Anany; Castellini, Claudio; Beckerle, Philipp (2025). MyoKi: A database of multimodal myography and hand kinematics during realistic daily life activities. figshare. Dataset. https://doi.org/10.6084/m9.figshare.28696778.v1",
+  "related_materials": [
+    {
+      "id": 222269746,
+      "identifier": "10.1038/s41597-025-05852-6",
+      "title": "A database of multimodal myography and hand kinematics during realistic daily life activities",
+      "relation": "IsSupplementTo",
+      "identifier_type": "DOI",
+      "is_linkout": true,
+      "link": "https://doi.org/10.1038/s41597-025-05852-6"
+    }
+  ],
+  "is_embargoed": false,
+  "embargo_date": null,
+  "embargo_type": null,
+  "embargo_title": "",
+  "embargo_reason": "",
+  "embargo_options": [],
+  "id": 28696778,
+  "title": "MyoKi: A database of multimodal myography and hand kinematics during realistic daily life activities",
+  "doi": "10.6084/m9.figshare.28696778.v1",
+  "handle": "",
+  "url": "https://api.figshare.com/v2/articles/28696778",
+  "published_date": "2025-08-29T07:03:27Z",
+  "thumb": "",
+  "defined_type": 3,
+  "defined_type_name": "dataset",
+  "group_id": 2826,
+  "url_private_api": "https://api.figshare.com/v2/account/articles/28696778",
+  "url_public_api": "https://api.figshare.com/v2/articles/28696778",
+  "url_private_html": "https://figshare.com/account/articles/28696778",
+  "url_public_html": "https://springernature.figshare.com/articles/dataset/MyoKi_A_database_of_multimodal_myography_and_hand_kinematics_during_realistic_daily_life_activities/28696778",
+  "timeline": {
+    "posted": "2025-08-29T07:03:27",
+    "firstOnline": "2025-08-29"
+  },
+  "resource_title": "A database of multimodal myography and hand kinematics during realistic daily life activities",
+  "resource_doi": "10.1038/s41597-025-05852-6"
+}

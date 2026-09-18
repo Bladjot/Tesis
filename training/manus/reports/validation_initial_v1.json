@@ -1,0 +1,23 @@
+{
+  "prepared_dataset_fingerprint": "7f43364618339fa988e50b7d051a3b55135905e54a06efbbcf3bb2fa8d7893e4",
+  "file_hashes_valid": true,
+  "splits": {
+    "train": {
+      "trials": 1980,
+      "windows": 372505,
+      "boundary_windows_checked": 3960
+    },
+    "val": {
+      "trials": 395,
+      "windows": 73300,
+      "boundary_windows_checked": 790
+    },
+    "test": {
+      "trials": 594,
+      "windows": 118640,
+      "boundary_windows_checked": 1188
+    }
+  },
+  "training_executed": false,
+  "framework_loaded": false
+}

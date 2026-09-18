@@ -1,0 +1,305 @@
+{
+  "created": "2026-04-15T14:55:17.997766+00:00",
+  "modified": "2026-04-15T14:55:19.488347+00:00",
+  "id": 19453843,
+  "conceptrecid": "19453842",
+  "doi": "10.5281/zenodo.19453843",
+  "conceptdoi": "10.5281/zenodo.19453842",
+  "doi_url": "https://doi.org/10.5281/zenodo.19453843",
+  "metadata": {
+    "title": "EMG-Finger-Kinematics (EMG-FK) dataset",
+    "doi": "10.5281/zenodo.19453843",
+    "publication_date": "2026-04-07",
+    "description": "<p>This dataset contains EMG and kinematic data from 20 participants.</p>\n<p><strong>EMG:</strong> 8 channels acquired at 500 Hz around the forearm using MindRove sensors (<a href=\"https://mindrove.com/product/emg-armband/\">EMG armband | muscle sensor</a>).<br><strong>Kinematics:</strong> 15 joint angles (in degrees) acquired using MediaPipe hand tracking and linearly interpolated to 500 Hz.</p>\n<p>Each participant performed 30 minutes of free, unconstrained finger gestures while keeping the hand position fixed.</p>\n<p>The files can be easily loaded using the MNE Python package. No preprocessing has been applied to the dataset. Exact synchronization is guaranteed between EMG channels and within kinematic channels. However, a constant shift of approximately 300 ms can be observed between the two signal types.</p>\n<p>The source code of the data acquisition framework and the benchmark evaluation is available on GitHub at&nbsp;<a href=\"https://github.com/ulb-mlg/Joint-Angles-Regression-from-EMG---Temporal-Riemannian-Regressor\">GitHub/TRR_EMG-FK</a></p>\n<p>A video demonstration of the data acquisition procedure, with training and testing of a machine learning model for hand gesture recognition, is available on YouTube at <a href=\"https://youtu.be/fDK7dXqEAEI\">https://youtu.be/fDK7dXqEAEI</a></p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Colot, Martin",
+        "affiliation": "Université Libre de Bruxelles",
+        "orcid": "0009-0000-5852-573X"
+      },
+      {
+        "name": "Simar, Cédric",
+        "affiliation": "Fund for Scientific Research",
+        "orcid": "0000-0002-6412-4163"
+      },
+      {
+        "name": "Cheron, Guy",
+        "affiliation": "Université Libre de Bruxelles",
+        "orcid": "0000-0003-0734-583X"
+      },
+      {
+        "name": "Cebolla Alvarez, Ana Maria",
+        "affiliation": "Université Libre de Bruxelles",
+        "orcid": "0000-0002-3710-7923"
+      },
+      {
+        "name": "Bontempi, Gianluca",
+        "affiliation": "Fund for Scientific Research",
+        "orcid": "0000-0001-8621-316X"
+      }
+    ],
+    "language": "eng",
+    "custom": {
+      "code:codeRepository": "https://github.com/ulb-mlg/Joint-Angles-Regression-from-EMG---Temporal-Riemannian-Regressor"
+    },
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "19453842"
+          }
+        }
+      ]
+    }
+  },
+  "title": "EMG-Finger-Kinematics (EMG-FK) dataset",
+  "links": {
+    "self": "https://zenodo.org/api/records/19453843",
+    "self_html": "https://zenodo.org/records/19453843",
+    "preview_html": "https://zenodo.org/records/19453843?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.19453843",
+    "self_doi": "https://doi.org/10.5281/zenodo.19453843",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.19453843",
+    "reserve_doi": "https://zenodo.org/api/records/19453843/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/19453842",
+    "parent_html": "https://zenodo.org/records/19453842",
+    "parent_doi": "https://doi.org/10.5281/zenodo.19453842",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.19453842",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:19453843/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:19453843/sequence/default",
+    "files": "https://zenodo.org/api/records/19453843/files",
+    "media_files": "https://zenodo.org/api/records/19453843/media-files",
+    "archive": "https://zenodo.org/api/records/19453843/files-archive",
+    "archive_media": "https://zenodo.org/api/records/19453843/media-files-archive",
+    "latest": "https://zenodo.org/api/records/19453843/versions/latest",
+    "latest_html": "https://zenodo.org/records/19453843/latest",
+    "versions": "https://zenodo.org/api/records/19453843/versions",
+    "draft": "https://zenodo.org/api/records/19453843/draft",
+    "access_links": "https://zenodo.org/api/records/19453843/access/links",
+    "access_grants": "https://zenodo.org/api/records/19453843/access/grants",
+    "access_users": "https://zenodo.org/api/records/19453843/access/users",
+    "access_request": "https://zenodo.org/api/records/19453843/access/request",
+    "access": "https://zenodo.org/api/records/19453843/access",
+    "communities": "https://zenodo.org/api/records/19453843/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/19453843/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/19453843/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/19453843/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/19453843/quota-increase",
+    "requests": "https://zenodo.org/api/records/19453843/requests"
+  },
+  "updated": "2026-04-15T14:55:19.488347+00:00",
+  "recid": "19453843",
+  "revision": 4,
+  "files": [
+    {
+      "id": "4693a45f-2f14-4454-93fc-06aefd89effd",
+      "key": "Subject_01.fif",
+      "size": 105180917,
+      "checksum": "md5:1e8bcd72c41b1d7865ffdbba00fc7c0b",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_01.fif/content"
+      }
+    },
+    {
+      "id": "707ce527-8b21-450c-8300-ee6cee6b7bad",
+      "key": "Subject_04.fif",
+      "size": 106340773,
+      "checksum": "md5:f87039ce5ca7d9f98b4f7e874da7cbae",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_04.fif/content"
+      }
+    },
+    {
+      "id": "e2d4d5b3-efab-44b0-9280-c39b37e83ec4",
+      "key": "Subject_06.fif",
+      "size": 105080445,
+      "checksum": "md5:5f35da3570314670e3310d30d9b042ff",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_06.fif/content"
+      }
+    },
+    {
+      "id": "a812f02b-4730-4802-b9b5-52d73ac1b92d",
+      "key": "Subject_07.fif",
+      "size": 105002693,
+      "checksum": "md5:dc77e20cc58a08d1c0d208339ff46770",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_07.fif/content"
+      }
+    },
+    {
+      "id": "13d2754f-88d8-483e-9abb-b70203a7171c",
+      "key": "Subject_03.fif",
+      "size": 105939997,
+      "checksum": "md5:cf882cbbee92630ee81223add9bd8fce",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_03.fif/content"
+      }
+    },
+    {
+      "id": "2b96b4d6-4f9c-45d2-9341-82ad67fc7e78",
+      "key": "Subject_02.fif",
+      "size": 104951412,
+      "checksum": "md5:49cd84e2fed21653d20e31e6ce91e0d9",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_02.fif/content"
+      }
+    },
+    {
+      "id": "53fd7b95-4cb6-4b40-8034-a71958db93d4",
+      "key": "Subject_13.fif",
+      "size": 104917069,
+      "checksum": "md5:c7a6f19e5dc9c9a08f1f086e7e1fbaf9",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_13.fif/content"
+      }
+    },
+    {
+      "id": "dc45b785-6e97-4268-a092-ae887cffbdb5",
+      "key": "Subject_17.fif",
+      "size": 105054213,
+      "checksum": "md5:3cb9b3e1e9d486ecfce1a541522e0940",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_17.fif/content"
+      }
+    },
+    {
+      "id": "6d02bbc3-eca0-452e-9b13-b092f4f51328",
+      "key": "Subject_14.fif",
+      "size": 104905701,
+      "checksum": "md5:8f99a6f47168da8be7271f121fd31927",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_14.fif/content"
+      }
+    },
+    {
+      "id": "7521a404-7d53-4f23-9109-c4272e28ef89",
+      "key": "Subject_05.fif",
+      "size": 105108749,
+      "checksum": "md5:5579a3895988bcaa3644937ea13f7278",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_05.fif/content"
+      }
+    },
+    {
+      "id": "7e63405b-f000-42cb-935b-c7d9942c2226",
+      "key": "Subject_18.fif",
+      "size": 104932149,
+      "checksum": "md5:cb8dac87caad73be0f37c78e731817b2",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_18.fif/content"
+      }
+    },
+    {
+      "id": "8f6dfe8e-d2b4-4b89-9e06-ac678b4f0e22",
+      "key": "Subject_08.fif",
+      "size": 105672205,
+      "checksum": "md5:e6a88d3bfdb17d38fdacc936a64e9fc6",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_08.fif/content"
+      }
+    },
+    {
+      "id": "46d68138-8bf0-408d-85e1-cf04eb68d266",
+      "key": "Subject_20.fif",
+      "size": 105501173,
+      "checksum": "md5:3e64b600e7e7617b19666ec2ad8b997c",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_20.fif/content"
+      }
+    },
+    {
+      "id": "77e71556-6753-42f0-a6ad-d3755cb9d9d4",
+      "key": "Subject_11.fif",
+      "size": 106568429,
+      "checksum": "md5:2eebae7cdda63633e34a99d774897332",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_11.fif/content"
+      }
+    },
+    {
+      "id": "e32ede6c-cddd-4f8e-ad0b-85f45efdb5aa",
+      "key": "Subject_12.fif",
+      "size": 107660989,
+      "checksum": "md5:41d7ca636c32aeab2eee4bb523351764",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_12.fif/content"
+      }
+    },
+    {
+      "id": "4330a679-575e-4ef6-9e67-c4538d8a3cab",
+      "key": "Subject_15.fif",
+      "size": 104985757,
+      "checksum": "md5:a797602f00403d5703771e258d98e3fe",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_15.fif/content"
+      }
+    },
+    {
+      "id": "96da0ec3-3bdb-4c6b-8b59-3a7cb9622dc7",
+      "key": "Subject_16.fif",
+      "size": 105212485,
+      "checksum": "md5:3b78d13a37bbbc310423e1c56208186d",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_16.fif/content"
+      }
+    },
+    {
+      "id": "9771462c-2de2-4ba6-a4b7-e961637eb175",
+      "key": "Subject_19.fif",
+      "size": 105297877,
+      "checksum": "md5:b1785d48d0e1e7886bd8d383249e0bc3",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_19.fif/content"
+      }
+    },
+    {
+      "id": "37ec137e-358f-4d3c-9243-a785bdf5a5a8",
+      "key": "Subject_09.fif",
+      "size": 104724229,
+      "checksum": "md5:d16b1d1f588976c6aa525609ff64b24b",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_09.fif/content"
+      }
+    },
+    {
+      "id": "34f1d9bc-bc8c-4790-961c-85a044072de4",
+      "key": "Subject_10.fif",
+      "size": 105180221,
+      "checksum": "md5:ad49207c48703a4e621b3263c61e1a7e",
+      "links": {
+        "self": "https://zenodo.org/api/records/19453843/files/Subject_10.fif/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1601377"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 819,
+    "unique_downloads": 724,
+    "views": 378,
+    "unique_views": 334,
+    "version_downloads": 819,
+    "version_unique_downloads": 724,
+    "version_unique_views": 334,
+    "version_views": 378
+  },
+  "state": "done",
+  "submitted": true
+}

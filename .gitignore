@@ -1,0 +1,24 @@
+node_modules/
+frontend/dist/
+.venv/
+.venv-analysis/
+.venv-manus/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.log
+artifacts/
+.env
+.env.*
+!.env.example
+datasets/
+Datos-Train/
+training/manus/bundles/
+training/manus/runs/
+
+# Copias locales de fuentes externas y muestras; conservar informes y scripts.
+/analisis_datos/fuentes/*
+!/analisis_datos/fuentes/LECTURA_FUENTE_EMG_FK.md
+/analisis_datos/investigacion_datasets/fuentes/
+/analisis_datos/investigacion_datasets/fuentes_egoemg/
+/analisis_datos/ejemplo_subject01.npz

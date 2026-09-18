@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "source_record": "https://zenodo.org/records/19261324",
+  "seed": 42,
+  "sample_rate_hz_nominal": 200,
+  "window_samples": 80,
+  "hop_samples": 10,
+  "target_offset_samples": 0,
+  "input_columns": ["emg_0", "emg_1", "emg_2", "emg_3", "emg_4", "emg_5", "emg_6", "emg_7"],
+  "target_columns": ["thumb_spread", "thumb_mcp", "thumb_pip", "thumb_dip", "index_spread", "index_mcp", "index_pip", "index_dip", "middle_spread", "middle_mcp", "middle_pip", "middle_dip", "ring_spread", "ring_mcp", "ring_pip", "ring_dip", "pinky_spread", "pinky_mcp", "pinky_pip", "pinky_dip"],
+  "splits": {
+    "train": [5, 6, 8, 9, 10, 11, 12, 15, 16, 18],
+    "val": [7, 14],
+    "test": [3, 4, 13]
+  },
+  "incomplete_participants_excluded": [1, 2, 17],
+  "label_units": "native_manus_export",
+  "standard_deviation_floor": 0.000001,
+  "filtering": "none_added",
+  "angle_clipping": "none",
+  "duplicate_policy": "keep_first_exact_input_target_recording_by_sorted_source_path",
+  "invalid_policy": "exclude_whole_trial_if_used_columns_nonfinite_or_fewer_than_window_samples",
+  "constant_target_policy": "exclude_whole_trial_if_all_20_targets_exactly_constant",
+  "known_trial_count_anomalies": "retain_valid_recordings_and_flag"
+}

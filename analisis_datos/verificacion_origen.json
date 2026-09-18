@@ -1,0 +1,142 @@
+[
+  {
+    "file": "Subject_01.fif",
+    "size_match": true,
+    "checksum_local": "md5:1e8bcd72c41b1d7865ffdbba00fc7c0b",
+    "checksum_zenodo": "md5:1e8bcd72c41b1d7865ffdbba00fc7c0b",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_02.fif",
+    "size_match": true,
+    "checksum_local": "md5:49cd84e2fed21653d20e31e6ce91e0d9",
+    "checksum_zenodo": "md5:49cd84e2fed21653d20e31e6ce91e0d9",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_03.fif",
+    "size_match": true,
+    "checksum_local": "md5:cf882cbbee92630ee81223add9bd8fce",
+    "checksum_zenodo": "md5:cf882cbbee92630ee81223add9bd8fce",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_04.fif",
+    "size_match": true,
+    "checksum_local": "md5:f87039ce5ca7d9f98b4f7e874da7cbae",
+    "checksum_zenodo": "md5:f87039ce5ca7d9f98b4f7e874da7cbae",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_05.fif",
+    "size_match": true,
+    "checksum_local": "md5:5579a3895988bcaa3644937ea13f7278",
+    "checksum_zenodo": "md5:5579a3895988bcaa3644937ea13f7278",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_06.fif",
+    "size_match": true,
+    "checksum_local": "md5:5f35da3570314670e3310d30d9b042ff",
+    "checksum_zenodo": "md5:5f35da3570314670e3310d30d9b042ff",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_07.fif",
+    "size_match": true,
+    "checksum_local": "md5:dc77e20cc58a08d1c0d208339ff46770",
+    "checksum_zenodo": "md5:dc77e20cc58a08d1c0d208339ff46770",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_08.fif",
+    "size_match": true,
+    "checksum_local": "md5:e6a88d3bfdb17d38fdacc936a64e9fc6",
+    "checksum_zenodo": "md5:e6a88d3bfdb17d38fdacc936a64e9fc6",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_09.fif",
+    "size_match": true,
+    "checksum_local": "md5:d16b1d1f588976c6aa525609ff64b24b",
+    "checksum_zenodo": "md5:d16b1d1f588976c6aa525609ff64b24b",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_10.fif",
+    "size_match": true,
+    "checksum_local": "md5:ad49207c48703a4e621b3263c61e1a7e",
+    "checksum_zenodo": "md5:ad49207c48703a4e621b3263c61e1a7e",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_11.fif",
+    "size_match": true,
+    "checksum_local": "md5:2eebae7cdda63633e34a99d774897332",
+    "checksum_zenodo": "md5:2eebae7cdda63633e34a99d774897332",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_12.fif",
+    "size_match": true,
+    "checksum_local": "md5:41d7ca636c32aeab2eee4bb523351764",
+    "checksum_zenodo": "md5:41d7ca636c32aeab2eee4bb523351764",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_13.fif",
+    "size_match": true,
+    "checksum_local": "md5:c7a6f19e5dc9c9a08f1f086e7e1fbaf9",
+    "checksum_zenodo": "md5:c7a6f19e5dc9c9a08f1f086e7e1fbaf9",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_14.fif",
+    "size_match": true,
+    "checksum_local": "md5:8f99a6f47168da8be7271f121fd31927",
+    "checksum_zenodo": "md5:8f99a6f47168da8be7271f121fd31927",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_15.fif",
+    "size_match": true,
+    "checksum_local": "md5:a797602f00403d5703771e258d98e3fe",
+    "checksum_zenodo": "md5:a797602f00403d5703771e258d98e3fe",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_16.fif",
+    "size_match": true,
+    "checksum_local": "md5:3b78d13a37bbbc310423e1c56208186d",
+    "checksum_zenodo": "md5:3b78d13a37bbbc310423e1c56208186d",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_17.fif",
+    "size_match": true,
+    "checksum_local": "md5:3cb9b3e1e9d486ecfce1a541522e0940",
+    "checksum_zenodo": "md5:3cb9b3e1e9d486ecfce1a541522e0940",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_18.fif",
+    "size_match": true,
+    "checksum_local": "md5:cb8dac87caad73be0f37c78e731817b2",
+    "checksum_zenodo": "md5:cb8dac87caad73be0f37c78e731817b2",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_19.fif",
+    "size_match": true,
+    "checksum_local": "md5:b1785d48d0e1e7886bd8d383249e0bc3",
+    "checksum_zenodo": "md5:b1785d48d0e1e7886bd8d383249e0bc3",
+    "checksum_match": true
+  },
+  {
+    "file": "Subject_20.fif",
+    "size_match": true,
+    "checksum_local": "md5:3e64b600e7e7617b19666ec2ad8b997c",
+    "checksum_zenodo": "md5:3e64b600e7e7617b19666ec2ad8b997c",
+    "checksum_match": true
+  }
+]

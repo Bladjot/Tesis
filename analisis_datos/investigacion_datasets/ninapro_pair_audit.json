@@ -1,0 +1,574 @@
+{
+  "checked_at": "2026-09-18T19:25:35.744053+00:00",
+  "urls": {
+    "DB5_s1": "https://ninapro.hevs.ch/files/DB5_Preproc/s1.zip",
+    "DB9_s68": "https://ninapro.hevs.ch/files/DB9/DB5/s_68_angles.zip"
+  },
+  "matrices": {
+    "DB5_s1": {
+      "s1/S1_E1_A1.mat": {
+        "emg": {
+          "shape": [
+            130267,
+            16
+          ],
+          "dtype": "float32",
+          "min": -128.0,
+          "max": 127.0
+        },
+        "acc": {
+          "shape": [
+            130267,
+            3
+          ],
+          "dtype": "float32",
+          "min": -0.9658203125,
+          "max": 0.81591796875
+        },
+        "stimulus": {
+          "shape": [
+            130267
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 12.0
+        },
+        "glove": {
+          "shape": [
+            130267,
+            22
+          ],
+          "dtype": "float32",
+          "min": -137.061767578125,
+          "max": 1076.46875
+        },
+        "subject": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 1
+        },
+        "exercise": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 3
+        },
+        "repetition": {
+          "shape": [
+            130267
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 6.0
+        },
+        "restimulus": {
+          "shape": [
+            130267
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 12.0
+        },
+        "rerepetition": {
+          "shape": [
+            130267
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 6.0
+        },
+        "age": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 23
+        },
+        "circumference": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 24
+        },
+        "frequency": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 200
+        },
+        "gender": {
+          "shape": [],
+          "dtype": "<U1",
+          "values": "m"
+        },
+        "height": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 187
+        },
+        "weight": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 67
+        },
+        "laterality": {
+          "shape": [],
+          "dtype": "<U1",
+          "values": "r"
+        },
+        "sensor": {
+          "shape": [],
+          "dtype": "<U10",
+          "values": "Double Myo"
+        }
+      },
+      "s1/S1_E2_A1.mat": {
+        "emg": {
+          "shape": [
+            179901,
+            16
+          ],
+          "dtype": "float32",
+          "min": -128.0,
+          "max": 127.0
+        },
+        "acc": {
+          "shape": [
+            179901,
+            3
+          ],
+          "dtype": "float32",
+          "min": -0.90771484375,
+          "max": 0.9853515625
+        },
+        "stimulus": {
+          "shape": [
+            179901
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 17.0
+        },
+        "glove": {
+          "shape": [
+            179901,
+            22
+          ],
+          "dtype": "float32",
+          "min": -631.7636108398438,
+          "max": 907.0572509765625
+        },
+        "subject": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 1
+        },
+        "exercise": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 1
+        },
+        "repetition": {
+          "shape": [
+            179901
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 6.0
+        },
+        "restimulus": {
+          "shape": [
+            179901
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 17.0
+        },
+        "rerepetition": {
+          "shape": [
+            179901
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 6.0
+        },
+        "age": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 23
+        },
+        "circumference": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 24
+        },
+        "frequency": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 200
+        },
+        "gender": {
+          "shape": [],
+          "dtype": "<U1",
+          "values": "m"
+        },
+        "height": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 187
+        },
+        "weight": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 67
+        },
+        "laterality": {
+          "shape": [],
+          "dtype": "<U1",
+          "values": "r"
+        },
+        "sensor": {
+          "shape": [],
+          "dtype": "<U10",
+          "values": "Double Myo"
+        }
+      },
+      "s1/S1_E3_A1.mat": {
+        "emg": {
+          "shape": [
+            258372,
+            16
+          ],
+          "dtype": "float32",
+          "min": -128.0,
+          "max": 127.0
+        },
+        "acc": {
+          "shape": [
+            258372,
+            3
+          ],
+          "dtype": "float32",
+          "min": -1.15380859375,
+          "max": 1.45068359375
+        },
+        "stimulus": {
+          "shape": [
+            258372
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 23.0
+        },
+        "glove": {
+          "shape": [
+            258372,
+            22
+          ],
+          "dtype": "float32",
+          "min": -1041.1746826171875,
+          "max": 921.1748657226562
+        },
+        "subject": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 1
+        },
+        "exercise": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 2
+        },
+        "repetition": {
+          "shape": [
+            258372
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 6.0
+        },
+        "restimulus": {
+          "shape": [
+            258372
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 23.0
+        },
+        "rerepetition": {
+          "shape": [
+            258372
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 6.0
+        },
+        "age": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 23
+        },
+        "circumference": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 24
+        },
+        "frequency": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 200
+        },
+        "gender": {
+          "shape": [],
+          "dtype": "<U1",
+          "values": "m"
+        },
+        "height": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 187
+        },
+        "weight": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 67
+        },
+        "laterality": {
+          "shape": [],
+          "dtype": "<U1",
+          "values": "r"
+        },
+        "sensor": {
+          "shape": [],
+          "dtype": "<U10",
+          "values": "Double Myo"
+        }
+      }
+    },
+    "DB9_s68": {
+      "s_68_angles/S68_E2_A1.mat": {
+        "order_of_angles": {
+          "shape": [
+            22
+          ],
+          "dtype": "object",
+          "values": [
+            "1:CMC1_f",
+            "2:CMC1_a",
+            "3:MCP1",
+            "4:IP1",
+            "5:MCP2_f",
+            "6:MCP2_a",
+            "7:PIP2",
+            "8:MCP3_f",
+            "9:PIP3",
+            "10:MCP4_f",
+            "11:MCP4_a",
+            "12:PIP4",
+            "13:CMC5",
+            "14:MCP5_f",
+            "15:MCP5_a",
+            "16:PIP5",
+            "17:DIP2",
+            "18:DIP3",
+            "19:DIP4",
+            "20:DIP5",
+            "21:WRIST_F",
+            "22:WRIST_A"
+          ]
+        },
+        "stimulus": {
+          "shape": [
+            179901
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 17.0
+        },
+        "repetition": {
+          "shape": [
+            179901
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 6.0
+        },
+        "angles": {
+          "shape": [
+            179901,
+            22
+          ],
+          "dtype": "float64",
+          "min": -318.27520751953125,
+          "max": 233.81068420410156
+        },
+        "exercise": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 1
+        },
+        "glove": {
+          "shape": [
+            179901,
+            22
+          ],
+          "dtype": "float32",
+          "min": -631.7636108398438,
+          "max": 907.0572509765625
+        },
+        "rerepetition": {
+          "shape": [
+            179901
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 6.0
+        },
+        "restimulus": {
+          "shape": [
+            179901
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 17.0
+        },
+        "subject": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 1
+        }
+      },
+      "s_68_angles/S68_E3_A1.mat": {
+        "order_of_angles": {
+          "shape": [
+            22
+          ],
+          "dtype": "object",
+          "values": [
+            "1:CMC1_f",
+            "2:CMC1_a",
+            "3:MCP1",
+            "4:IP1",
+            "5:MCP2_f",
+            "6:MCP2_a",
+            "7:PIP2",
+            "8:MCP3_f",
+            "9:PIP3",
+            "10:MCP4_f",
+            "11:MCP4_a",
+            "12:PIP4",
+            "13:CMC5",
+            "14:MCP5_f",
+            "15:MCP5_a",
+            "16:PIP5",
+            "17:DIP2",
+            "18:DIP3",
+            "19:DIP4",
+            "20:DIP5",
+            "21:WRIST_F",
+            "22:WRIST_A"
+          ]
+        },
+        "stimulus": {
+          "shape": [
+            258372
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 23.0
+        },
+        "repetition": {
+          "shape": [
+            258372
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 6.0
+        },
+        "angles": {
+          "shape": [
+            258372,
+            22
+          ],
+          "dtype": "float64",
+          "min": -262.27520751953125,
+          "max": 200.62001037597656
+        },
+        "exercise": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 2
+        },
+        "glove": {
+          "shape": [
+            258372,
+            22
+          ],
+          "dtype": "float32",
+          "min": -1041.1746826171875,
+          "max": 921.1748657226562
+        },
+        "rerepetition": {
+          "shape": [
+            258372
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 6.0
+        },
+        "restimulus": {
+          "shape": [
+            258372
+          ],
+          "dtype": "int8",
+          "min": 0.0,
+          "max": 23.0
+        },
+        "subject": {
+          "shape": [],
+          "dtype": "int64",
+          "values": 1
+        }
+      }
+    }
+  },
+  "pair_comparisons": [
+    {
+      "original": "s1/S1_E1_A1.mat",
+      "calibrated": "s_68_angles/S68_E2_A1.mat",
+      "same_shape": false
+    },
+    {
+      "original": "s1/S1_E1_A1.mat",
+      "calibrated": "s_68_angles/S68_E3_A1.mat",
+      "same_shape": false
+    },
+    {
+      "original": "s1/S1_E2_A1.mat",
+      "calibrated": "s_68_angles/S68_E2_A1.mat",
+      "same_shape": true,
+      "glove_equal": true,
+      "glove_max_abs_error": 0.0,
+      "restimulus_equal": true,
+      "rerepetition_equal": true,
+      "stimulus_equal": true,
+      "repetition_equal": true
+    },
+    {
+      "original": "s1/S1_E2_A1.mat",
+      "calibrated": "s_68_angles/S68_E3_A1.mat",
+      "same_shape": false
+    },
+    {
+      "original": "s1/S1_E3_A1.mat",
+      "calibrated": "s_68_angles/S68_E2_A1.mat",
+      "same_shape": false
+    },
+    {
+      "original": "s1/S1_E3_A1.mat",
+      "calibrated": "s_68_angles/S68_E3_A1.mat",
+      "same_shape": true,
+      "glove_equal": true,
+      "glove_max_abs_error": 0.0,
+      "restimulus_equal": true,
+      "rerepetition_equal": true,
+      "stimulus_equal": true,
+      "repetition_equal": true
+    }
+  ]
+}

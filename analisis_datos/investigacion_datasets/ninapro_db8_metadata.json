@@ -1,0 +1,304 @@
+{
+  "files": [
+    {
+      "id": 17213498,
+      "name": "Ninapro_DB8_SubjectsInformation.csv",
+      "size": 1245,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/17213498",
+      "supplied_md5": "710e06c97148c664814e68e08a1028c3",
+      "computed_md5": "710e06c97148c664814e68e08a1028c3",
+      "mimetype": "text/plain"
+    },
+    {
+      "id": 17213330,
+      "name": "DB8_s1.zip",
+      "size": 2248249208,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/17213330",
+      "supplied_md5": "cd9b48e10aa524c1c888a6a577cb7c56",
+      "computed_md5": "cd9b48e10aa524c1c888a6a577cb7c56",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 17213546,
+      "name": "DB8_s2.zip",
+      "size": 2190039189,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/17213546",
+      "supplied_md5": "4432e852c4546e4e60ad47c45522b9b6",
+      "computed_md5": "4432e852c4546e4e60ad47c45522b9b6",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 17213696,
+      "name": "DB8_s3.zip",
+      "size": 2193518764,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/17213696",
+      "supplied_md5": "49d4563e96f9d518abcedaa9672f9435",
+      "computed_md5": "49d4563e96f9d518abcedaa9672f9435",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 17214371,
+      "name": "DB8_s4.zip",
+      "size": 2205477734,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/17214371",
+      "supplied_md5": "3e7d1b3085655508bbd2f2f359c34077",
+      "computed_md5": "3e7d1b3085655508bbd2f2f359c34077",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 17215997,
+      "name": "DB8_s5.zip",
+      "size": 2111925730,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/17215997",
+      "supplied_md5": "baeb1c670c70131ffc7bb3e444db01ae",
+      "computed_md5": "baeb1c670c70131ffc7bb3e444db01ae",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 17216135,
+      "name": "DB8_s6.zip",
+      "size": 2234266523,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/17216135",
+      "supplied_md5": "297f50c8d095df57f841a36eef8c1986",
+      "computed_md5": "297f50c8d095df57f841a36eef8c1986",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 17216411,
+      "name": "DB8_s7.zip",
+      "size": 2213642872,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/17216411",
+      "supplied_md5": "c6134ee03be504b4e9fb25f228dadc0d",
+      "computed_md5": "c6134ee03be504b4e9fb25f228dadc0d",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 17216822,
+      "name": "DB8_s8.zip",
+      "size": 2182682299,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/17216822",
+      "supplied_md5": "80ede467f651979102069381cbb98096",
+      "computed_md5": "80ede467f651979102069381cbb98096",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 17217371,
+      "name": "DB8_s9.zip",
+      "size": 2189960639,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/17217371",
+      "supplied_md5": "5d3235154bc942a6e24ec25dbd991e7b",
+      "computed_md5": "5d3235154bc942a6e24ec25dbd991e7b",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 17217671,
+      "name": "DB8_s10.zip",
+      "size": 2224728905,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/17217671",
+      "supplied_md5": "a9a61c27d5a6d23c97080bf37bf719dd",
+      "computed_md5": "a9a61c27d5a6d23c97080bf37bf719dd",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 17217869,
+      "name": "DB8_s11.zip",
+      "size": 1767901055,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/17217869",
+      "supplied_md5": "8dd4e703f0e1de38efdb97f9b4cfbedb",
+      "computed_md5": "8dd4e703f0e1de38efdb97f9b4cfbedb",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 17218115,
+      "name": "DB8_s12.zip",
+      "size": 1624150191,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/17218115",
+      "supplied_md5": "fe513c44987ccd5d2580ab9d238481bc",
+      "computed_md5": "fe513c44987ccd5d2580ab9d238481bc",
+      "mimetype": "application/zip"
+    }
+  ],
+  "folder_structure": {},
+  "authors": [
+    {
+      "id": 6582983,
+      "full_name": "Agamemnon Krasoulis",
+      "first_name": "Agamemnon",
+      "last_name": "Krasoulis",
+      "is_active": true,
+      "url_name": "Agamemnon_Krasoulis",
+      "orcid_id": ""
+    },
+    {
+      "id": 7215843,
+      "full_name": "Sethu Vijayakumar",
+      "first_name": "Sethu",
+      "last_name": "Vijayakumar",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": "0000-0003-0649-7241"
+    },
+    {
+      "id": 7207409,
+      "full_name": "K. Nazarpour",
+      "first_name": "K.",
+      "last_name": "Nazarpour",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    }
+  ],
+  "custom_fields": [],
+  "figshare_url": "https://data.ncl.ac.uk/articles/dataset/EMG_and_data_glove_dataset_for_dexterous_myoelectric_control/9577598",
+  "download_disabled": false,
+  "description": "<div><b>Instructions</b><br></div><div><b>Acquisition Protocol</b></div><div><br></div><div>The 8th Ninapro database is described in the paper: \"Agamemnon Krasoulis, Sethu Vijayakumar & Kianoush Nazarpour.  Effect of user adaptation on prosthetic finger control with an intuitive myoelectric decoder, Frontiers in Neuroscience. Please cite this paper for any work related to this database.</div><div><br></div><div>More information about the protocol can be found in the original paper: \"Manfredo Atzori, Arjan Gijsberts, Claudio Castellini, Barbara Caputo, Anne-Gabrielle Mittaz Hager, Simone Elsig, Giorgio Giatsidis, Franco Bassetto & Henning Müller. Electromyography data for non-invasive naturally-controlled robotic hand prostheses. Scientific Data, 2014\" (http://www.nature.com/articles/sdata201453)</div><div><br></div><div>The experiment comprised nine movements including single-finger as well as functional movements. The subjects had to repeat the instructed movements following visual cues (i.e. movies) shown on the screen of a computer monitor.</div><div><br></div><div>The muscular activity was recorded using 16 active double-differential wireless sensors from a Delsys Trigno IM Wireless EMG system. The sensors comprise EMG electrodes and 9-axis inertial measurement units (IMUs). The sensors were positioned in two rows of eight units around the participants’ right forearm in correspondence to the radiohumeral joint (see pictures below). No specific muscles were targeted. The sensors were fixed on the forearm using the standard manufacturer-provided adhesive bands. Moreover, a hypoallergenic elastic latex-free band was placed around the sensors to keep them fixed during the acquisition. The sEMG signals were sampled at a rate of 1111 Hz, accelerometer and gyroscope data were sampled at 148 Hz, and magnetometer data were sampled at 74 Hz. All signals were upsampled to 2 kHz and post-synchronized.</div><div><br></div><div>Hand kinematic data were recorded with a dataglove (Cyberglove 2, 18-DOF model). For all participants (i.e. both able-bodied and amputee), the data glove was worn on the left hand (i.e. contralateral to the arm where the EMG sensors were located). The Cyberglove signals correspond to data from the associated Cyberglove sensors located as shown in the picture below (\"n/a\" corresponds to sensors that were not available, since an 18-DOF model was used). Prior to each experimental session, the data glove was calibrated for the specific participant using the \"quick calibration\" procedure provided by the manufacturer. The Cyberglove signals were sampled at 100 Hz and subsequently upsampled to 2 kHz and synchronized to EMG and IMU data.</div><div><br></div><div>Ten able-bodied (Subjects 1-10) and two right-hand transradial amputee participants (Subjects 11-12) are included in the dataset. During the acquisition, the subjects were asked to repeat 9 movements using both hands (bilateral mirrored movements). The duration of each of the nine movements varied between 6 and 9 seconds and consecutive trials were interleaved with 3 seconds of rest. Each repetition started with the participant holding their fingers at the rest state and involved slowly reaching the target posture as shown on the screen and returning to the rest state before the end of the trial. The following movements were included:</div><div><br></div><div>0.      rest</div><div>1.       thumb flexion/extension</div><div>2.      thumb abduction/adduction</div><div>3.      index finger flexion/extension</div><div>4.      middle finger flexion/extension</div><div>5.       combined ring and little fingers flexion/extension</div><div>6.      index pointer</div><div>7.       cylindrical grip</div><div>8.      lateral grip</div><div>9.      tripod grip</div><div><br></div><div> </div><div><b>Datasets</b></div><div><br></div><div>For each participant, three datasets were collected: the first two datasets (acquisitions 1 & 2) comprised 10 repetitions of each movement and the third dataset (acquisition 3) comprised only two repetitions. For each subject, the associated .zip file contains three MATLAB files in .mat format, that is, one for each dataset, with synchronized variables.</div><div><br></div><div><br></div><div>The variables included in the .mat files are the following:</div><div>·         subject: subject number</div><div>·         exercise: exercise number (value set to 1 in all data files)</div><div>·         emg (16 columns): sEMG signals from the 16 sensors</div><div>·         acc (48 columns): three-axis accelerometer data from the 16 sensors</div><div>·         gyro (48 columns): three-axis gyroscope data from the 16 sensors</div><div>·         mag (48 columns): three-axis magnetometer data from the 16 sensors</div><div>·         glove (18 columns): calibrated signals from the 18 sensors of the Cyberglove</div><div>·         stimulus (1 column): the movement repeated by the subject</div><div>·         restimulus (1 column): again the movement repeated by the subject. In this case, the duration of the movement label is refined a-posteriori in order to correspond to the real movement.</div><div>·         repetition (1 column): repetition number of the stimulus</div><div>·         rerepetition (1 column): repetition number of restimulus</div><div><br></div><div> </div><div><b>Important notes</b></div><div><br></div><div>Given the nature of the data collection procedure (slow finger movement and lack of extended hold period), this database is intended to be used for estimation/reconstruction of finger movement rather than motion/grip classification.  In other words, the purpose of this database is to provide a benchmark for decoding finger position from (contralateral) EMG measurements using regression algorithms as opposed to classification. Therefore, the use of stimulus/restimulus vectors as target variables should be avoided; these are only provided for the user to have access to the exact timings of each movement repetition.</div><div><br></div><div>Three datasets/acquisitions are provided for each subject. It is recommended that dataset 3, which comprises only two repetitions for each movement, is only used to report performance results and no training or hyper-parameter tuning is performed using this data (i.e. test dataset). The three datasets, which were recorded sequentially, can offer an out-of-the-box three-way split for model training (dataset 1), hyper-parameter tuning/validation (dataset 2), and performance testing (dataset 3). Another possibility is to merge datasets 1 & 2 and perform training and validation/hyper-parameter tuning using K-fold cross-validation, then report performance results on dataset 3.</div>",
+  "funding": "EP/F500386/1",
+  "funding_list": [
+    {
+      "id": 15058571,
+      "title": "EP/F500386/1",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    },
+    {
+      "id": 15058574,
+      "title": "EP/R004242/1",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    },
+    {
+      "id": 15058577,
+      "title": "BB/F529254/1",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    },
+    {
+      "id": 15058580,
+      "title": "EP/M025594/1",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    },
+    {
+      "id": 15058583,
+      "title": "EP/M025977/1",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    },
+    {
+      "id": 15058586,
+      "title": "EP/H1012338/1",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    }
+  ],
+  "version": 1,
+  "status": "public",
+  "size": 25386544354,
+  "created_date": "2019-08-13T15:35:12Z",
+  "modified_date": "2023-05-30T12:01:28Z",
+  "is_public": true,
+  "is_confidential": false,
+  "is_metadata_record": false,
+  "confidential_reason": "",
+  "metadata_reason": "",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "tags": [
+    "EMG signals",
+    "myoelectric",
+    "data glove",
+    "prosthesis control schemes",
+    "Biomedical Engineering not elsewhere classified"
+  ],
+  "keywords": [
+    "EMG signals",
+    "myoelectric",
+    "data glove",
+    "prosthesis control schemes",
+    "Biomedical Engineering not elsewhere classified"
+  ],
+  "categories": [
+    {
+      "id": 26299,
+      "title": "Biomedical engineering not elsewhere classified",
+      "parent_id": 26263,
+      "path": "/26212/26263/26299",
+      "source_id": "400399",
+      "taxonomy_id": 100
+    }
+  ],
+  "references": [
+    "http://ninaweb.hevs.ch/DB8",
+    "https://doi.org/10.1038/sdata.2014.53"
+  ],
+  "has_linked_file": false,
+  "citation": "Krasoulis, Agamemnon; Vijayakumar, Sethu; Nazarpour, K. (2019). EMG and data glove dataset for dexterous myoelectric control. Newcastle University. Dataset. https://doi.org/10.25405/data.ncl.9577598.v1",
+  "related_materials": [
+    {
+      "id": 804779,
+      "identifier": "http://ninaweb.hevs.ch/DB8",
+      "title": "",
+      "relation": "References",
+      "identifier_type": "URL",
+      "is_linkout": false,
+      "link": "http://ninaweb.hevs.ch/DB8"
+    },
+    {
+      "id": 804782,
+      "identifier": "https://doi.org/10.1038/sdata.2014.53",
+      "title": "",
+      "relation": "References",
+      "identifier_type": "URL",
+      "is_linkout": false,
+      "link": "https://doi.org/10.1038/sdata.2014.53"
+    }
+  ],
+  "is_embargoed": false,
+  "embargo_date": null,
+  "embargo_type": "file",
+  "embargo_title": "",
+  "embargo_reason": "",
+  "embargo_options": [],
+  "id": 9577598,
+  "title": "EMG and data glove dataset for dexterous myoelectric control",
+  "doi": "10.25405/data.ncl.9577598.v1",
+  "handle": "",
+  "url": "https://api.figshare.com/v2/articles/9577598",
+  "published_date": "2019-08-13T15:35:12Z",
+  "thumb": "",
+  "defined_type": 3,
+  "defined_type_name": "dataset",
+  "group_id": 61306,
+  "url_private_api": "https://api.figshare.com/v2/account/articles/9577598",
+  "url_public_api": "https://api.figshare.com/v2/articles/9577598",
+  "url_private_html": "https://figshare.com/account/articles/9577598",
+  "url_public_html": "https://data.ncl.ac.uk/articles/dataset/EMG_and_data_glove_dataset_for_dexterous_myoelectric_control/9577598",
+  "timeline": {
+    "posted": "2019-08-13T15:35:12",
+    "firstOnline": "2019-08-13"
+  },
+  "resource_title": null,
+  "resource_doi": null
+}

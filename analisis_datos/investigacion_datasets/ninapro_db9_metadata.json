@@ -1,0 +1,136 @@
+{
+  "created": "2019-10-11T09:08:54.818761+00:00",
+  "modified": "2020-01-24T19:24:49.342379+00:00",
+  "id": 3480074,
+  "conceptrecid": "2159751",
+  "doi": "10.5281/zenodo.3480074",
+  "conceptdoi": "10.5281/zenodo.2159751",
+  "doi_url": "https://doi.org/10.5281/zenodo.3480074",
+  "metadata": {
+    "title": "Calibrated kinematic Ninapro hand movements data",
+    "doi": "10.5281/zenodo.3480074",
+    "publication_date": "2019-03-12",
+    "description": "<p>The kinematic data of the Ninapro (Non Invasive Adaptive Prosthetics) database&nbsp; includes calibrated kinematic data from 77 subjects, performing 40 hand movements and grasps. The whole database aims at allowing worldwide research groups to study hand kinematics. As well the dataset allows also to study the relationship between hand kinematics and muscle activity, since it is linked to sEMG datasets. The final goal of this work is to aid the progress in rehabilitation, physiotherapy, medicine, neuroscience and prosthetics. Therefore, the kinematic database improves the state of the art, being the most accurate, comprehensive and advanced reference for the largest kinematic database existing at the time of writing.&nbsp;<br>\n<br>\n<strong>Acquisition protocol</strong>:<br>\nHand kinematics was measured using a 22-sensor CyberGlove II dataglove (CyberGlove Systems LLC,&nbsp;<a href=\"http://www.cyberglovesystems.com/\">www.cyberglovesystems.com</a>). The CyberGlove is a motion capture data glove, instrumented with joint-angle measurements. It uses proprietary resistive bend-sensing technology to transform hand and finger motions into real-time digital joint-angle data.<br>\n<br>\nThe calibrated kinematic Ninapro database includes 40 different movements of 77 intact subjects.<br>\nThe subjects have to repeat several movement represented by movies that are shown on the screen of a laptop.<br>\nThe experiment is divided in two exercises:<br>\n&nbsp; &nbsp; &nbsp; &nbsp; &bull; Isometric, isotonic hand configurations and basic wrist movements<br>\n&nbsp; &nbsp; &nbsp; &nbsp; &bull; Grasping and functional movements<br>\nJoint angles from raw data were calculated according to a very detailed calibration protocol. The protocol was previously applied to 10 different intact subjects and consists in recording 64 different poses or guided movements to obtain the gains and also some corrections because of cross-coupling effects for specific anatomical angles.</p>\n\n<p>Gracia-Ib&aacute;&ntilde;ez, V., Vergara, M., Buffi, J. H., Murray, W. M. &amp; Sancho-Bru, J. L. Across-subject calibration of an instrumented glove to measure hand movement for clinical purposes. C. Comput. Methods Biomech. Biomed. Eng. 20, 587&ndash;597 (2017).<br>\n<br>\n<strong>Data Sets</strong>:<br>\nFor each subject and exercise, the database contains one file in Matlab format (<a href=\"http://www.mathworks.com/\">www.mathworks.com</a>) with synchronized variables. The variables included are the following ones:<br>\n&nbsp; &nbsp; &nbsp; &nbsp; &bull; subject: subject number;<br>\n&nbsp; &nbsp; &nbsp; &nbsp; &bull; exercise: exercise number;<br>\n&nbsp; &nbsp; &nbsp; &nbsp; &bull; glove (22 columns): uncalibrated signal from the 22 sensors of the Cyberglove. Details on the location of the sensors are available at the link:&nbsp;<a href=\"http://ninapro.hevs.ch/node/123\">ninapro.hevs.ch/node/123</a>;<br>\n&nbsp; &nbsp; &nbsp; &nbsp; &bull; angles(22 columns): calibrated signal from the 22 sensors of the Cyberglove by applying an across-subject calibration<br>\n&nbsp; &nbsp; &nbsp; &nbsp; &bull; re-stimulus (1 column): the a-posteriori refined label of the movement;<br>\n&nbsp; &nbsp; &nbsp; &nbsp; &bull; re-repetition (1 column): re-stimulus repetition index;</p>\n\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &bull; stimulus (1 column): the label of the movement;<br>\n&nbsp; &nbsp; &nbsp; &nbsp; &bull; repetition (1 column): stimulus repetition index;<br>\n&nbsp; &nbsp; &nbsp; &nbsp; &bull; order of angles (22 columns) : name of the angles corresponding to variable &ldquo;angles&rdquo;.</p>\n\n<p>Raw glove data are also included in the folder &quot;Raw data&quot;.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Jarque-Bou, Nestor",
+        "affiliation": "Department of Mechanical Engineering and Construction, Universitat Jaume I",
+        "orcid": "0000-0001-7793-3309"
+      },
+      {
+        "name": "Manfredo, Atzori",
+        "affiliation": "Information Systems Institute, University of Applied Sciences Western Switzerland (HES-SO)"
+      },
+      {
+        "name": "Müller, Henning",
+        "affiliation": "Information Systems Institute, University of Applied Sciences Western Switzerland (HES-SO)"
+      }
+    ],
+    "keywords": [
+      "kinematics",
+      "hand grasps",
+      "hand movements",
+      "data glove",
+      "activities of daily living"
+    ],
+    "language": "eng",
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 2,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "2159751"
+          }
+        }
+      ]
+    },
+    "notes": "Acknowledgements to : Barbara Caputo, Claudio Castellini, Arjan Gijsberts, Anne-Gabrielle and Mittaz-Hager ."
+  },
+  "title": "Calibrated kinematic Ninapro hand movements data",
+  "links": {
+    "self": "https://zenodo.org/api/records/3480074",
+    "self_html": "https://zenodo.org/records/3480074",
+    "preview_html": "https://zenodo.org/records/3480074?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.3480074",
+    "self_doi": "https://doi.org/10.5281/zenodo.3480074",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.3480074",
+    "reserve_doi": "https://zenodo.org/api/records/3480074/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/2159751",
+    "parent_html": "https://zenodo.org/records/2159751",
+    "parent_doi": "https://doi.org/10.5281/zenodo.2159751",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.2159751",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:3480074/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:3480074/sequence/default",
+    "files": "https://zenodo.org/api/records/3480074/files",
+    "media_files": "https://zenodo.org/api/records/3480074/media-files",
+    "archive": "https://zenodo.org/api/records/3480074/files-archive",
+    "archive_media": "https://zenodo.org/api/records/3480074/media-files-archive",
+    "latest": "https://zenodo.org/api/records/3480074/versions/latest",
+    "latest_html": "https://zenodo.org/records/3480074/latest",
+    "versions": "https://zenodo.org/api/records/3480074/versions",
+    "draft": "https://zenodo.org/api/records/3480074/draft",
+    "access_links": "https://zenodo.org/api/records/3480074/access/links",
+    "access_grants": "https://zenodo.org/api/records/3480074/access/grants",
+    "access_users": "https://zenodo.org/api/records/3480074/access/users",
+    "access_request": "https://zenodo.org/api/records/3480074/access/request",
+    "access": "https://zenodo.org/api/records/3480074/access",
+    "communities": "https://zenodo.org/api/records/3480074/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/3480074/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/3480074/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/3480074/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/3480074/quota-increase",
+    "requests": "https://zenodo.org/api/records/3480074/requests"
+  },
+  "updated": "2020-01-24T19:24:49.342379+00:00",
+  "recid": "3480074",
+  "revision": 4,
+  "files": [
+    {
+      "id": "fc821b53-d307-4332-b31b-ffa3911c8638",
+      "key": "Raw data.zip",
+      "size": 302758376,
+      "checksum": "md5:30c2dacf0b24e4703c677889c5883b77",
+      "links": {
+        "self": "https://zenodo.org/api/records/3480074/files/Raw%20data.zip/content"
+      }
+    },
+    {
+      "id": "81be7a93-3358-4bd5-b335-35750f178efd",
+      "key": "CALIBRATED_KINEMATIC_DB_v2.zip",
+      "size": 6502929730,
+      "checksum": "md5:385df7a88738aeee2ec64c1b89aef92c",
+      "links": {
+        "self": "https://zenodo.org/api/records/3480074/files/CALIBRATED_KINEMATIC_DB_v2.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "56555"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 1639,
+    "unique_downloads": 788,
+    "views": 4266,
+    "unique_views": 3926,
+    "version_downloads": 1476,
+    "version_unique_downloads": 680,
+    "version_unique_views": 3129,
+    "version_views": 3426
+  },
+  "state": "done",
+  "submitted": true
+}

@@ -1,0 +1,4 @@
+* text=auto eol=lf
+
+# Preservar literalmente los documentos originales y sus hashes publicados.
+training/manus/source/* -text whitespace=-blank-at-eof

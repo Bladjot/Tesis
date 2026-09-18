@@ -1,0 +1,216 @@
+{
+  "created": "2017-10-01T08:08:09.163263+00:00",
+  "modified": "2020-01-24T19:25:45.836456+00:00",
+  "id": 1000116,
+  "conceptrecid": "1000115",
+  "doi": "10.5281/zenodo.1000116",
+  "conceptdoi": "10.5281/zenodo.1000115",
+  "doi_url": "https://doi.org/10.5281/zenodo.1000116",
+  "metadata": {
+    "title": "Ninapro dataset 5 (double Myo armband)",
+    "doi": "10.5281/zenodo.1000116",
+    "publication_date": "2017-10-01",
+    "description": "<p>The 5th Ninapro database includes 10 intact subjects recorded with two Thalmic Myo (https://www.myo.com/) armbands.<br>\nThe database can be used to test the Myo armbands separately as well.</p>\n\n<p>The database is thoroughly described in the paper: \"Pizzolato et al., Comparison of Six Electromyography Acquisition Setups on Hand Movement Classification Tasks, Plos One 2017 (accepted).\".<br>\nPlease, cite this paper for any work related to the 5th Ninapro database.</p>\n\n<p>The dataset is part of the Ninapro database (http://ninapro.hevs.ch/). Please, look at the database for more information.</p>\n\n<p><strong>Acquisition Protocol</strong><br>\nThe subjects have to repeat several movements represented by movies that are shown on the screen of a laptop.<br>\nThe experiment is divided in three exercises:<br>\n1. Basic movements of the fingers<br>\n2. Isometric, isotonic hand configurations and basic wrist movements<br>\n3. Grasping and functional movements<br>\nDuring the acquisition, the subjects were asked to repeat the movements with the right hand. Each movement repetition lasted 5 seconds and was followed by 3 seconds of rest.<br>\nThe protocol includes 6 repetitions of 52 different movements (plus rest) performed by 10 intact subjects. The movements were selected from the hand taxonomy as well as from hand robotics literature.</p>\n\n<p><strong>Acquisition Setup</strong><br>\nThe muscular activity is gathered using 2 Thalmic Myo armbands. The database can be used to test the Myo armbands separately as well.<br>\nThe subjects in this database wore two Myo armbands one next to the other, including 16 active single–differential wireless electrodes. The top Myo armband is placed closed to the elbow with the first sensor placed on the radio humeral joint, as in the standard Ninapro configuration for the equally spaced electrodes; the second Myo armband is placed just after the first, nearer to the hand, tilted of 22.5 degrees. This configuration provides an extended uniform muscle mapping at an extremely affordable cost. The Myo sensors do not require the arm to be shaved and after few minutes the armband tighten very firmly to the arm of the subject.<br>\nThe sEMG signals are sampled at a rate of 200 Hz.</p>\n\n<p> </p>\n\n<p>The kinematic information is recorded with a dataglove (22 sensors Cyberglove 2). The cyberglove signal corresponds to raw data from the cyberglove sensors located as shown in the following pictures.<br>\nThe raw data are declared to be proportional to the angles at the joints in the CyberGlove manual.</p>\n\n<p> </p>\n\n<p><strong>Data Sets</strong><br>\nFor each exercise, for each subject, the database contains one matlab file with synchronized variables.<br>\nThe variables included in the matlab files are:<br>\n• subject: the subject number;<br>\n• sensor: the name of the sEMG sensor;<br>\n• frequency: the frequency in Hertz of the recorded data<br>\n• exercise: exercise number;<br>\n• emg: sEMG signal. Columns 1-8 are the electrodes equally spaced around the forearm at the height of the radio humeral joint. Columns 9-16 represent the second Myo, tilted by 22.5 degrees clockwise.<br>\n• acc (3 columns): raw signals from the three axis accelerometer of the first Myo, found in the Myo DB<br>\n• glove (22 columns): uncalibrated signal from the 22 sensors of the CyberGlove. The raw data are declared to be proportional to the angles of the joints in the CyberGlove manual.<br>\n• stimulus: the original label of the movement repeated by the subject;<br>\n• restimulus: the corrected stimulus, processed with movement detection algorithms;<br>\n• repetition: stimulus repetition index;<br>\n• rerepetition: restimulus repetition index;<br>\n• age: subject’s age;<br>\n• gender: subject’s gender, ”m” for male ”f” for female;<br>\n• weight: subject’s weight in kilograms;<br>\n• height: subject’s height in centimeters;<br>\n• laterality: subject’s laterality, ”r” for right-handed, ”l” for left-handed;<br>\n• circumference: circumference of the subject’s forearm at the radio-humeral joint height, measured in centimeters;</p>\n\n<p> </p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Pizzolato, Stefano",
+        "affiliation": "Information Systems Institute at the University of Applied Sciences Western Switzerland (HES-SO Valais), Sierre, Switzerland"
+      },
+      {
+        "name": "Tagliapietra, Luca",
+        "affiliation": "Department of Management and Engineering, University of Padova, Padova, Italy"
+      },
+      {
+        "name": "Cognolato, Matteo",
+        "affiliation": "Information Systems Institute at the University of Applied Sciences Western Switzerland (HES-SO Valais), Sierre, Switzerland"
+      },
+      {
+        "name": "Reggiani, Monica",
+        "affiliation": "Department of Management and Engineering, University of Padova, Padova, Italy"
+      },
+      {
+        "name": "Müller, Henning",
+        "affiliation": "Information Systems Institute at the University of Applied Sciences Western Switzerland (HES-SO Valais), Sierre, Switzerland"
+      },
+      {
+        "name": "Atzori, Manfredo",
+        "affiliation": "Information Systems Institute at the University of Applied Sciences Western Switzerland (HES-SO Valais), Sierre, Switzerland"
+      }
+    ],
+    "keywords": [
+      "electromyography, prosthetics, prostheses, thalmic myo,"
+    ],
+    "references": [
+      "Stefano Pizzolato, Luca Tagliapietra, Matteo Cognolato, Monica Reggiani, Henning Müller, Manfredo Atzori, Comparison of Six Electromyography Acquisition Setups on Hand Movement Classification Tasks, Plos One, 2017 (accepted)"
+    ],
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-nd-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "1000115"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Ninapro dataset 5 (double Myo armband)",
+  "links": {
+    "self": "https://zenodo.org/api/records/1000116",
+    "self_html": "https://zenodo.org/records/1000116",
+    "preview_html": "https://zenodo.org/records/1000116?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.1000116",
+    "self_doi": "https://doi.org/10.5281/zenodo.1000116",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.1000116",
+    "reserve_doi": "https://zenodo.org/api/records/1000116/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/1000115",
+    "parent_html": "https://zenodo.org/records/1000115",
+    "parent_doi": "https://doi.org/10.5281/zenodo.1000115",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.1000115",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:1000116/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:1000116/sequence/default",
+    "files": "https://zenodo.org/api/records/1000116/files",
+    "media_files": "https://zenodo.org/api/records/1000116/media-files",
+    "archive": "https://zenodo.org/api/records/1000116/files-archive",
+    "archive_media": "https://zenodo.org/api/records/1000116/media-files-archive",
+    "latest": "https://zenodo.org/api/records/1000116/versions/latest",
+    "latest_html": "https://zenodo.org/records/1000116/latest",
+    "versions": "https://zenodo.org/api/records/1000116/versions",
+    "draft": "https://zenodo.org/api/records/1000116/draft",
+    "access_links": "https://zenodo.org/api/records/1000116/access/links",
+    "access_grants": "https://zenodo.org/api/records/1000116/access/grants",
+    "access_users": "https://zenodo.org/api/records/1000116/access/users",
+    "access_request": "https://zenodo.org/api/records/1000116/access/request",
+    "access": "https://zenodo.org/api/records/1000116/access",
+    "communities": "https://zenodo.org/api/records/1000116/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/1000116/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/1000116/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/1000116/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/1000116/quota-increase",
+    "requests": "https://zenodo.org/api/records/1000116/requests"
+  },
+  "updated": "2020-01-24T19:25:45.836456+00:00",
+  "recid": "1000116",
+  "revision": 11,
+  "files": [
+    {
+      "id": "cb9f51d5-0741-43df-a057-3b73667b3c47",
+      "key": "s10.zip",
+      "size": 20233334,
+      "checksum": "md5:765d22dbe4241c67f3b6dbacf79fc901",
+      "links": {
+        "self": "https://zenodo.org/api/records/1000116/files/s10.zip/content"
+      }
+    },
+    {
+      "id": "062715eb-6a24-47d7-bbc0-248e50cdafa2",
+      "key": "s4.zip",
+      "size": 19151413,
+      "checksum": "md5:0eac484016793b28481d786a0f73e270",
+      "links": {
+        "self": "https://zenodo.org/api/records/1000116/files/s4.zip/content"
+      }
+    },
+    {
+      "id": "9e5ec588-2cc8-45aa-a508-2ec4930033fb",
+      "key": "s2.zip",
+      "size": 20435979,
+      "checksum": "md5:9d91c5a524123e950cd7cab3b42887ae",
+      "links": {
+        "self": "https://zenodo.org/api/records/1000116/files/s2.zip/content"
+      }
+    },
+    {
+      "id": "d6df381e-2a0e-4ead-afe5-56581d04e534",
+      "key": "s7.zip",
+      "size": 20459169,
+      "checksum": "md5:e55ee99af5fb924a6a8d8500752b6d78",
+      "links": {
+        "self": "https://zenodo.org/api/records/1000116/files/s7.zip/content"
+      }
+    },
+    {
+      "id": "ebbb9ef4-2fe1-42b1-aa88-635877cdaf1b",
+      "key": "s1.zip",
+      "size": 19462713,
+      "checksum": "md5:bb63c22179b4a750bac2499aecd72021",
+      "links": {
+        "self": "https://zenodo.org/api/records/1000116/files/s1.zip/content"
+      }
+    },
+    {
+      "id": "242ded02-bdd0-4e48-9410-0da835e593d1",
+      "key": "s5.zip",
+      "size": 18408716,
+      "checksum": "md5:0ff40dd987a67f5b2770671504fc9b23",
+      "links": {
+        "self": "https://zenodo.org/api/records/1000116/files/s5.zip/content"
+      }
+    },
+    {
+      "id": "21e879ae-2ee6-4781-8814-6bc147d9d781",
+      "key": "s6.zip",
+      "size": 21606311,
+      "checksum": "md5:850e853dd6dfd0170fa38189509133d1",
+      "links": {
+        "self": "https://zenodo.org/api/records/1000116/files/s6.zip/content"
+      }
+    },
+    {
+      "id": "4220639c-9f1d-4fd8-9eec-667b37def58b",
+      "key": "s3.zip",
+      "size": 22098551,
+      "checksum": "md5:700d15737cd5219cf9e9a0370670f246",
+      "links": {
+        "self": "https://zenodo.org/api/records/1000116/files/s3.zip/content"
+      }
+    },
+    {
+      "id": "628dd2ad-5825-4199-a389-64420e415c7d",
+      "key": "s9.zip",
+      "size": 20113619,
+      "checksum": "md5:622e562482f5b9c9b10d6cfe7b3d1636",
+      "links": {
+        "self": "https://zenodo.org/api/records/1000116/files/s9.zip/content"
+      }
+    },
+    {
+      "id": "c18a2ae4-65b3-4436-ac2e-1129a45cb14e",
+      "key": "s8.zip",
+      "size": 19729731,
+      "checksum": "md5:281c62eade1ffd58579b57aa36df579d",
+      "links": {
+        "self": "https://zenodo.org/api/records/1000116/files/s8.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "36653"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 14672,
+    "unique_downloads": 5295,
+    "views": 9022,
+    "unique_views": 7936,
+    "version_downloads": 14661,
+    "version_unique_downloads": 5293,
+    "version_unique_views": 7917,
+    "version_views": 9002
+  },
+  "state": "done",
+  "submitted": true
+}

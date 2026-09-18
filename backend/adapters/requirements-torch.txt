@@ -1,0 +1,2 @@
+# Optional. For CPU-specific wheels use the installation selector at pytorch.org.
+torch>=2.2,<3.0

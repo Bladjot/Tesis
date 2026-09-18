@@ -1,0 +1,176 @@
+{
+  "created_at_utc": "2026-09-18T20:11:48.450171+00:00",
+  "source_record": "https://zenodo.org/records/19261324",
+  "source_version": "1.0",
+  "active_prepared_directory": "datasets/semg_manus/prepared_v2",
+  "initial_audit_directory": "datasets/semg_manus/prepared_v1",
+  "downloaded_files": [
+    {
+      "name": "checksums.txt",
+      "size_bytes": 500,
+      "md5": "d7888e50b4e4df16d917b6ca881bd939",
+      "sha256": "5ae0dfb6f7565aa1dfbfd296b3eae92bb77bee4e6fdad432c9c299298e4ec736",
+      "verified_utc": "2026-09-18T19:53:08.518485+00:00"
+    },
+    {
+      "name": "manifest.csv",
+      "size_bytes": 619050,
+      "md5": "6c036dab3092bf08a4cdef2fd6c0e1c7",
+      "sha256": "40a4cf0850cee0e7df66c5ab72f0f9d6a93986dfc8ae0818847e984a26023530",
+      "verified_utc": "2026-09-18T19:53:08.538159+00:00"
+    },
+    {
+      "name": "CODEBOOK.md",
+      "size_bytes": 4658,
+      "md5": "c9815d4c25ff05f1af4afb13506c07f9",
+      "sha256": "f6bad0723d6123021c4262908a7c986623a92f0e52d9d6ce3ff6f94dfca80d79",
+      "verified_utc": "2026-09-18T19:53:08.539892+00:00"
+    },
+    {
+      "name": "DATA_QUALITY.md",
+      "size_bytes": 1663,
+      "md5": "6fb4bfb221127280b1ff370fd3be5a30",
+      "sha256": "69b703191f78de6ff7509640c8d0a26542eb508730b24c7ccf11bca8382af9c4",
+      "verified_utc": "2026-09-18T19:53:08.545131+00:00"
+    },
+    {
+      "name": "README.md",
+      "size_bytes": 3622,
+      "md5": "c55a1c6c37afa40901ea7c9ab9e902b3",
+      "sha256": "a1a83ef6c6cae29331dac303aa88836a9262e72326e82511b79cc27239daba4a",
+      "verified_utc": "2026-09-18T19:53:08.547422+00:00"
+    },
+    {
+      "name": "LICENSE-data-CC-BY-4.0.txt",
+      "size_bytes": 634,
+      "md5": "8f2f92a31644ad9669b94a90f2bed3d6",
+      "sha256": "827972c2a58d546db13ecfb73d8636aba76d4fe9c55383383839453b34eb1d54",
+      "verified_utc": "2026-09-18T19:53:08.554822+00:00"
+    },
+    {
+      "name": "semg-manus-dataset-v1.zip",
+      "url": "https://zenodo.org/api/records/19261324/files/semg-manus-dataset-v1.zip/content",
+      "size_bytes": 594438686,
+      "md5": "2d3975173cd6b6832d50d0be0948e1f0",
+      "sha256": "2d9e1df613485b9a4afe9a5a71010ca84e75a521b596f836a195b5eaf3dc1f29",
+      "verified_utc": "2026-09-18T19:55:45.051799+00:00"
+    }
+  ],
+  "download_published_hashes_verified": true,
+  "all_3108_csv_sha256_verified_during_preparation": true,
+  "source_rows_actual": 6121804,
+  "accepted_trials": 2919,
+  "accepted_rows": 5767720,
+  "excluded_trials": 189,
+  "exclusion_summary": {
+    "outside_complete_cohort": 139,
+    "all_20_targets_exactly_constant": 50
+  },
+  "source_schema_finding": {
+    "excluded_38_column_headerless_csv": 61,
+    "original_manifest_row_count_off_by_one": 61
+  },
+  "splits": {
+    "train": [
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      15,
+      16,
+      18
+    ],
+    "val": [
+      7,
+      14
+    ],
+    "test": [
+      3,
+      4,
+      13
+    ]
+  },
+  "split_counts": {
+    "train": {
+      "trials": 1955,
+      "rows": 3824022,
+      "windows": 367927
+    },
+    "val": {
+      "trials": 393,
+      "rows": 758324,
+      "windows": 72912
+    },
+    "test": {
+      "trials": 571,
+      "rows": 1185374,
+      "windows": 114311
+    }
+  },
+  "total_windows": 555150,
+  "input_columns": [
+    "emg_0",
+    "emg_1",
+    "emg_2",
+    "emg_3",
+    "emg_4",
+    "emg_5",
+    "emg_6",
+    "emg_7"
+  ],
+  "target_columns": [
+    "thumb_spread",
+    "thumb_mcp",
+    "thumb_pip",
+    "thumb_dip",
+    "index_spread",
+    "index_mcp",
+    "index_pip",
+    "index_dip",
+    "middle_spread",
+    "middle_mcp",
+    "middle_pip",
+    "middle_dip",
+    "ring_spread",
+    "ring_mcp",
+    "ring_pip",
+    "ring_dip",
+    "pinky_spread",
+    "pinky_mcp",
+    "pinky_pip",
+    "pinky_dip"
+  ],
+  "label_units": "native_manus_export",
+  "sample_rate_hz_nominal": 200,
+  "window_samples": 80,
+  "hop_samples": 10,
+  "normalizer_fit_split": "train",
+  "normalizer_training_rows": 3824022,
+  "prepared_dataset_fingerprint": "72f257d88862e8263cecb7d947b59d8c19ec064517b8fa3a23e544836f0bc839",
+  "prepared_files": {
+    "emg.npy": {
+      "sha256": "cca8bcdbf83a8803537ce7d890960d70b785bcee9839d54ef56ffd259f6313f2",
+      "size_bytes": 184567168
+    },
+    "targets.npy": {
+      "sha256": "5a9f681ea38c25b8f966f88e95d085726f2501d55febff1c07db4adb40712aa1",
+      "size_bytes": 461417728
+    },
+    "normalizer.json": {
+      "sha256": "0c6a2c7e3e0f175ea54ae8fa2066f2cee7170dfee079cffd14165b85ac9acf3b",
+      "size_bytes": 1805
+    }
+  },
+  "prepared_directory_bytes": 648082174,
+  "source_manifest_sha256": "40a4cf0850cee0e7df66c5ab72f0f9d6a93986dfc8ae0818847e984a26023530",
+  "constant_input_channels": [],
+  "constant_target_channels": [],
+  "training_executed": false,
+  "git_upload_performed": false,
+  "local_checks_report": "training/manus/reports/local_checks.json",
+  "validation_report": "training/manus/reports/validation.json",
+  "constant_reference_review": "training/manus/reports/constant_targets_review.json"
+}

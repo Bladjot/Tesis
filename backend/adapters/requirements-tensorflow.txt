@@ -1,0 +1,2 @@
+# Optional. Use the TensorFlow version compatible with your trained artifact.
+tensorflow>=2.16,<3.0

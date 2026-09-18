@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-09-18T20:10:49.557300+00:00",
+  "tests_run": 17,
+  "passed": 15,
+  "failed": 0,
+  "errors": 0,
+  "skipped": [
+    {
+      "test": "test_export_has_raw_emg_contract_and_preserves_output_scaling (test_training_contract.ForwardOnlyTests.test_export_has_raw_emg_contract_and_preserves_output_scaling)",
+      "reason": "PyTorch is deliberately not installed on the preparation PC"
+    },
+    {
+      "test": "test_tcn_blocks_do_not_use_future_samples (test_training_contract.ForwardOnlyTests.test_tcn_blocks_do_not_use_future_samples)",
+      "reason": "PyTorch is deliberately not installed on the preparation PC"
+    }
+  ],
+  "torch_imported": false,
+  "training_executed": false,
+  "python_syntax_valid": true,
+  "notebook_unexecuted": true,
+  "notebook_code_cells": 9,
+  "gpu_execution_verified": false
+}

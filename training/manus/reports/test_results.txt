@@ -1,0 +1,182 @@
+test_constant_targets_are_excluded_or_retained_by_explicit_policy (test_prepare.PreparationTests.test_constant_targets_are_excluded_or_retained_by_explicit_policy) ... Verificados 4/4 CSV; aceptados 3; filas 24
+{
+  "verified_csv_files": 4,
+  "accepted_trials": 3,
+  "excluded_trials": 1,
+  "accepted_rows": 24,
+  "split_counts": {
+    "train": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    },
+    "val": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    },
+    "test": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    }
+  },
+  "flag_counts": {
+    "all_targets_constant": 1
+  },
+  "trained": false
+}
+Verificados 4/4 CSV; aceptados 4; filas 32
+{
+  "verified_csv_files": 4,
+  "accepted_trials": 4,
+  "excluded_trials": 0,
+  "accepted_rows": 32,
+  "split_counts": {
+    "train": {
+      "trials": 2,
+      "rows": 16,
+      "windows": 6
+    },
+    "val": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    },
+    "test": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    }
+  },
+  "flag_counts": {
+    "all_targets_constant": 1
+  },
+  "trained": false
+}
+ok
+test_excluded_legacy_csv_is_audited_without_changing_core_data (test_prepare.PreparationTests.test_excluded_legacy_csv_is_audited_without_changing_core_data) ... Verificados 4/4 CSV; aceptados 3; filas 24
+{
+  "verified_csv_files": 4,
+  "accepted_trials": 3,
+  "excluded_trials": 1,
+  "accepted_rows": 24,
+  "split_counts": {
+    "train": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    },
+    "val": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    },
+    "test": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    }
+  },
+  "flag_counts": {
+    "excluded_legacy_schema": 1,
+    "excluded_manifest_row_count_difference": 1
+  },
+  "trained": false
+}
+ok
+test_mismatched_source_hash_fails (test_prepare.PreparationTests.test_mismatched_source_hash_fails) ... ok
+test_shared_participant_fails_before_processing (test_prepare.PreparationTests.test_shared_participant_fails_before_processing) ... ok
+test_train_only_statistics_and_trial_boundaries (test_prepare.PreparationTests.test_train_only_statistics_and_trial_boundaries) ... Verificados 3/3 CSV; aceptados 3; filas 24
+{
+  "verified_csv_files": 3,
+  "accepted_trials": 3,
+  "excluded_trials": 0,
+  "accepted_rows": 24,
+  "split_counts": {
+    "train": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    },
+    "val": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    },
+    "test": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    }
+  },
+  "flag_counts": {},
+  "trained": false
+}
+ok
+test_validation_rejects_altered_trial_ranges_with_valid_splits (test_prepare.PreparationTests.test_validation_rejects_altered_trial_ranges_with_valid_splits) ... Verificados 3/3 CSV; aceptados 3; filas 24
+{
+  "verified_csv_files": 3,
+  "accepted_trials": 3,
+  "excluded_trials": 0,
+  "accepted_rows": 24,
+  "split_counts": {
+    "train": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    },
+    "val": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    },
+    "test": {
+      "trials": 1,
+      "rows": 8,
+      "windows": 3
+    }
+  },
+  "flag_counts": {},
+  "trained": false
+}
+{
+  "prepared_dataset_fingerprint": "ec6432b3fc3c109a1750b9d9b1a7c7358bfd09eff8cacbaa9befa8177826d3d9",
+  "file_hashes_valid": true,
+  "splits": {
+    "train": {
+      "trials": 1,
+      "windows": 3,
+      "boundary_windows_checked": 2
+    },
+    "val": {
+      "trials": 1,
+      "windows": 3,
+      "boundary_windows_checked": 2
+    },
+    "test": {
+      "trials": 1,
+      "windows": 3,
+      "boundary_windows_checked": 2
+    }
+  },
+  "training_executed": false,
+  "framework_loaded": false
+}
+ok
+test_export_has_raw_emg_contract_and_preserves_output_scaling (test_training_contract.ForwardOnlyTests.test_export_has_raw_emg_contract_and_preserves_output_scaling) ... skipped 'PyTorch is deliberately not installed on the preparation PC'
+test_tcn_blocks_do_not_use_future_samples (test_training_contract.ForwardOnlyTests.test_tcn_blocks_do_not_use_future_samples) ... skipped 'PyTorch is deliberately not installed on the preparation PC'
+test_causal_windows_end_at_label_and_never_bridge_trials (test_training_contract.PreparedContractTests.test_causal_windows_end_at_label_and_never_bridge_trials) ... ok
+test_fingerprint_detects_changed_data_and_checks_preparation_hashes (test_training_contract.PreparedContractTests.test_fingerprint_detects_changed_data_and_checks_preparation_hashes) ... ok
+test_invalid_normalizer_cannot_silently_change_targets (test_training_contract.PreparedContractTests.test_invalid_normalizer_cannot_silently_change_targets) ... ok
+test_metrics_restore_native_units_and_use_training_mean_baseline (test_training_contract.PreparedContractTests.test_metrics_restore_native_units_and_use_training_mean_baseline) ... ok
+test_nonfinite_data_is_rejected_when_a_window_is_read (test_training_contract.PreparedContractTests.test_nonfinite_data_is_rejected_when_a_window_is_read) ... ok
+test_participant_leakage_and_mismatched_declared_splits_are_rejected (test_training_contract.PreparedContractTests.test_participant_leakage_and_mismatched_declared_splits_are_rejected) ... ok
+test_validation_uses_supplied_training_scales_without_refitting (test_training_contract.PreparedContractTests.test_validation_uses_supplied_training_scales_without_refitting) ... ok
+test_window_count_and_temporal_target_contract_are_checked (test_training_contract.PreparedContractTests.test_window_count_and_temporal_target_contract_are_checked) ... ok
+test_workers_reopen_memmaps_instead_of_serializing_all_arrays (test_training_contract.PreparedContractTests.test_workers_reopen_memmaps_instead_of_serializing_all_arrays) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 4.530s
+
+OK (skipped=2)

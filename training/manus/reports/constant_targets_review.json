@@ -1,0 +1,859 @@
+{
+  "source_record": "https://zenodo.org/records/19261324",
+  "reviewed_initial_dataset_fingerprint": "7f43364618339fa988e50b7d051a3b55135905e54a06efbbcf3bb2fa8d7893e4",
+  "decision": "exclude_whole_trial_if_all_20_targets_exactly_constant",
+  "interpretation": "suspected frozen glove reference, not confirmed hardware failure",
+  "decision_before_any_training": true,
+  "training_executed": false,
+  "flagged_trials": 50,
+  "flagged_rows": 96642,
+  "all_flagged_have_variation_in_all_8_emg_channels": true,
+  "flagged_split_counts": {
+    "train": 25,
+    "test": 23,
+    "val": 2
+  },
+  "distinct_constant_vectors": 13,
+  "groups": [
+    {
+      "target_vector": [
+        29.46019172668457,
+        48.82721710205078,
+        28.125234603881836,
+        35.48736572265625,
+        -3.795708179473877,
+        28.081295013427734,
+        35.02777862548828,
+        35.03656768798828,
+        -1.2846611738204956,
+        39.363582611083984,
+        13.209606170654297,
+        8.384641647338867,
+        -7.639822959899902,
+        20.75115203857422,
+        17.4320068359375,
+        11.02665901184082,
+        -7.5589165687561035,
+        21.212430953979492,
+        18.721073150634766,
+        11.814197540283203
+      ],
+      "source_paths": [
+        "data/u_11/s_1/g_tap_thumb/recording_fast_24_04_2024_14_30_31.csv"
+      ]
+    },
+    {
+      "target_vector": [
+        36.25336456298828,
+        42.70870590209961,
+        13.064319610595703,
+        6.361096382141113,
+        -4.3325066566467285,
+        7.21985387802124,
+        10.78152847290039,
+        6.840026378631592,
+        -3.3144028186798096,
+        12.506340980529785,
+        6.253603458404541,
+        3.9729602336883545,
+        -10.81261157989502,
+        -0.4829499423503876,
+        0.0,
+        0.0,
+        -18.476402282714844,
+        -3.751080274581909,
+        0.0,
+        0.0
+      ],
+      "source_paths": [
+        "data/u_13/s_2/g_ab_add_index_middle/recording_fast_17_05_2024_15_29_05.csv",
+        "data/u_13/s_2/g_ab_add_index_middle/recording_medium_17_05_2024_15_28_42.csv",
+        "data/u_13/s_2/g_ab_add_index_middle/recording_slow_17_05_2024_15_28_22.csv",
+        "data/u_13/s_2/g_ab_add_middle_ring/recording_fast_17_05_2024_15_30_18.csv",
+        "data/u_13/s_2/g_ab_add_middle_ring/recording_medium_17_05_2024_15_29_58.csv",
+        "data/u_13/s_2/g_ab_add_middle_ring/recording_slow_17_05_2024_15_29_35.csv",
+        "data/u_13/s_2/g_ab_add_thumb_index/recording_fast_17_05_2024_15_27_49.csv",
+        "data/u_13/s_2/g_ab_add_thumb_index/recording_medium_17_05_2024_15_27_30.csv",
+        "data/u_13/s_2/g_tap_index/recording_fast_17_05_2024_15_36_01.csv",
+        "data/u_13/s_2/g_tap_index/recording_medium_17_05_2024_15_35_44.csv",
+        "data/u_13/s_2/g_tap_index/recording_slow_17_05_2024_15_35_23.csv",
+        "data/u_13/s_2/g_tap_middle/recording_fast_17_05_2024_15_37_01.csv",
+        "data/u_13/s_2/g_tap_middle/recording_medium_17_05_2024_15_36_44.csv",
+        "data/u_13/s_2/g_tap_middle/recording_slow_17_05_2024_15_36_26.csv",
+        "data/u_13/s_2/g_tap_pinky/recording_medium_17_05_2024_15_39_10.csv",
+        "data/u_13/s_2/g_tap_pinky/recording_slow_17_05_2024_15_38_53.csv",
+        "data/u_13/s_2/g_tap_ring/recording_fast_17_05_2024_15_38_24.csv",
+        "data/u_13/s_2/g_tap_ring/recording_medium_17_05_2024_15_37_58.csv",
+        "data/u_13/s_2/g_tap_ring/recording_slow_17_05_2024_15_37_29.csv",
+        "data/u_13/s_2/g_tap_thumb/recording_fast_17_05_2024_15_34_58.csv",
+        "data/u_13/s_2/g_tap_thumb/recording_medium_17_05_2024_15_34_24.csv",
+        "data/u_13/s_2/g_tap_thumb/recording_slow_17_05_2024_15_34_04.csv"
+      ]
+    },
+    {
+      "target_vector": [
+        35.17267608642578,
+        29.23604965209961,
+        22.473609924316406,
+        21.880399703979492,
+        -6.802330493927002,
+        55.27739715576172,
+        61.7777099609375,
+        18.297990798950195,
+        5.2258100509643555,
+        31.888742446899414,
+        8.344026565551758,
+        5.291872501373291,
+        -9.177252769470215,
+        8.360413551330566,
+        0.0,
+        0.0,
+        -12.169753074645996,
+        1.397737979888916,
+        0.0,
+        0.0
+      ],
+      "source_paths": [
+        "data/u_13/s_3/g_ab_add_thumb_index/recording_slow_22_05_2024_16_38_42.csv"
+      ]
+    },
+    {
+      "target_vector": [
+        28.658918380737305,
+        52.76188659667969,
+        17.81992530822754,
+        13.021223068237305,
+        -2.065164566040039,
+        32.20740509033203,
+        10.808514595031738,
+        6.837502479553223,
+        -1.2333698272705078,
+        41.42284393310547,
+        4.907161235809326,
+        3.108475923538208,
+        -7.611049652099609,
+        28.279050827026367,
+        11.063772201538086,
+        7.023365020751953,
+        -16.29409408569336,
+        26.32567596435547,
+        6.373537540435791,
+        4.032597541809082
+      ],
+      "source_paths": [
+        "data/u_14/s_1/g_finger_tap_surface/recording_slow_17_06_2024_17_07_43.csv"
+      ]
+    },
+    {
+      "target_vector": [
+        25.94455337524414,
+        47.19597244262695,
+        15.34014892578125,
+        8.606880187988281,
+        -4.3157477378845215,
+        18.76316261291504,
+        6.199919700622559,
+        3.9378585815429688,
+        -2.6458966732025146,
+        39.53646469116211,
+        2.776362180709839,
+        1.7601418495178223,
+        -7.190174579620361,
+        34.45492935180664,
+        8.106051445007324,
+        5.153622627258301,
+        -9.100728034973145,
+        22.498023986816406,
+        5.557071685791016,
+        3.5259783267974854
+      ],
+      "source_paths": [
+        "data/u_14/s_1/g_flexext_thumb/recording_medium_17_06_2024_16_59_14.csv"
+      ]
+    },
+    {
+      "target_vector": [
+        28.75967025756836,
+        48.942630767822266,
+        20.45586395263672,
+        18.762609481811523,
+        -2.3091039657592773,
+        44.79795455932617,
+        15.371074676513672,
+        8.554831504821777,
+        -3.194633960723877,
+        41.87086486816406,
+        19.04883575439453,
+        12.108510971069336,
+        -8.850152015686035,
+        42.15904998779297,
+        17.432199478149414,
+        11.01467227935791,
+        -10.315398216247559,
+        44.92221450805664,
+        17.197534561157227,
+        10.858771324157715
+      ],
+      "source_paths": [
+        "data/u_15/s_1/g_point_index/recording_slow_26_06_2024_10_33_50.csv"
+      ]
+    },
+    {
+      "target_vector": [
+        26.4856014251709,
+        39.26449966430664,
+        17.05211639404297,
+        14.609545707702637,
+        -1.9337080717086792,
+        21.115467071533203,
+        15.537212371826172,
+        9.836873054504395,
+        -0.42011380195617676,
+        39.415199279785156,
+        8.134073257446289,
+        5.157042980194092,
+        -9.6436128616333,
+        21.66061782836914,
+        13.046087265014648,
+        8.278868675231934,
+        -18.69976043701172,
+        19.088912963867188,
+        5.356281280517578,
+        3.3948259353637695
+      ],
+      "source_paths": [
+        "data/u_18/s_1/g_ab_add_thumb_index/recording_slow_20_08_2024_12_55_25.csv"
+      ]
+    },
+    {
+      "target_vector": [
+        21.5772705078125,
+        41.829158782958984,
+        17.730375289916992,
+        16.131710052490234,
+        -1.339398741722107,
+        25.334047317504883,
+        13.930377006530762,
+        8.796650886535645,
+        -0.7962302565574646,
+        50.2458610534668,
+        7.905395030975342,
+        4.9953203201293945,
+        -7.347614288330078,
+        33.82122039794922,
+        17.904132843017578,
+        11.364686012268066,
+        -10.613631248474121,
+        37.94645690917969,
+        11.351211547851562,
+        7.189001083374023
+      ],
+      "source_paths": [
+        "data/u_18/s_1/g_flexext_pinky/recording_medium_20_08_2024_12_48_58.csv"
+      ]
+    },
+    {
+      "target_vector": [
+        39.57049560546875,
+        45.389442443847656,
+        30.24958610534668,
+        44.04313278198242,
+        -5.916092395782471,
+        69.8667984008789,
+        90.10758972167969,
+        51.506591796875,
+        -4.638949871063232,
+        72.81806945800781,
+        95.70000457763672,
+        60.233238220214844,
+        -3.7681634426116943,
+        68.5542984008789,
+        99.27072143554688,
+        63.16682815551758,
+        -3.195859432220459,
+        67.14807891845703,
+        103.11775970458984,
+        65.60685729980469
+      ],
+      "source_paths": [
+        "data/u_5/s_1/g_point_index/recording_medium_12_04_2024_11_44_36.csv"
+      ]
+    },
+    {
+      "target_vector": [
+        25.533124923706055,
+        40.16815185546875,
+        22.28375244140625,
+        29.617691040039062,
+        -3.148897409439087,
+        61.219512939453125,
+        17.382234573364258,
+        8.010502815246582,
+        -1.9266104698181152,
+        81.06417083740234,
+        13.185598373413086,
+        8.355432510375977,
+        -6.086180210113525,
+        58.3323974609375,
+        21.518978118896484,
+        13.67015552520752,
+        -6.888630390167236,
+        52.4161491394043,
+        18.542282104492188,
+        11.704000473022461
+      ],
+      "source_paths": [
+        "data/u_5/s_2/g_ab_add_middle_ring/recording_fast_17_05_2024_13_20_08.csv"
+      ]
+    },
+    {
+      "target_vector": [
+        30.485084533691406,
+        42.92284393310547,
+        1.2244527339935303,
+        -15.509023666381836,
+        -4.143639087677002,
+        57.75851058959961,
+        35.515804290771484,
+        22.5682373046875,
+        -3.2860465049743652,
+        78.37344360351562,
+        34.549827575683594,
+        21.951658248901367,
+        -5.549272537231445,
+        53.510276794433594,
+        46.49964141845703,
+        29.566335678100586,
+        -7.044058799743652,
+        46.187496185302734,
+        20.53481101989746,
+        12.968355178833008
+      ],
+      "source_paths": [
+        "data/u_5/s_2/g_thumbs_up/recording_slow_17_05_2024_13_12_52.csv"
+      ]
+    },
+    {
+      "target_vector": [
+        33.991886138916016,
+        46.00778579711914,
+        29.918075561523438,
+        37.239498138427734,
+        -4.635063171386719,
+        68.25514221191406,
+        50.52679443359375,
+        22.339677810668945,
+        -3.564307451248169,
+        60.61434555053711,
+        44.279052734375,
+        36.784080505371094,
+        -1.8839828968048096,
+        39.60755920410156,
+        38.21308135986328,
+        32.015174865722656,
+        -0.34942635893821716,
+        25.755367279052734,
+        18.13201332092285,
+        11.496341705322266
+      ],
+      "source_paths": [
+        "data/u_8/s_1/g_pinched_tap_thumb_index/recording_medium_17_04_2024_15_30_29.csv"
+      ]
+    },
+    {
+      "target_vector": [
+        10.3173246383667,
+        54.31501388549805,
+        21.42347526550293,
+        20.511783599853516,
+        -3.99336314201355,
+        58.33708953857422,
+        10.514962196350098,
+        6.681431770324707,
+        7.63038969039917,
+        -9.736760139465332,
+        14.924765586853027,
+        9.492788314819336,
+        -2.743809700012207,
+        -19.249486923217773,
+        2.9532015323638916,
+        1.8789901733398438,
+        -12.184792518615723,
+        -25.106361389160156,
+        0.0,
+        0.0
+      ],
+      "source_paths": [
+        "data/u_8/s_3/g_pinched_tap_index_middle/recording_fast_19_07_2024_15_23_03.csv",
+        "data/u_8/s_3/g_pinched_tap_index_middle/recording_medium_19_07_2024_15_22_45.csv",
+        "data/u_8/s_3/g_pinched_tap_index_middle/recording_slow_19_07_2024_15_22_06.csv",
+        "data/u_8/s_3/g_pinched_tap_middle_ring/recording_slow_19_07_2024_15_23_25.csv",
+        "data/u_8/s_3/g_pinched_tap_thumb_index/recording_fast_19_07_2024_15_21_44.csv",
+        "data/u_8/s_3/g_pinched_tap_thumb_index/recording_medium_19_07_2024_15_21_22.csv",
+        "data/u_8/s_3/g_pinched_tap_thumb_index/recording_slow_19_07_2024_15_19_32.csv",
+        "data/u_8/s_3/g_tap_index/recording_fast_19_07_2024_15_12_35.csv",
+        "data/u_8/s_3/g_tap_middle/recording_fast_19_07_2024_15_15_20.csv",
+        "data/u_8/s_3/g_tap_middle/recording_medium_19_07_2024_15_15_00.csv",
+        "data/u_8/s_3/g_tap_middle/recording_slow_19_07_2024_15_14_21.csv",
+        "data/u_8/s_3/g_tap_pinky/recording_fast_19_07_2024_15_17_44.csv",
+        "data/u_8/s_3/g_tap_pinky/recording_medium_19_07_2024_15_17_27.csv",
+        "data/u_8/s_3/g_tap_pinky/recording_slow_19_07_2024_15_17_08.csv",
+        "data/u_8/s_3/g_tap_ring/recording_fast_19_07_2024_15_16_42.csv",
+        "data/u_8/s_3/g_tap_ring/recording_medium_19_07_2024_15_16_25.csv",
+        "data/u_8/s_3/g_tap_ring/recording_slow_19_07_2024_15_16_07.csv"
+      ]
+    }
+  ],
+  "trials": [
+    {
+      "source_path": "data/u_11/s_1/g_tap_thumb/recording_fast_24_04_2024_14_30_31.csv",
+      "participant": 11,
+      "session": 1,
+      "gesture": "tap_thumb",
+      "speed": "fast",
+      "split": "train",
+      "source_sha256": "2401fd3f297e4e13a7682d168aef7486f9826cd1fb5de99b6675120ee2983159"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_ab_add_index_middle/recording_fast_17_05_2024_15_29_05.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "ab_add_index_middle",
+      "speed": "fast",
+      "split": "test",
+      "source_sha256": "70aa00e30a8f9ca803d94ad95e6206247d20b15c026f4b82dec7a6d7bf5bc18e"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_ab_add_index_middle/recording_medium_17_05_2024_15_28_42.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "ab_add_index_middle",
+      "speed": "medium",
+      "split": "test",
+      "source_sha256": "c4c6fd9b4095bdbe166f52ac82d3216e0f79f35223d5b0551df01850a8bd1fec"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_ab_add_index_middle/recording_slow_17_05_2024_15_28_22.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "ab_add_index_middle",
+      "speed": "slow",
+      "split": "test",
+      "source_sha256": "64b62744a3ef9d92544f45c5e31c110184c1d6cba13e1fea92bb407c5de4e553"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_ab_add_middle_ring/recording_fast_17_05_2024_15_30_18.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "ab_add_middle_ring",
+      "speed": "fast",
+      "split": "test",
+      "source_sha256": "67b9ff42e8fdd669d390a8f7d6d18f11dcf0f95ef0e324ee865af56ec952a718"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_ab_add_middle_ring/recording_medium_17_05_2024_15_29_58.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "ab_add_middle_ring",
+      "speed": "medium",
+      "split": "test",
+      "source_sha256": "e850c3f2190c05ed8b8c4918dbf6b1baaac4356787ec849c5252a86caa42ddf9"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_ab_add_middle_ring/recording_slow_17_05_2024_15_29_35.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "ab_add_middle_ring",
+      "speed": "slow",
+      "split": "test",
+      "source_sha256": "6eb27f961a8ae00d64d7cc6e637df4ebe5703378a999af99f26b90b4c407ea14"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_ab_add_thumb_index/recording_fast_17_05_2024_15_27_49.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "ab_add_thumb_index",
+      "speed": "fast",
+      "split": "test",
+      "source_sha256": "e33623566d47f336ba1daadf7401cd072c9ea68ab0fc89dd9c67e90e26cd640e"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_ab_add_thumb_index/recording_medium_17_05_2024_15_27_30.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "ab_add_thumb_index",
+      "speed": "medium",
+      "split": "test",
+      "source_sha256": "c293a3f0c0819d4cd525dcf1bc17a6f6f4714265344f1680a3f711e841908848"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_index/recording_fast_17_05_2024_15_36_01.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_index",
+      "speed": "fast",
+      "split": "test",
+      "source_sha256": "53772f3de48675106b21d74097db42269ca73a1c45ea5136f365a2fad0647e3d"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_index/recording_medium_17_05_2024_15_35_44.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_index",
+      "speed": "medium",
+      "split": "test",
+      "source_sha256": "b80d1b6e5133463df7891f53bf0ccd31df4670e6219cf400b3c2da64ccec6a11"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_index/recording_slow_17_05_2024_15_35_23.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_index",
+      "speed": "slow",
+      "split": "test",
+      "source_sha256": "44807bc013518b2c63cd22533a44f05955e2046c7d2ff83646dea691fab289bb"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_middle/recording_fast_17_05_2024_15_37_01.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_middle",
+      "speed": "fast",
+      "split": "test",
+      "source_sha256": "3b095741226edbdbb44e53bd892d0251f1f346e2b2686f1212022d55714ef231"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_middle/recording_medium_17_05_2024_15_36_44.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_middle",
+      "speed": "medium",
+      "split": "test",
+      "source_sha256": "f0e324028d9747b9c8d067b9f868183184a325b2df838d1f97ff186772675ebf"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_middle/recording_slow_17_05_2024_15_36_26.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_middle",
+      "speed": "slow",
+      "split": "test",
+      "source_sha256": "80e14e486e2211a25975085fd258b9bb7df8190a16a65d1c0fa20497dcd58791"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_pinky/recording_medium_17_05_2024_15_39_10.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_pinky",
+      "speed": "medium",
+      "split": "test",
+      "source_sha256": "c1ee42c4688e3e0595206e81d62f6d8e85f648c688acc2278264d4eae089525d"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_pinky/recording_slow_17_05_2024_15_38_53.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_pinky",
+      "speed": "slow",
+      "split": "test",
+      "source_sha256": "93b7af10764a0eeee30cc8ec1fed97898c540d76e51295e8950f63e2b2113222"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_ring/recording_fast_17_05_2024_15_38_24.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_ring",
+      "speed": "fast",
+      "split": "test",
+      "source_sha256": "5c568bb3574f1da6ffd4ebb6db070d122ac88fefbb07f727ce6da8fbb62a1cb5"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_ring/recording_medium_17_05_2024_15_37_58.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_ring",
+      "speed": "medium",
+      "split": "test",
+      "source_sha256": "150bd246e0d8e9edec37e4aa3eddca4106ecd6bfc3d25540f9c1947c2b3fe2e4"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_ring/recording_slow_17_05_2024_15_37_29.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_ring",
+      "speed": "slow",
+      "split": "test",
+      "source_sha256": "f6eb02dbda819b54c2f5266258c2abb71f20fb793e0a4113f2fe323322d36619"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_thumb/recording_fast_17_05_2024_15_34_58.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_thumb",
+      "speed": "fast",
+      "split": "test",
+      "source_sha256": "b015e2216876e03cde8972a31c78ed7443f03c3a4af8a691939c94c39d1666a9"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_thumb/recording_medium_17_05_2024_15_34_24.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_thumb",
+      "speed": "medium",
+      "split": "test",
+      "source_sha256": "e8696c3a9faa11f0868d36d94d1b7013b89878517449982807a805d059e091a1"
+    },
+    {
+      "source_path": "data/u_13/s_2/g_tap_thumb/recording_slow_17_05_2024_15_34_04.csv",
+      "participant": 13,
+      "session": 2,
+      "gesture": "tap_thumb",
+      "speed": "slow",
+      "split": "test",
+      "source_sha256": "49ffacca53891478caa2e19659edbacd5907d7142b81d0d1ad6c10ab9a0bad61"
+    },
+    {
+      "source_path": "data/u_13/s_3/g_ab_add_thumb_index/recording_slow_22_05_2024_16_38_42.csv",
+      "participant": 13,
+      "session": 3,
+      "gesture": "ab_add_thumb_index",
+      "speed": "slow",
+      "split": "test",
+      "source_sha256": "108c0b84f9b7a572301f392bc57dfb888c3053f82c79e627089f34cb3abcd138"
+    },
+    {
+      "source_path": "data/u_14/s_1/g_finger_tap_surface/recording_slow_17_06_2024_17_07_43.csv",
+      "participant": 14,
+      "session": 1,
+      "gesture": "finger_tap_surface",
+      "speed": "slow",
+      "split": "val",
+      "source_sha256": "206a32f04c0f8318daee12602e508d5e6b93dc3ad4ece38499d1d566bc20e6d9"
+    },
+    {
+      "source_path": "data/u_14/s_1/g_flexext_thumb/recording_medium_17_06_2024_16_59_14.csv",
+      "participant": 14,
+      "session": 1,
+      "gesture": "flexext_thumb",
+      "speed": "medium",
+      "split": "val",
+      "source_sha256": "d399d8cb60ad35b2a166078d03c97d18fc8569d9fe187f832891b839fb726191"
+    },
+    {
+      "source_path": "data/u_15/s_1/g_point_index/recording_slow_26_06_2024_10_33_50.csv",
+      "participant": 15,
+      "session": 1,
+      "gesture": "point_index",
+      "speed": "slow",
+      "split": "train",
+      "source_sha256": "883fc2be6c98380c70c17de04d65fcbee5a248656d4e1279c6842a553ccf8996"
+    },
+    {
+      "source_path": "data/u_18/s_1/g_ab_add_thumb_index/recording_slow_20_08_2024_12_55_25.csv",
+      "participant": 18,
+      "session": 1,
+      "gesture": "ab_add_thumb_index",
+      "speed": "slow",
+      "split": "train",
+      "source_sha256": "14d0dce6230c0f08c2a454ba11d36b99c0defbfb4103fb66067c9eddfba97483"
+    },
+    {
+      "source_path": "data/u_18/s_1/g_flexext_pinky/recording_medium_20_08_2024_12_48_58.csv",
+      "participant": 18,
+      "session": 1,
+      "gesture": "flexext_pinky",
+      "speed": "medium",
+      "split": "train",
+      "source_sha256": "edf4c0be34aa020c5f2d9235cb676cfbefdc3b366fbcb7ca9a297c91d7bcc523"
+    },
+    {
+      "source_path": "data/u_5/s_1/g_point_index/recording_medium_12_04_2024_11_44_36.csv",
+      "participant": 5,
+      "session": 1,
+      "gesture": "point_index",
+      "speed": "medium",
+      "split": "train",
+      "source_sha256": "e2c3a4b7037728b8644c7b65e5e6bb1642bb3b1453a341678fc08e7c12cc78c8"
+    },
+    {
+      "source_path": "data/u_5/s_2/g_ab_add_middle_ring/recording_fast_17_05_2024_13_20_08.csv",
+      "participant": 5,
+      "session": 2,
+      "gesture": "ab_add_middle_ring",
+      "speed": "fast",
+      "split": "train",
+      "source_sha256": "f6e9defd9704691e306c12b7770031008168aae93e9cb2b3b14643382ae650d2"
+    },
+    {
+      "source_path": "data/u_5/s_2/g_thumbs_up/recording_slow_17_05_2024_13_12_52.csv",
+      "participant": 5,
+      "session": 2,
+      "gesture": "thumbs_up",
+      "speed": "slow",
+      "split": "train",
+      "source_sha256": "409e487eb9efcf41b6aa7fb46b344e32ae8f26d4f2d660771ed1d7c9fe682b8d"
+    },
+    {
+      "source_path": "data/u_8/s_1/g_pinched_tap_thumb_index/recording_medium_17_04_2024_15_30_29.csv",
+      "participant": 8,
+      "session": 1,
+      "gesture": "pinched_tap_thumb_index",
+      "speed": "medium",
+      "split": "train",
+      "source_sha256": "f2b6e41bc7054f6e253b891a57b0e44736be9d9aa1fd02d76bb8b933d08bd9b2"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_pinched_tap_index_middle/recording_fast_19_07_2024_15_23_03.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "pinched_tap_index_middle",
+      "speed": "fast",
+      "split": "train",
+      "source_sha256": "22b88aa39f5668cf63cf9e906799be6490d199344be17fdc0d2ad24cfcc1a8ba"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_pinched_tap_index_middle/recording_medium_19_07_2024_15_22_45.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "pinched_tap_index_middle",
+      "speed": "medium",
+      "split": "train",
+      "source_sha256": "33dbb8381607ee0d8ddaf2f7747242c8aaa35fa9b16d11891df5094ad956c1c3"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_pinched_tap_index_middle/recording_slow_19_07_2024_15_22_06.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "pinched_tap_index_middle",
+      "speed": "slow",
+      "split": "train",
+      "source_sha256": "cd77fc449a1a9d1318fac9f9e6f56d4679d1165a9256418ad7f72e969d6689c8"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_pinched_tap_middle_ring/recording_slow_19_07_2024_15_23_25.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "pinched_tap_middle_ring",
+      "speed": "slow",
+      "split": "train",
+      "source_sha256": "5ac1cbf57402b6ec423bd52740d91c23c840f812aefc95947852c38ea1fa9fd5"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_pinched_tap_thumb_index/recording_fast_19_07_2024_15_21_44.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "pinched_tap_thumb_index",
+      "speed": "fast",
+      "split": "train",
+      "source_sha256": "150bd6bd6708e3ac31fc45b7a033bfc0410cfa475ddeb9d95d5332cf5ca3bb82"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_pinched_tap_thumb_index/recording_medium_19_07_2024_15_21_22.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "pinched_tap_thumb_index",
+      "speed": "medium",
+      "split": "train",
+      "source_sha256": "c765bd65513cb6f2bac766ea816fa26aa70b0b4e33395d8756d5bffbf1c2f5d3"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_pinched_tap_thumb_index/recording_slow_19_07_2024_15_19_32.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "pinched_tap_thumb_index",
+      "speed": "slow",
+      "split": "train",
+      "source_sha256": "88b3366e772eddced1f7b6ac1eaf5a1a81a848514bb3e7a7d04c448941323ea5"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_tap_index/recording_fast_19_07_2024_15_12_35.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "tap_index",
+      "speed": "fast",
+      "split": "train",
+      "source_sha256": "ef74ee53d9b5a70af1034fc7ce07210b7cab82963a873672baeb97e1090fa624"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_tap_middle/recording_fast_19_07_2024_15_15_20.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "tap_middle",
+      "speed": "fast",
+      "split": "train",
+      "source_sha256": "2eec86cfda46088732ec4239194cda8d4a97222ff7b4f8e77dfe3d93163422a9"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_tap_middle/recording_medium_19_07_2024_15_15_00.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "tap_middle",
+      "speed": "medium",
+      "split": "train",
+      "source_sha256": "c16e829278372471f4efd85842f36bee0b05780b553a2aec0e8c292e88f6ae8c"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_tap_middle/recording_slow_19_07_2024_15_14_21.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "tap_middle",
+      "speed": "slow",
+      "split": "train",
+      "source_sha256": "d9e88ad5483ad4b38262d50632be2a850f7f1ec60190e241d42841d785b734a3"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_tap_pinky/recording_fast_19_07_2024_15_17_44.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "tap_pinky",
+      "speed": "fast",
+      "split": "train",
+      "source_sha256": "4c2b820e09b5f4014685d141c864c830d954163ed0e1bfae8c616bf0f6a6c968"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_tap_pinky/recording_medium_19_07_2024_15_17_27.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "tap_pinky",
+      "speed": "medium",
+      "split": "train",
+      "source_sha256": "850bc14c4ee30720ba422fc5c97a9efa77b35ea9f9f9d09df41cda7dd9ce130b"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_tap_pinky/recording_slow_19_07_2024_15_17_08.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "tap_pinky",
+      "speed": "slow",
+      "split": "train",
+      "source_sha256": "cd33e36ed162e97786fd7d92cf51a9810e85f78d4fc52aabc01963ee0253f5bb"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_tap_ring/recording_fast_19_07_2024_15_16_42.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "tap_ring",
+      "speed": "fast",
+      "split": "train",
+      "source_sha256": "e03898865ca5d4596255e505cc0586aea340b9d0b9f7dd9a0d9d20626e787b57"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_tap_ring/recording_medium_19_07_2024_15_16_25.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "tap_ring",
+      "speed": "medium",
+      "split": "train",
+      "source_sha256": "db5d4d820285d6e2d2b85c0fb6c2509419e6d56a75707b24604bc1be41a7a9fd"
+    },
+    {
+      "source_path": "data/u_8/s_3/g_tap_ring/recording_slow_19_07_2024_15_16_07.csv",
+      "participant": 8,
+      "session": 3,
+      "gesture": "tap_ring",
+      "speed": "slow",
+      "split": "train",
+      "source_sha256": "41e27de48bcab931957cd6c3e77312efdf7af0cc39201c4110dcbcab06fab2be"
+    }
+  ]
+}
