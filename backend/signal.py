@@ -20,6 +20,11 @@ GESTURES = {
 }
 
 MAX_SERIAL_BACKLOG_BYTES = 32_768
+EMG_PRO_FRAME_MAGIC = b"\x55\xaa\xaa\x5f"
+EMG_PRO_FRAME_SIZE = 98
+EMG_PRO_PAYLOAD_OFFSET = 17
+EMG_PRO_CHANNELS = 8
+EMG_PRO_SAMPLES_PER_FRAME = 10
 
 
 def ensure_serial_backlog(buffered_bytes: int) -> None:
@@ -38,6 +43,49 @@ def ensure_serial_timing(processing_ms: float, hop_ms: int) -> None:
             f"supera el salto de {hop_ms} ms. Aumenta el salto o usa un modelo más rápido; "
             "se detuvo el flujo para evitar controlar la mano con datos atrasados"
         )
+
+
+class EMGProPacketDecoder:
+    """Decode the observed 98-byte EMG PRO packets into normalized ADC samples."""
+
+    def __init__(self):
+        self.buffer = bytearray()
+
+    @property
+    def buffered_bytes(self) -> int:
+        return len(self.buffer)
+
+    def feed(self, data: bytes) -> list[list[float]]:
+        self.buffer.extend(data)
+        samples: list[list[float]] = []
+        while True:
+            marker = self.buffer.find(EMG_PRO_FRAME_MAGIC)
+            if marker < 0:
+                keep = min(len(self.buffer), len(EMG_PRO_FRAME_MAGIC) - 1)
+                if len(self.buffer) > keep:
+                    del self.buffer[:-keep]
+                break
+            if marker:
+                del self.buffer[:marker]
+            if len(self.buffer) < EMG_PRO_FRAME_SIZE:
+                break
+            if (
+                len(self.buffer) >= EMG_PRO_FRAME_SIZE + len(EMG_PRO_FRAME_MAGIC)
+                and self.buffer[EMG_PRO_FRAME_SIZE:EMG_PRO_FRAME_SIZE + len(EMG_PRO_FRAME_MAGIC)]
+                != EMG_PRO_FRAME_MAGIC
+            ):
+                del self.buffer[0]
+                continue
+            frame = bytes(self.buffer[:EMG_PRO_FRAME_SIZE])
+            del self.buffer[:EMG_PRO_FRAME_SIZE]
+            payload_end = EMG_PRO_PAYLOAD_OFFSET + EMG_PRO_CHANNELS * EMG_PRO_SAMPLES_PER_FRAME
+            payload = frame[EMG_PRO_PAYLOAD_OFFSET:payload_end]
+            for offset in range(0, len(payload), EMG_PRO_CHANNELS):
+                samples.append([
+                    (value - 127.5) / 127.5
+                    for value in payload[offset:offset + EMG_PRO_CHANNELS]
+                ])
+        return samples
 
 
 def parse_sample(line: str, channels: int) -> list[float]:

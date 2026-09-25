@@ -1,8 +1,9 @@
 # MyoHand · laboratorio local de simulación EMG
 
 Prototipo funcional para una tesis de **regresión continua del movimiento de la mano
-a partir de EMG**, inspirado en la referencia visual proporcionada. Interfaz en
-español y representación 3D procedural; adquisición e inferencia locales.
+a partir de EMG**, con un modo Expo adicional para entrenar clasificadores de gestos
+personalizados. Interfaz en español y representación 3D procedural; adquisición,
+entrenamiento e inferencia locales.
 
 ## Inicio en Windows
 
@@ -47,22 +48,26 @@ cd ..
   vistas, ampliación del visor, malla, estructura esquemática y ejes.
 - Modo manual y control de la mano mediante la salida continua del procesamiento.
 - Adquisición de ocho canales; generador sintético y conector a puertos COM.
-- Ventanas y saltos configurables, RMS/MAV por canal, selección del canal a graficar
-  y tiempo de procesamiento medido.
+- Ventanas y saltos configurables, RMS/MAV por canal, gráfica simultánea de ocho
+  canales con visibilidad individual y tiempo de procesamiento medido.
 - Registro de señal cruda, resultados por ventana y configuración; exportaciones
   CSV/JSON. Hasta 120.000 muestras por sesión en memoria del navegador.
 - Contrato Python y plantillas de regresión TensorFlow/Keras y PyTorch/TorchScript.
+- Asistente Expo que guía la apertura y el cierre de la mano 3D, captura ventanas
+  etiquetadas, entrena un Random Forest local y permite usarlo inmediatamente en el
+  simulador.
 
 El controlador RMS incluido es una **referencia proporcional de demostración**,
-no un modelo entrenado. Las posturas manuales son atajos de interfaz;
-el flujo de inferencia previsto es regresión continua, no clasificación de gestos.
+no un modelo entrenado. La regresión continua sigue siendo el objetivo principal de
+la tesis; el clasificador discreto del modo Expo es un flujo separado para demostrar
+entrenamiento personalizado y control en tiempo real.
 
 ## Probar el flujo completo
 
 1. Abre el simulador y mueve los controles de cada dedo.
 2. Mantén “Generador de demostración” e inicia la adquisición.
 3. Selecciona “Señal EMG” para que los valores calculados controlen la mano.
-4. Cambia el canal de la gráfica entre CH 01 y CH 08.
+4. Activa o desactiva CH1–CH8 para comparar los canales en una misma gráfica.
 5. Pulsa “Grabar”, espera unos segundos y detén el registro.
 6. En “Sesiones”, descarga señal cruda, inferencias y metadatos.
 
@@ -73,9 +78,11 @@ no representa dimensiones ni un diseño de fabricación validado.
 
 ## Conectar tu brazalete EMG PRO
 
-El usuario confirmó un brazalete de ocho canales con receptor USB por COM/serial.
-**El formato de trama, baudios, unidades y frecuencia real todavía no se han
-proporcionado ni verificado con hardware.**
+El receptor USB CH340 del brazalete de ocho canales fue comprobado en `COM3` a
+115200 baudios. El lector detecta automáticamente el flujo binario observado:
+paquetes de 98 bytes con cabecera `55 AA AA 5F`, 10 muestras intercaladas de ocho
+canales y bytes de cabecera/control. Cada muestra ADC de 8 bits se centra y escala
+con `(valor - 127,5) / 127,5` antes de entrar al procesamiento.
 
 El lector actual admite una muestra simultánea de los ocho canales por línea:
 
@@ -89,13 +96,28 @@ También admite JSON por línea:
 {"values":[0.01,-0.02,0.03,0.04,-0.05,0.06,0.07,-0.08]}
 ~~~
 
-Si tu receptor transmite paquetes binarios, encabezados, contadores o checksums,
-hay que adaptar el decodificador a su protocolo. Tener puerto COM **no confirma
-compatibilidad con CSV/JSON**. No se envían comandos ni se cambia el firmware.
+La estructura binaria se obtuvo de una captura del dispositivo real, no de una
+especificación del fabricante. La frecuencia declarada de 1000 Hz todavía debe
+validarse contra documentación o una medición independiente. Si otra versión del
+firmware cambia cabecera, longitud, orden de canales o resolución ADC, habrá que
+actualizar el decodificador. No se envían comandos ni se cambia el firmware.
 
-Para terminar esa integración se necesita una muestra real de las tramas o el
-protocolo del dispositivo, además de frecuencia, baudios y escala de sus canales.
-1000 Hz es un parámetro de demostración, no una especificación del brazalete.
+## Entrenamiento personalizado para Expo
+
+El botón **Expo** abre un panel lateral que mantiene visible la mano 3D. La primera
+ronda registra la mano abierta durante 10 segundos y el puño cerrado durante otros
+10 segundos. Después, la mano 3D alterna apertura y cierre durante 10 segundos para
+capturar el movimiento repetido. Se descartan 250 ms alrededor de cada cambio. La
+persona debe conservar la posición del brazo y del brazalete durante toda la secuencia,
+que dura aproximadamente 37 segundos incluyendo las preparaciones.
+
+Al terminar, el backend separa temporalmente ventanas de entrenamiento y validación,
+entrena un Random Forest y guarda el artefacto en `artifacts/expo_models/`. Esa carpeta
+es local y está excluida de Git. El modelo aparece en **Configurar adquisición →
+Modelo activo** y también puede activarse directamente desde el resultado del asistente.
+Sus dos clases controlan la mano abierta y el puño cerrado; se muestra la confianza de
+la clasificación. La validación de una sesión sirve como diagnóstico de la demostración,
+no como métrica clínica ni como sustituto de una evaluación con participantes separados.
 
 ## Integrar TensorFlow o PyTorch
 

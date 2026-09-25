@@ -1,16 +1,7 @@
-<header class="topbar">
-  <a class="brand" href="/" aria-label="MyoHand inicio"><span class="brand-icon"><i data-lucide="activity"></i></span><span>myo<span class="brand-light">hand</span><small>RESEARCH LAB</small></span></a>
-  <nav class="main-nav" aria-label="Herramientas">
-    <button class="nav-button active" id="nav-simulation"><i data-lucide="box"></i>Simulación</button>
-    <button class="nav-button" id="nav-model"><i data-lucide="workflow"></i>Sensor y modelo</button>
-    <button class="nav-button" id="nav-session"><i data-lucide="folder-open"></i>Sesiones<span id="session-dot" class="notification-dot" hidden></span></button>
-  </nav>
-  <div class="topbar-end"><span class="local-label"><span class="status-dot"></span>Entorno local</span><button class="icon-button" id="help-button" aria-label="Información del simulador"><i data-lucide="circle-help"></i></button><span class="version">v0.1</span></div>
-</header>
 <main>
   <div class="page-heading">
-    <div><div class="eyebrow">BIOMECÁNICA & CONTROL MIOELÉCTRICO</div><h1>Laboratorio de simulación<span class="beta-tag">PROTOTIPO</span></h1><p>Explora el movimiento. Conecta la señal. Evalúa tu modelo.</p></div>
-    <button class="button quiet" id="export-session"><i data-lucide="download"></i>Exportar sesión</button>
+    <div><div class="eyebrow">BIOMECÁNICA & CONTROL MIOELÉCTRICO</div><h1>Laboratorio de Simulación Universidad de Valparaíso<span class="beta-tag">PROTOTIPO</span></h1><p>Creado por Sebastián Rodríguez <span aria-hidden="true">·</span> Profesor guía: Jhon Pilataxi</p></div>
+    <div class="page-actions"><button class="button primary" id="expo-button"><i data-lucide="sparkles"></i>Expo</button><button class="button quiet" id="export-session"><i data-lucide="download"></i>Exportar sesión</button></div>
   </div>
   <div id="message" class="message" role="status" hidden></div>
   <div class="workspace">
@@ -46,7 +37,7 @@
       <section class="panel acquisition-panel">
         <div class="panel-heading"><h2><i data-lucide="radio"></i>Adquisición EMG</h2><span id="connection-status" class="mini-badge">EN ESPERA</span></div>
         <label class="field-label" for="source">Fuente de señal</label>
-        <div class="select-wrap"><i data-lucide="audio-lines"></i><select id="source"><option value="demo">Generador de demostración</option><option value="serial">Puerto COM · serial CSV/JSON</option></select></div>
+        <div class="select-wrap"><i data-lucide="audio-lines"></i><select id="source"><option value="demo">Generador de demostración</option><option value="serial">Puerto COM · EMG PRO / CSV / JSON</option></select></div>
         <div id="serial-fields" hidden><label class="field-label" for="port">Puerto del sensor</label><div class="port-row"><select id="port"><option value="">Selecciona un puerto</option></select><button id="refresh-ports" class="icon-button" aria-label="Actualizar puertos"><i data-lucide="refresh-cw"></i></button></div></div>
         <div class="acquisition-stats"><div><span>MUESTREO</span><strong id="rate-summary">1.000 <small>Hz</small></strong></div><div><span>VENTANA</span><strong id="window-summary">200 <small>ms</small></strong></div><div><span>CANALES</span><strong id="channel-summary">01</strong></div></div>
         <div id="source-note" class="source-note"><i data-lucide="flask-conical"></i>Señal sintética · sin sensor conectado</div>
@@ -57,25 +48,50 @@
         <div class="panel-heading"><h2><i data-lucide="cpu"></i>Modelo de control</h2><button id="model-settings" class="icon-button small" aria-label="Configurar modelo"><i data-lucide="settings-2"></i></button></div>
         <div class="model-card"><span class="model-symbol"><i data-lucide="workflow"></i></span><div><strong id="model-name">Control proporcional RMS</strong><span id="model-description">Referencia de demostración</span></div><span class="status-dot muted"></span></div>
         <div class="pipeline"><span>EMG</span><i data-lucide="chevron-right"></i><span>Ventana</span><i data-lucide="chevron-right"></i><span>Modelo</span><i data-lucide="chevron-right"></i><span>3D</span></div>
-        <div class="prediction"><span>REGRESIÓN CONTINUA · 5 ÁNGULOS</span><strong id="gesture">Esperando señal<span>—</span></strong><div id="angle-readout" class="angle-readout"><span>P<b>—</b></span><span>I<b>—</b></span><span>M<b>—</b></span><span>A<b>—</b></span><span>Me<b>—</b></span></div><div class="activation-bar"><div id="activation-fill"></div></div><div class="prediction-meta"><span>Activación RMS <b id="activation-value">—</b></span><span id="confidence">Referencia proporcional</span></div></div>
+        <div class="prediction"><span id="prediction-kind">REGRESIÓN CONTINUA · 5 ÁNGULOS</span><strong id="gesture">Esperando señal<span>—</span></strong><div id="angle-readout" class="angle-readout"><span>P<b>—</b></span><span>I<b>—</b></span><span>M<b>—</b></span><span>A<b>—</b></span><span>Me<b>—</b></span></div><div class="activation-bar"><div id="activation-fill"></div></div><div class="prediction-meta"><span>Activación RMS <b id="activation-value">—</b></span><span id="confidence">Referencia proporcional</span></div></div>
         <div class="inference-footer"><span><i data-lucide="timer"></i>Tiempo de inferencia</span><strong id="latency">— <small>ms</small></strong></div>
       </section>
     </aside>
   </div>
   <section class="panel signal-panel">
-    <div class="signal-heading"><div><h2><i data-lucide="activity"></i>Señal en tiempo real</h2><span class="signal-subtitle" id="signal-description">EMG sin filtrar · canal 1</span></div><div class="signal-legend"><span><b class="legend-line"></b>Señal EMG</span><span><b class="legend-line rms"></b>RMS</span><span class="mini-badge" id="signal-unit">u. normalizadas · demo</span></div><button class="button record-button" id="record-button"><span class="record-dot"></span>Grabar</button></div>
-    <div class="signal-body"><div class="chart-container"><canvas id="signal-chart" aria-label="Gráfica de la señal EMG y su RMS de los últimos cinco segundos"></canvas><span class="chart-time">ÚLTIMOS 5 SEGUNDOS</span></div><div class="signal-metrics"><div><span>RMS · CANAL 1</span><strong id="rms-value">—<small> u.</small></strong></div><div><span>MUESTRAS RECIBIDAS</span><strong id="sample-count">0</strong></div><div><span>TIEMPO ADQUIRIDO</span><strong id="elapsed">00:00<small>.0</small></strong></div></div></div>
+    <div class="signal-heading"><div><h2><i data-lucide="activity"></i>Señal en tiempo real</h2><span class="signal-subtitle" id="signal-description">EMG sin filtrar · 8 canales simultáneos</span></div><div class="signal-legend"><div id="channel-legend" class="channel-legend" aria-label="Colores de los canales"></div><span class="mini-badge" id="signal-unit">u. normalizadas · demo</span></div><button class="button record-button" id="record-button"><span class="record-dot"></span>Grabar</button></div>
+    <div class="signal-body"><div class="chart-container"><canvas id="signal-chart" aria-label="Gráfica simultánea de los ocho canales EMG de los últimos cinco segundos"></canvas><span class="chart-time">ÚLTIMOS 5 SEGUNDOS</span></div><div class="signal-metrics"><div><span>RMS · CANALES VISIBLES</span><strong id="rms-value">—<small> u.</small></strong></div><div><span>MUESTRAS RECIBIDAS</span><strong id="sample-count">0</strong></div><div><span>TIEMPO ADQUIRIDO</span><strong id="elapsed">00:00<small>.0</small></strong></div></div></div>
   </section>
   <footer class="statusbar"><span><span id="backend-dot" class="status-dot muted"></span><span id="backend-status">Comprobando servicio Python…</span></span><span id="record-status">Sin sesión grabada</span><span>MYOHAND LAB<span class="footer-separator">/</span>Prototipo de investigación</span></footer>
 </main>
+<dialog id="expo-dialog" class="expo-dialog">
+  <div class="dialog-heading"><div class="eyebrow">DEMOSTRACIÓN PERSONALIZADA</div><button class="icon-button close-dialog" aria-label="Cerrar entrenamiento"><i data-lucide="x"></i></button><h2>Entrenamiento para Expo</h2><p>La mano 3D indicará cuándo abrir y cerrar. La persona imita la postura y el sistema captura automáticamente la actividad de los ocho canales.</p></div>
+  <div class="expo-stage-strip" aria-label="Etapas del entrenamiento"><span class="active" data-expo-stage="prepare"><b>1</b>Preparar</span><i data-lucide="chevron-right"></i><span data-expo-stage="capture"><b>2</b>Capturar</span><i data-lucide="chevron-right"></i><span data-expo-stage="train"><b>3</b>Entrenar</span></div>
+  <section id="expo-intro">
+    <div class="expo-form-grid"><label>Nombre del participante o modelo<input id="expo-model-name" maxlength="64" value="Visitante Expo" autocomplete="off"></label><div class="expo-duration-summary"><span>DURACIÓN ESTIMADA</span><strong>37 segundos</strong></div></div>
+    <div class="expo-protocol"><div><b>Ronda 1</b><span>Mano abierta y puño cerrado · 10 s por postura</span></div><div><b>Ronda 2</b><span>Abrir y cerrar repetidamente · 10 s</span></div></div>
+    <div class="expo-sequence"><span>Mano abierta</span><span>Puño cerrado</span></div>
+    <div class="expo-source"><i data-lucide="radio"></i><div><strong id="expo-source-title">Sensor seleccionado</strong><span id="expo-source-detail">Se usarán la fuente y el puerto configurados en adquisición.</span></div></div>
+    <p id="expo-feedback" class="form-note" role="status">Coloca el brazalete firme y conserva la misma posición del brazo durante toda la secuencia.</p>
+    <div class="dialog-actions"><span>Incluye una pausa antes de registrar cada movimiento.</span><button class="button primary" id="expo-start"><i data-lucide="play"></i>Comenzar entrenamiento</button></div>
+  </section>
+  <section id="expo-training" hidden>
+    <div class="expo-progress-line"><span id="expo-progress-label">Movimiento 1 de 8</span><span id="expo-window-count">0 ventanas</span></div>
+    <div class="expo-progress"><span id="expo-progress-fill"></span></div>
+    <div class="expo-target"><span id="expo-phase">PREPÁRATE</span><strong id="expo-gesture">Mano relajada</strong><p id="expo-instruction">Imita la postura que aparece en la mano 3D.</p><b id="expo-countdown">2,0 s</b></div>
+    <div id="expo-gesture-list" class="expo-gesture-list" aria-label="Progreso de movimientos"></div>
+    <div class="dialog-actions"><span id="expo-training-status" role="status">Esperando señal del brazalete…</span><button class="button quiet" id="expo-cancel">Cancelar</button></div>
+  </section>
+  <section id="expo-result" hidden>
+    <div class="expo-result-mark"><i data-lucide="brain-circuit"></i></div><div class="eyebrow">MODELO LISTO</div><h3 id="expo-result-name">Visitante Expo</h3><p id="expo-result-summary">El clasificador fue entrenado y guardado en este equipo.</p>
+    <div class="expo-result-metrics"><div><span>VALIDACIÓN</span><strong id="expo-accuracy">—</strong></div><div><span>VENTANAS</span><strong id="expo-samples">—</strong></div><div><span>GESTOS</span><strong>2</strong></div></div>
+    <p class="form-note">La validación orienta sobre esta sesión; no representa exactitud clínica ni garantiza el mismo resultado si cambia la posición del brazalete.</p>
+    <div class="dialog-actions"><span>El modelo también quedará disponible en “Modelo activo”.</span><button class="button primary" id="expo-use-model"><i data-lucide="check"></i>Usar modelo en la mano 3D</button></div>
+  </section>
+</dialog>
 <dialog id="settings-dialog" class="settings-dialog">
   <div class="dialog-heading"><div class="eyebrow">ENTRADA & PROCESAMIENTO</div><button class="icon-button close-dialog" aria-label="Cerrar configuración"><i data-lucide="x"></i></button><h2>Sensor y modelo</h2><p>Define el contrato de adquisición de tu experimento.</p></div>
   <form id="settings-form">
     <div class="form-section-title"><span>01</span>Adquisición de señal</div>
     <div class="form-grid"><label>Frecuencia declarada (Hz)<input id="sample-rate" type="number" min="10" max="5000" step="1" value="1000" required></label><label>Canales<input id="channels" type="number" min="1" max="8" value="8" required></label><label>Ventana de análisis (ms)<input id="window-ms" type="number" min="50" max="2000" value="200" required></label><label>Salto entre ventanas (ms)<input id="hop-ms" type="number" min="10" max="1000" value="50" required></label><label>Velocidad del puerto (baudios)<select id="baudrate"><option>9600</option><option>57600</option><option selected>115200</option><option>230400</option><option>460800</option><option>921600</option></select></label></div>
-    <p class="form-note">Perfil inicial: brazalete EMG PRO de 8 canales por COM. Debes confirmar frecuencia, baudios y formato real. Este conector admite una muestra por línea: 8 valores separados por comas o JSON con “values”. Las tramas binarias requieren adaptar el lector. El simulador no configura el sensor.</p>
+    <p class="form-note">Perfil inicial: brazalete EMG PRO de 8 canales por COM. El lector detecta sus paquetes binarios de 98 bytes y también admite una muestra por línea en CSV o JSON con “values”. Confirma la frecuencia y los baudios reales; el simulador no configura el sensor.</p>
     <div class="form-section-title"><span>02</span>Modelo & calibración</div>
-    <label class="full-field">Modelo activo<select id="model"><option value="baseline">Referencia · activación proporcional por RMS</option><option value="custom">Mi modelo · adaptador Python local</option></select></label>
+    <label class="full-field">Modelo activo<select id="model"><option value="baseline">Referencia · activación proporcional por RMS</option><option value="custom">Mi modelo · adaptador Python local</option><optgroup id="expo-model-options" label="Modelos entrenados en Expo"></optgroup></select></label>
     <div class="form-grid"><label>RMS en reposo<input id="rest" type="number" step="any" min="0" value="0.05" required></label><label>RMS en contracción de referencia<input id="mvc" type="number" step="any" min="0" value="0.6" required></label></div>
     <p class="form-note">Usa las mismas unidades que envía tu sensor. Activación = (RMS − reposo) / (referencia − reposo), limitada a 0–1, usando la media de RMS de los canales. Tu modelo recibe los 8 canales crudos y debe aplicar su preprocesamiento de entrenamiento.</p>
     <div class="adapter-note"><i data-lucide="file-code-2"></i><div><strong>Regresión con TensorFlow o PyTorch</strong><p>El adaptador recibe una ventana de señal y devuelve 5 ángulos continuos de flexión. Usa la plantilla de tu framework y configura EMG_MODEL_MODULE, la ruta del modelo y sus unidades de salida.</p><code>backend/adapters/</code></div></div>

@@ -12,13 +12,16 @@ from typing import Literal
 
 import numpy as np
 import serial
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 from serial.tools import list_ports
 
 from .signal import (
+    EMG_PRO_CHANNELS,
+    EMG_PRO_FRAME_MAGIC,
+    EMGProPacketDecoder,
     WindowBuffer,
     baseline_prediction,
     ensure_serial_backlog,
@@ -28,6 +31,7 @@ from .signal import (
     parse_sample,
     validate_prediction,
 )
+from .expo import list_expo_models, load_expo_predictor, train_expo_model
 
 
 logger = logging.getLogger("emg")
@@ -38,7 +42,7 @@ LOCAL_ORIGINS = {
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
-    allow_methods=["GET"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
@@ -54,7 +58,8 @@ class StreamConfig(BaseModel):
     hop_ms: int = Field(default=50, ge=10, le=1000)
     rest: float = Field(default=0.05, ge=0, le=1e12)
     mvc: float = Field(default=0.6, gt=0, le=1e12)
-    model: Literal["baseline", "custom"] = "baseline"
+    model: Literal["baseline", "custom", "expo"] = "baseline"
+    model_id: str | None = Field(default=None, pattern=r"^[a-f0-9]{32}$")
 
     @model_validator(mode="after")
     def validate_relationships(self):
@@ -64,7 +69,19 @@ class StreamConfig(BaseModel):
             raise ValueError("El salto no puede superar la ventana")
         if self.source == "serial" and not (self.port and self.port.strip()):
             raise ValueError("Selecciona un puerto para la fuente serial")
+        if self.model == "expo" and not self.model_id:
+            raise ValueError("Selecciona un modelo Expo entrenado")
         return self
+
+
+class ExpoTrainingRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid", allow_inf_nan=False)
+    name: str = Field(min_length=1, max_length=64)
+    features: list[list[float]] = Field(min_length=1, max_length=4_000)
+    labels: list[str] = Field(min_length=1, max_length=4_000)
+    channels: int = Field(default=8, ge=1, le=8)
+    sample_rate: int = Field(ge=10, le=5000)
+    window_ms: int = Field(ge=50, le=2000)
 
 
 @app.get("/api/health")
@@ -78,7 +95,29 @@ async def ports():
     return {"ports": [{"device": p.device, "description": p.description} for p in found]}
 
 
-async def emit_window(ws: WebSocket, completed, cfg: StreamConfig, predictor):
+@app.get("/api/expo/models")
+async def expo_models():
+    return {"models": await asyncio.to_thread(list_expo_models)}
+
+
+@app.post("/api/expo/train")
+async def expo_train(request: ExpoTrainingRequest):
+    try:
+        metadata = await asyncio.to_thread(
+            train_expo_model,
+            request.name,
+            request.features,
+            request.labels,
+            request.channels,
+            request.sample_rate,
+            request.window_ms,
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    return {"model": metadata}
+
+
+async def emit_window(ws: WebSocket, completed, cfg: StreamConfig, predictor, source_unit: str | None = None):
     started = time.perf_counter()
     rms, mav = extract_features(completed.values)
     prediction = baseline_prediction(rms, cfg.rest, cfg.mvc)
@@ -100,7 +139,7 @@ async def emit_window(ws: WebSocket, completed, cfg: StreamConfig, predictor):
         "sample_count": completed.sample_count,
         "source": cfg.source,
         "model": cfg.model,
-        "unit": "normalized" if cfg.source == "demo" else "raw",
+        "unit": source_unit or ("normalized" if cfg.source == "demo" else "raw"),
         "sample_rate": cfg.sample_rate,
         "window_ms": cfg.window_ms,
         "hop_ms": cfg.hop_ms,
@@ -138,6 +177,8 @@ async def serial_stream(ws: WebSocket, cfg: StreamConfig, predictor):
         await ws.send_json({"type": "status", "message": f"Puerto {cfg.port} abierto; esperando muestras"})
         buffer = WindowBuffer(cfg.sample_rate, cfg.channels, cfg.window_ms, cfg.hop_ms)
         pending = bytearray()
+        binary_decoder = EMGProPacketDecoder()
+        serial_format: Literal["text", "emg_pro"] | None = None
         rejected = 0
         last_notice = time.perf_counter()
         while True:
@@ -147,27 +188,51 @@ async def serial_stream(ws: WebSocket, cfg: StreamConfig, predictor):
                 rejected = 0
                 last_notice = now
             available_bytes = connection.in_waiting
-            ensure_serial_backlog(available_bytes + len(pending))
+            ensure_serial_backlog(available_bytes + len(pending) + binary_decoder.buffered_bytes)
             data = connection.read(min(available_bytes, 4096))
             if not data:
                 await asyncio.sleep(0.005)
                 continue
-            pending.extend(data)
-            ensure_serial_backlog(len(pending))
-            while b"\n" in pending:
-                line, _, remainder = pending.partition(b"\n")
-                pending = bytearray(remainder)
-                try:
-                    if len(line) > 4096:
-                        raise ValueError("Línea demasiado larga")
-                    values = parse_sample(line.decode("utf-8"), cfg.channels)
-                except (ValueError, UnicodeDecodeError):
-                    rejected += 1
-                    continue
+            decoded_samples: list[list[float]] = []
+            if serial_format == "emg_pro":
+                decoded_samples = binary_decoder.feed(data)
+            else:
+                pending.extend(data)
+                ensure_serial_backlog(len(pending))
+                if serial_format is None:
+                    if EMG_PRO_FRAME_MAGIC in pending:
+                        if cfg.channels != EMG_PRO_CHANNELS:
+                            raise ValueError("El protocolo binario EMG PRO requiere 8 canales")
+                        serial_format = "emg_pro"
+                        decoded_samples = binary_decoder.feed(bytes(pending))
+                        pending.clear()
+                        await ws.send_json({
+                            "type": "status",
+                            "message": "Protocolo binario EMG PRO detectado · 8 canales normalizados",
+                        })
+                    elif b"\n" in pending:
+                        serial_format = "text"
+                        await ws.send_json({"type": "status", "message": "Flujo serial CSV/JSON detectado"})
+                    elif len(pending) >= 4096:
+                        raise ValueError("El flujo serial no coincide con CSV/JSON ni con el protocolo binario EMG PRO")
+                if serial_format == "text":
+                    while b"\n" in pending:
+                        line, _, remainder = pending.partition(b"\n")
+                        pending = bytearray(remainder)
+                        try:
+                            if len(line) > 4096:
+                                raise ValueError("Línea demasiado larga")
+                            decoded_samples.append(parse_sample(line.decode("utf-8"), cfg.channels))
+                        except (ValueError, UnicodeDecodeError):
+                            rejected += 1
+            for values in decoded_samples:
                 completed = buffer.add(values)
                 if completed:
-                    await emit_window(ws, completed, cfg, predictor)
-                    ensure_serial_backlog(connection.in_waiting + len(pending))
+                    unit = "normalized-adc" if serial_format == "emg_pro" else "raw"
+                    await emit_window(ws, completed, cfg, predictor, unit)
+                    ensure_serial_backlog(
+                        connection.in_waiting + len(pending) + binary_decoder.buffered_bytes
+                    )
             await asyncio.sleep(0)
     finally:
         connection.close()
@@ -195,7 +260,12 @@ async def emg_socket(ws: WebSocket):
         if len(raw) > 4096:
             raise ValueError("Configuración demasiado larga")
         cfg = StreamConfig.model_validate_json(raw)
-        predictor = await asyncio.to_thread(load_custom_predictor) if cfg.model == "custom" else None
+        if cfg.model == "custom":
+            predictor = await asyncio.to_thread(load_custom_predictor)
+        elif cfg.model == "expo":
+            predictor = await asyncio.to_thread(load_expo_predictor, cfg.model_id)
+        else:
+            predictor = None
         await ws.send_json({
             "type": "status",
             "message": "Señal sintética activa · control RMS de demostración" if cfg.source == "demo" and cfg.model == "baseline"

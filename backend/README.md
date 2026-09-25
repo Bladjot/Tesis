@@ -28,7 +28,15 @@ El servicio solo abre puertos enumerados, sin enviar comandos al dispositivo.
 La apertura del puerto puede reiniciar algunas placas por sus líneas DTR/RTS.
 La adquisición comienza al conectar el WebSocket y finaliza al desconectarlo.
 
-Cada línea UTF-8 representa **una muestra simultánea de todos los canales**:
+El lector detecta primero el protocolo binario observado en el brazalete EMG PRO:
+paquetes de 98 bytes con cabecera `55 AA AA 5F`, 13 bytes adicionales de cabecera,
+80 bytes con 10 muestras intercaladas de 8 canales y un byte final de control. Los
+valores ADC se convierten de 0–255 a `[-1, 1]` mediante
+`(valor - 127.5) / 127.5`. La captura real mostró paquetes consecutivos separados
+exactamente por 98 bytes; el lector se resincroniza buscando la cabecera.
+
+Como alternativa, cada línea UTF-8 puede representar **una muestra simultánea de
+todos los canales**:
 
 ```text
 0.012,-0.034,0.018,0.009,-0.014,0.025,0.003,-0.011
@@ -50,11 +58,11 @@ Los valores se mantienen en unidades crudas; no se convierten automáticamente d
 cuentas ADC a voltios. Las líneas corruptas se descartan y se informa su número.
 
 La configuración predeterminada utiliza los ocho canales del brazalete indicado.
-El usuario confirmó el transporte por puerto COM serie. Aún debe verificarse el
-formato de las tramas: si envía paquetes binarios o datos propietarios, se necesita
-un parser del protocolo o del SDK que preserve los ocho canales y su frecuencia real.
-El parser actual admite únicamente las líneas CSV/JSON descritas aquí; no presupone
-el formato específico del brazalete EMG PRO.
+El transporte, la velocidad de 115200 baudios y la estructura binaria fueron
+comprobados con el receptor CH340 en `COM3`. La estructura proviene de observación
+directa y no reemplaza una especificación del fabricante; la frecuencia de 1000 Hz,
+el significado de los bytes de cabecera/control y el orden anatómico de los ocho
+canales aún deben validarse de manera independiente.
 
 Configurar en el firmware la frecuencia real y la velocidad serie. El valor
 `sample_rate` del visor describe esa frecuencia: no reprograma el dispositivo.
@@ -129,6 +137,21 @@ latencia física extremo a extremo. `unit` es `normalized` para la demo sintéti
 (valores limitados a ±1) y `raw` para el puerto serie. `confidence` es `null` en el
 control RMS; no se calcula precisión ni confianza ficticia. Los gestos del control
 RMS son `open`, `proportional` y `fist`.
+
+## Modelos personalizados del modo Expo
+
+`POST /api/expo/train` recibe ventanas ya resumidas como 8 valores RMS seguidos por
+8 valores MAV, junto con sus etiquetas. Requiere al menos ocho ventanas para cada
+clase: `open` y `fist`. Entrena un Random Forest con una separación temporal 75/25
+por clase y guarda el modelo generado localmente en `artifacts/expo_models/`.
+`GET /api/expo/models` lista los modelos disponibles sin cargar archivos
+proporcionados por el navegador.
+
+Para inferencia, usar `"model":"expo"` y el `model_id` devuelto al entrenar. El
+predictor calcula el mismo vector RMS/MAV y suaviza las probabilidades de las cinco
+ventanas más recientes antes de convertir la clase ganadora en cinco órdenes de
+flexión para la mano 3D. Este clasificador discreto es específico del modo Expo; no
+reemplaza el flujo de regresión continua descrito abajo.
 
 Las conexiones del navegador validan `Origin` contra localhost/127.0.0.1 en los
 puertos 5173 y 8765. Clientes locales sin `Origin` pueden conectarse para pruebas.

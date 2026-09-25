@@ -13,6 +13,8 @@ from pydantic import ValidationError
 
 from backend.app import StreamConfig, emit_window, serial_stream
 from backend.signal import (
+    EMG_PRO_FRAME_MAGIC,
+    EMGProPacketDecoder,
     WindowBuffer,
     MAX_SERIAL_BACKLOG_BYTES,
     baseline_prediction,
@@ -24,6 +26,27 @@ from backend.signal import (
 
 
 class SignalTests(unittest.TestCase):
+    def test_emg_pro_binary_packets_decode_fragmented_eight_channel_samples(self):
+        header = EMG_PRO_FRAME_MAGIC + bytes(13)
+        payload = bytes(range(80))
+        packet = header + payload + b"\x24"
+        decoder = EMGProPacketDecoder()
+        self.assertEqual(decoder.feed(b"junk" + packet[:31]), [])
+        samples = decoder.feed(packet[31:])
+        self.assertEqual(len(samples), 10)
+        self.assertEqual(len(samples[0]), 8)
+        np.testing.assert_allclose(samples[0], [(value - 127.5) / 127.5 for value in range(8)])
+        np.testing.assert_allclose(samples[-1], [(value - 127.5) / 127.5 for value in range(72, 80)])
+        self.assertEqual(decoder.buffered_bytes, 0)
+
+    def test_emg_pro_binary_decoder_resynchronizes_on_next_packet(self):
+        header = EMG_PRO_FRAME_MAGIC + bytes(13)
+        packet = header + bytes([127] * 80) + b"\x24"
+        decoder = EMGProPacketDecoder()
+        samples = decoder.feed(b"noise" + packet + packet)
+        self.assertEqual(len(samples), 20)
+        np.testing.assert_allclose(samples[0], [-0.5 / 127.5] * 8)
+
     def test_csv_and_json_values(self):
         self.assertEqual(parse_sample(" 1.25, -3 \r\n", 2), [1.25, -3.0])
         self.assertEqual(parse_sample('{"values":[-0.25,4],"t":99.5}', 2), [-0.25, 4.0])
