@@ -6,6 +6,8 @@ import asyncio
 import contextlib
 import logging
 import math
+import json
+import threading
 import time
 from pathlib import Path
 from typing import Literal
@@ -15,6 +17,7 @@ import serial
 from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 from serial.tools import list_ports
 
@@ -82,6 +85,7 @@ class ExpoTrainingRequest(BaseModel):
     channels: int = Field(default=8, ge=1, le=8)
     sample_rate: int = Field(ge=10, le=5000)
     window_ms: int = Field(ge=50, le=2000)
+    hop_ms: int = Field(default=50, ge=10, le=1000)
 
 
 @app.get("/api/health")
@@ -115,6 +119,48 @@ async def expo_train(request: ExpoTrainingRequest):
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
     return {"model": metadata}
+
+
+@app.post("/api/expo/compare")
+async def expo_compare(request: ExpoTrainingRequest):
+    if request.hop_ms > request.window_ms:
+        raise HTTPException(status_code=422, detail="El salto no puede superar la ventana")
+    loop = asyncio.get_running_loop()
+    events: asyncio.Queue = asyncio.Queue()
+    cancelled = threading.Event()
+
+    def report(event):
+        if cancelled.is_set():
+            raise ValueError("Entrenamiento cancelado")
+        loop.call_soon_threadsafe(events.put_nowait, event)
+
+    async def train():
+        try:
+            metadata = await asyncio.to_thread(
+                train_expo_model, request.name, request.features, request.labels,
+                request.channels, request.sample_rate, request.window_ms,
+                compare=True, hop_ms=request.hop_ms, progress=report,
+            )
+            await events.put({"type": "result", "model": metadata})
+        except Exception as exc:
+            logger.exception("Expo comparison stopped")
+            await events.put({"type": "error", "message": str(exc)})
+
+    async def stream():
+        task = asyncio.create_task(train())
+        try:
+            while True:
+                event = await events.get()
+                yield json.dumps(event, ensure_ascii=False, allow_nan=False) + "\n"
+                if event["type"] in ("result", "error"):
+                    break
+        finally:
+            cancelled.set()
+            task.cancel()
+            with contextlib.suppress(asyncio.CancelledError):
+                await task
+
+    return StreamingResponse(stream(), media_type="application/x-ndjson", headers={"Cache-Control": "no-store", "X-Accel-Buffering": "no"})
 
 
 async def emit_window(ws: WebSocket, completed, cfg: StreamConfig, predictor, source_unit: str | None = None):

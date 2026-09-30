@@ -92,7 +92,7 @@ document.querySelectorAll<HTMLDialogElement>('dialog').forEach(dialog => dialog.
 }));
 for (const id of ['configure-button', 'model-settings']) $(id).addEventListener('click', () => showDialog('settings-dialog'));
 $('export-session').addEventListener('click', () => showDialog('sessions-dialog'));
-$('expo-button').addEventListener('click', () => showDialog('expo-dialog'));
+$('expo-button').addEventListener('click', () => { location.href = '/'; });
 
 fingerNames.forEach((name, index) => {
   const row = document.createElement('div');

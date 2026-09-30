@@ -1,0 +1,39 @@
+<div class="expo-shell">
+  <header class="expo-header">
+    <a class="lab-brand" href="/" aria-label="Laboratorio de Simulación Universidad de Valparaíso"><span>Laboratorio de Simulación</span><span>Universidad de Valparaíso</span></a>
+    <nav class="view-tabs" aria-label="Vistas de la exposición">
+      <button id="tab-channels" data-view="channels" aria-current="page"><span>01</span>Reconocimiento de canales EMG</button>
+      <button id="tab-training" data-view="training"><span>02</span>Entrenamiento de modelo</button>
+      <button id="tab-hand" data-view="hand"><span>03</span>Mano 3D</button>
+    </nav>
+    <a class="thesis-link" id="thesis-link" href="/tesis.html">Tesis <span aria-hidden="true">↗</span></a>
+  </header>
+  <div class="connection-line">
+    <span class="connection-status"><i id="signal-dot"></i><span id="connection-status" role="status">Buscando brazalete…</span></span>
+    <label class="source-picker">Señal <select id="signal-source" aria-label="Fuente de señal"><option value="">Buscando brazalete…</option></select></label>
+  </div>
+  <div class="notice" id="notice" role="status" hidden></div>
+  <main>
+    <section id="view-channels" class="expo-view" aria-labelledby="channels-title">
+      <div class="view-heading"><div><p class="eyebrow">DEL MÚSCULO A LA SEÑAL</p><h1 id="channels-title">Tu actividad, en ocho canales.</h1><p>Colócate el brazalete. Contrae y relaja la mano para descubrir cómo cambia tu señal.</p></div><span class="live-label" id="channel-unit">ESPERANDO SEÑAL</span></div>
+      <div class="channel-grid" id="channel-grid"></div>
+      <footer class="view-footer"><span>Ocho puntos de escucha. Una misma intención.</span><span>Últimos 5 segundos · escala común en los ocho canales</span></footer>
+    </section>
+    <section id="view-training" class="expo-view" aria-labelledby="training-title" hidden>
+      <div class="view-heading"><div><p class="eyebrow">DE LA SEÑAL AL APRENDIZAJE</p><h1 id="training-title">Enséñale tu movimiento.</h1><p>Dos posturas. Tres modelos. El que mejor reconozca tu señal se guardará para la mano 3D.</p></div></div>
+      <div class="capture-panel" id="capture-panel">
+        <form id="training-form"><label for="participant">Tu nombre<input id="participant" name="participant" maxlength="64" placeholder="Nombre del participante" required autocomplete="off"></label><button id="train-button" class="primary" type="submit">Comenzar entrenamiento <span aria-hidden="true">→</span></button></form>
+        <div class="capture-cue" id="capture-cue"><span class="pose-symbol" id="pose-symbol" aria-hidden="true">✋</span><div><strong id="capture-title">Primero abre la mano, después haz un puño.</strong><p id="capture-detail">10 segundos de señal, con una pausa para preparar cada postura.</p></div><strong class="countdown" id="countdown">10<small>SEGUNDOS</small></strong></div>
+        <div class="capture-track"><span id="capture-fill"></span></div>
+      </div>
+      <div class="model-grid" id="model-grid" hidden></div>
+      <p class="training-result" id="training-result" role="status">Al terminar, compararemos el porcentaje de aciertos con los mismos datos de validación.</p>
+      <footer class="view-footer"><span>Las animaciones representan el proceso; el avance y los resultados son reales.</span><span>Mano abierta / puño cerrado</span></footer>
+    </section>
+    <section id="view-hand" class="expo-view hand-view" aria-labelledby="hand-title" hidden>
+      <div class="view-heading"><div><p class="eyebrow">DEL APRENDIZAJE AL MOVIMIENTO</p><h1 id="hand-title">Tu señal mueve la mano.</h1><p>Haz un puño para cerrar. Relaja y abre tu mano para soltar.</p></div><label class="model-picker">Modelo <select id="saved-model" aria-label="Modelo guardado"><option value="">Entrena tu primer modelo</option></select></label></div>
+      <div class="hand-stage"><div id="expo-hand-canvas"></div><span class="hand-state" id="hand-state" role="status">Selecciona un modelo entrenado</span></div>
+    </section>
+  </main>
+  <footer class="expo-credit"><span>CONTROL MIOELÉCTRICO · EXPOSICIÓN</span><span>Sebastián Rodríguez · Profesor guía: Jhon Pilataxi</span></footer>
+</div>

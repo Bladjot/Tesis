@@ -153,6 +153,33 @@ test('a whole-hand close reaches the full command range and reopens without mate
   });
 });
 
+test('the index closes and releases while the thumb stays opposed, without assistance', async () => {
+  await withHand(solver => {
+    for (const thumb of [53.4, 65, 75, 90]) {
+      const held = [thumb, 0, 0, 0, 0];
+      advance(solver, held, 150, `hold thumb at ${thumb}`);
+      const closed = advance(solver, [thumb, 90, 0, 0, 0], 180, `close index with thumb at ${thumb}`);
+      assert.ok(closed.achieved[1] >= 89.95,
+        `The thumb at ${thumb} blocks index closure: ${JSON.stringify(closed.achieved)}; contacts=${JSON.stringify(closed.contacts)}`);
+      const released = advance(solver, held, 180, `release index with thumb at ${thumb}`);
+      assert.ok(released.achieved[1] < .05,
+        `The thumb at ${thumb} traps the opening index: ${JSON.stringify(released.achieved)}; contacts=${JSON.stringify(released.contacts)}`);
+      assert.ok(Math.abs(released.achieved[0] - thumb) < .05, 'The thumb must retain its command while the index opens.');
+      assertOpened(advance(solver, OPEN, 180, `release thumb from ${thumb}`), `release thumb from ${thumb}`);
+    }
+  });
+});
+
+test('repeated Expo fist commands release the index without a planned route', async () => {
+  await withHand(solver => {
+    for (let cycle = 0; cycle < 4; cycle++) {
+      const closed = advance(solver, [75, 90, 90, 90, 90], 150, `Expo close ${cycle}`);
+      assert.ok(closed.achieved[1] >= 89.95, `Expo index stopped at ${closed.achieved[1]}`);
+      assertOpened(advance(solver, OPEN, 180, `Expo open ${cycle}`), `Expo open ${cycle}`);
+    }
+  });
+});
+
 test('each finger independently completes its full 0–90 degree range and releases', async () => {
   await withHand(solver => {
     for (let finger = 0; finger < 5; finger++) {

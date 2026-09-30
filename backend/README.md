@@ -147,6 +147,16 @@ por clase y guarda el modelo generado localmente en `artifacts/expo_models/`.
 `GET /api/expo/models` lista los modelos disponibles sin cargar archivos
 proporcionados por el navegador.
 
+`POST /api/expo/compare` recibe los mismos campos y `hop_ms` (50 por defecto), y
+devuelve eventos JSON separados por salto de línea (`application/x-ndjson`):
+`progress`, `evaluated`, y finalmente `result` con el modelo guardado, o `error`.
+Compara Random Forest con dos MLP (16 y 32/16 unidades ocultas), usando la misma
+validación temporal por clase y excluyendo ventanas de entrenamiento que puedan
+superponerse con validación. La normalización de las MLP se ajusta con el conjunto
+de entrenamiento y se guarda junto a la red. Solo se persiste el mejor clasificador;
+en empate gana el primero en el orden Random Forest, MLP simple, MLP de dos capas.
+Los metadatos incluyen las tres precisiones, el ganador y los tamaños de ambos conjuntos.
+
 Para inferencia, usar `"model":"expo"` y el `model_id` devuelto al entrenar. El
 predictor calcula el mismo vector RMS/MAV y suaviza las probabilidades de las cinco
 ventanas más recientes antes de convertir la clase ganadora en cinco órdenes de

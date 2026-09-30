@@ -55,7 +55,8 @@ export class HandModel {
     [0.17, 1.065, 0.29], [0.4, 1.025, 0.24], [0.52, 0.94, 0.2],
   ];
 
-  constructor() {
+  /** The archived dimensions are retained only to reproduce historical contact regressions. */
+  constructor(private readonly geometryProfile: 'current' | 'legacy-v3' = 'current') {
     this.model.rotation.z = -0.055;
     this.buildPalm();
     this.buildMounts();
@@ -214,14 +215,17 @@ export class HandModel {
     this.model.add(thumbRoot);
     const thumbRig: FingerRig = { joints: [], spread: 0.85, thumb: true };
     let thumbParent: THREE.Object3D = thumbRoot;
-    const thumbLengths = [0.55, 0.65, 0.49];
+    // Shorten the proximal and distal links together with their visible shells and colliders.
+    // Moving only the fingertip would leave the IP bearing trapping the opening index.
+    const thumbScale = this.geometryProfile === 'legacy-v3' ? 1 : 0.65;
+    const thumbLengths = [0.55, 0.65 * thumbScale, 0.49 * thumbScale];
     thumbLengths.forEach((length, index) => {
       const joint = index === 0 ? thumbRoot : new THREE.Group();
       joint.name = ['thumb-cmc', 'thumb-mcp', 'thumb-ip'][index];
       if (index > 0) { joint.position.y = thumbLengths[index - 1]; thumbParent.add(joint); }
       thumbRig.joints.push(joint);
       this.owner = { finger: 0, segment: index };
-      this.buildPhalanx(joint, length, [0.22, 0.235, 0.20][index], index === 2);
+      this.buildPhalanx(joint, length, [0.22, 0.235 * thumbScale, 0.20 * thumbScale][index], index === 2);
       thumbParent = joint;
     });
     this.fingers.push(thumbRig);

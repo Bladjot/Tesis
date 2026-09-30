@@ -18,7 +18,7 @@ const POSTURES = {
 };
 
 async function withHand(action: (solver: HandContactSolver) => Promise<void>, articulation: 'current' | 'legacy-v3' = 'current'): Promise<void> {
-  const model = new HandModel();
+  const model = new HandModel(articulation);
   let solver: HandContactSolver | undefined;
   try {
     solver = await HandContactSolver.create(model.collisionParts, angles => {

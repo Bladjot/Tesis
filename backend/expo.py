@@ -15,6 +15,9 @@ import joblib
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
+from sklearn.neural_network import MLPClassifier
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 
 from .signal import extract_features
 
@@ -68,6 +71,10 @@ def train_expo_model(
     channels: int,
     sample_rate: int,
     window_ms: int,
+    *,
+    compare: bool = False,
+    hop_ms: int = 50,
+    progress: Callable[[dict], None] | None = None,
 ) -> dict:
     clean_name = " ".join(name.strip().split())[:64]
     if not clean_name:
@@ -101,6 +108,15 @@ def train_expo_model(
         train_indices.extend(indices[:-test_count].tolist())
         test_indices.extend(indices[-test_count:].tolist())
 
+    if compare:
+        if not 10 <= hop_ms <= window_ms:
+            raise ValueError("El salto no puede superar la ventana ni ser menor que 10 ms")
+        # Adjacent overlapping windows must not cross the validation boundary.
+        gap = max(0, math.ceil(window_ms / hop_ms) - 1)
+        train_indices = [i for i in train_indices if all(abs(i - j) > gap for j in test_indices)]
+        if any(np.sum(label_array[train_indices] == label) < 4 for label in EXPO_TRAINING_LABELS):
+            raise ValueError("Faltan datos para separar entrenamiento y validación; repite la captura")
+
     classifier = RandomForestClassifier(
         n_estimators=120,
         max_depth=12,
@@ -109,15 +125,54 @@ def train_expo_model(
         random_state=42,
         n_jobs=1,
     )
-    classifier.fit(matrix[train_indices], label_array[train_indices])
-    accuracy = float(accuracy_score(label_array[test_indices], classifier.predict(matrix[test_indices])))
+    comparison = []
+    if compare:
+        def report(event):
+            if progress is not None:
+                progress(event)
+
+        candidates = []
+        def evaluate(key, title, fitted):
+            score = float(accuracy_score(label_array[test_indices], fitted.predict(matrix[test_indices])))
+            result = {"key": key, "algorithm": title, "validation_accuracy": round(score, 4)}
+            comparison.append(result)
+            report({"type": "evaluated", **result})
+
+        classifier.set_params(warm_start=True, class_weight=None)
+        report({"type": "progress", "key": "forest", "progress": 0, "detail": "Construyendo árboles"})
+        for trees in range(10, 121, 10):
+            classifier.set_params(n_estimators=trees)
+            classifier.fit(matrix[train_indices], label_array[train_indices])
+            report({"type": "progress", "key": "forest", "progress": trees / 120, "detail": f"{trees} de 120 árboles"})
+        candidates.append(("forest", "Random Forest", classifier))
+        evaluate(*candidates[-1])
+        # Scaling is fitted only on training data and travels with the saved model.
+        for key, title, layers in [("compact", "Red neuronal simple", (16,)), ("deep", "Red neuronal de dos capas", (32, 16))]:
+            scaler = StandardScaler().fit(matrix[train_indices])
+            scaled = scaler.transform(matrix[train_indices])
+            neural = MLPClassifier(hidden_layer_sizes=layers, solver="adam", learning_rate_init=0.01, random_state=42, batch_size=min(32, len(train_indices)))
+            report({"type": "progress", "key": key, "progress": 0, "detail": "Preparando la red"})
+            for epoch in range(1, 81):
+                neural.partial_fit(scaled, label_array[train_indices], classes=np.asarray(EXPO_TRAINING_LABELS))
+                if epoch % 4 == 0:
+                    report({"type": "progress", "key": key, "progress": epoch / 80, "detail": f"Época {epoch} de 80", "loss": float(neural.loss_)})
+            candidates.append((key, title, make_pipeline(scaler, neural)))
+            evaluate(*candidates[-1])
+        # Deterministic tie break: prefer the first model, Random Forest.
+        winner = int(np.argmax([item["validation_accuracy"] for item in comparison]))
+        winner_key, algorithm, classifier = candidates[winner]
+        accuracy = comparison[winner]["validation_accuracy"]
+    else:
+        classifier.fit(matrix[train_indices], label_array[train_indices])
+        accuracy = float(accuracy_score(label_array[test_indices], classifier.predict(matrix[test_indices])))
+        algorithm = "Random Forest"
     model_id = uuid4().hex
     created_at = datetime.now(timezone.utc).isoformat()
     metadata = {
         "id": model_id,
         "name": clean_name,
         "created_at": created_at,
-        "algorithm": "Random Forest",
+        "algorithm": algorithm,
         "channels": channels,
         "feature_count": expected_features,
         "features": "RMS y MAV por canal",
@@ -127,6 +182,8 @@ def train_expo_model(
         "samples": len(features),
         "validation_accuracy": round(accuracy, 4),
     }
+    if compare:
+        metadata.update({"comparison": comparison, "winner_key": winner_key, "training_samples": len(train_indices), "validation_samples": len(test_indices), "validation_method": "temporal por clase con separación de ventanas superpuestas", "hop_ms": hop_ms})
     payload = {"classifier": classifier, "metadata": metadata}
 
     MODEL_DIR.mkdir(parents=True, exist_ok=True)

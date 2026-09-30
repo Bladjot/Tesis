@@ -53,9 +53,9 @@ cd ..
 - Registro de señal cruda, resultados por ventana y configuración; exportaciones
   CSV/JSON. Hasta 120.000 muestras por sesión en memoria del navegador.
 - Contrato Python y plantillas de regresión TensorFlow/Keras y PyTorch/TorchScript.
-- Asistente Expo que guía la apertura y el cierre de la mano 3D, captura ventanas
-  etiquetadas, entrena un Random Forest local y permite usarlo inmediatamente en el
-  simulador.
+- Pantalla principal de exposición con tres vistas: ocho canales EMG, entrenamiento
+  comparado de tres clasificadores y control de la mano 3D. El botón **Tesis** abre
+  el laboratorio completo en `/tesis.html`.
 
 El controlador RMS incluido es una **referencia proporcional de demostración**,
 no un modelo entrenado. La regresión continua sigue siendo el objetivo principal de
@@ -64,7 +64,7 @@ entrenamiento personalizado y control en tiempo real.
 
 ## Probar el flujo completo
 
-1. Abre el simulador y mueve los controles de cada dedo.
+1. Abre el simulador y pulsa **Tesis** para acceder al laboratorio y los controles de cada dedo.
 2. Mantén “Generador de demostración” e inicia la adquisición.
 3. Selecciona “Señal EMG” para que los valores calculados controlen la mano.
 4. Activa o desactiva CH1–CH8 para comparar los canales en una misma gráfica.
@@ -104,20 +104,37 @@ actualizar el decodificador. No se envían comandos ni se cambia el firmware.
 
 ## Entrenamiento personalizado para Expo
 
-El botón **Expo** abre un panel lateral que mantiene visible la mano 3D. La primera
-ronda registra la mano abierta durante 10 segundos y el puño cerrado durante otros
-10 segundos. Después, la mano 3D alterna apertura y cierre durante 10 segundos para
-capturar el movimiento repetido. Se descartan 250 ms alrededor de cada cambio. La
-persona debe conservar la posición del brazo y del brazalete durante toda la secuencia,
-que dura aproximadamente 37 segundos incluyendo las preparaciones.
+La exposición abre directamente en `/`. Una barra horizontal permite cambiar entre
+**Reconocimiento de canales EMG**, **Entrenamiento de modelo** y **Mano 3D**. El botón
+**Expo** del laboratorio regresa a esta pantalla. El brazalete se selecciona y conecta
+automáticamente cuando hay un puerto único o un receptor USB CH340. Sin dispositivo,
+se puede elegir explícitamente **Demostración sin sensor**; siempre se identifica como
+señal sintética.
 
-Al terminar, el backend separa temporalmente ventanas de entrenamiento y validación,
-entrena un Random Forest y guarda el artefacto en `artifacts/expo_models/`. Esa carpeta
-es local y está excluida de Git. El modelo aparece en **Configurar adquisición →
-Modelo activo** y también puede activarse directamente desde el resultado del asistente.
-Sus dos clases controlan la mano abierta y el puño cerrado; se muestra la confianza de
-la clasificación. La validación de una sesión sirve como diagnóstico de la demostración,
-no como métrica clínica ni como sustituto de una evaluación con participantes separados.
+La primera vista muestra los ocho canales por separado, con una escala de amplitud
+común y cinco segundos de historial. La segunda pide el nombre del participante y
+registra cinco segundos de mano abierta y cinco de puño cerrado, con dos segundos de
+preparación antes de cada postura (14 segundos en total). Solo se etiquetan ventanas
+completamente contenidas dentro de la captura de cada postura.
+
+El backend compara un Random Forest (120 árboles), una red neuronal MLP de una capa
+oculta (16 unidades) y otra MLP de dos capas (32 y 16 unidades). Las redes usan una
+normalización ajustada exclusivamente con el entrenamiento. Los tres modelos comparten
+la misma separación temporal 75/25 por clase; se eliminan ventanas del entrenamiento
+cercanas a las de validación para evitar superposición de muestras. Las animaciones
+son representaciones simplificadas; muestran pasos realmente completados, reproducidos
+con una breve pausa visual para que puedan seguirse durante la exposición. Los
+porcentajes proceden de predicciones reales sobre la validación, no de la animación.
+
+Solo se guarda el ganador en `artifacts/expo_models/`, junto con los tres resultados y
+los tamaños del entrenamiento y la validación. Esa carpeta es local y está excluida de
+Git. En empates se conserva el primer clasificador de la comparación (Random Forest
+antes que las redes). La tercera vista permite elegir el nombre guardado y usa su
+clasificación de apertura/cierre para mover la mano 3D en tiempo real. Los modelos
+binarios anteriores siguen disponibles; la inferencia de redes conserva su normalización.
+
+La validación de una sesión sirve como diagnóstico de la demostración, no como métrica
+clínica ni como sustituto de una evaluación con participantes y sesiones separados.
 
 ## Integrar TensorFlow o PyTorch
 

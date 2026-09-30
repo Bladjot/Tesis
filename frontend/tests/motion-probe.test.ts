@@ -92,7 +92,7 @@ test('speculative frame budget and input constraints are explicit', async () => 
 });
 
 test('legacy-v3 numeric regression: worker accepts the exact live contact and reaches open without crossing material', async () => {
-  const model = new HandModel();
+  const model = new HandModel('legacy-v3');
   const solver = await HandContactSolver.create(model.collisionParts, angles => {
     model.applyPose(angles);
     // The old thumb curve preserves the precise captured Rapier rounding edge case,
