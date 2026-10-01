@@ -1,4 +1,4 @@
-# MyoHand · laboratorio local de simulación EMG
+# Tesis laboratorio local de simulación EMG
 
 Prototipo funcional para una tesis de **regresión continua del movimiento de la mano
 a partir de EMG**, con un modo Expo adicional para entrenar clasificadores de gestos
