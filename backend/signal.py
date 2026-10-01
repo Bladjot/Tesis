@@ -36,13 +36,22 @@ def ensure_serial_backlog(buffered_bytes: int) -> None:
         )
 
 
-def ensure_serial_timing(processing_ms: float, hop_ms: int) -> None:
-    if processing_ms > hop_ms:
+def ensure_serial_timing(processing_ms: float, window_ms: int) -> None:
+    # A hop is the desired update cadence, not a deadline for one scheduled task.
+    # Stop genuinely slow processing before emitting control; small overruns adapt.
+    if processing_ms > window_ms:
         raise ValueError(
             f"Adquisición detenida por sobrecarga: procesamiento/envío de {processing_ms:.1f} ms "
-            f"supera el salto de {hop_ms} ms. Aumenta el salto o usa un modelo más rápido; "
+            f"supera la ventana de {window_ms} ms. Usa un modelo más rápido; "
             "se detuvo el flujo para evitar controlar la mano con datos atrasados"
         )
+
+
+def adaptive_serial_hop(processing_ms: float, hop_ms: int, window_ms: int) -> int:
+    """Leave 25% headroom, retain the window, and only slow down this connection."""
+    ensure_serial_timing(processing_ms, window_ms)
+    target = math.ceil(processing_ms * 1.25 / 10) * 10
+    return min(window_ms, max(hop_ms, target))
 
 
 class EMGProPacketDecoder:
@@ -199,6 +208,14 @@ class WindowBuffer:
         self.pending: list[dict] = []
         self.count = 0
         self.next_frame = self.window_size
+
+    def set_hop_ms(self, hop_ms: int) -> None:
+        """Change future frame spacing without losing pending or historical samples."""
+        hop_size = max(1, round(self.sample_rate * hop_ms / 1000))
+        if hop_ms <= 0 or hop_size > self.window_size:
+            raise ValueError("El salto debe ser positivo y no superar la ventana")
+        self.next_frame += hop_size - self.hop_size
+        self.hop_size = hop_size
 
     def add(self, values: list[float]) -> CompletedWindow | None:
         if len(values) != self.channels or not all(math.isfinite(v) for v in values):

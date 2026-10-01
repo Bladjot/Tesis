@@ -18,6 +18,7 @@ from backend.signal import (
     WindowBuffer,
     MAX_SERIAL_BACKLOG_BYTES,
     baseline_prediction,
+    adaptive_serial_hop,
     extract_features,
     load_custom_predictor,
     parse_sample,
@@ -78,6 +79,27 @@ class SignalTests(unittest.TestCase):
         self.assertEqual(high["angles"], [75, 90, 90, 90, 90])
         self.assertEqual(high["gesture"], "fist")
         self.assertIsNone(high["confidence"])
+
+    def test_serial_cadence_tolerates_reported_overrun_and_keeps_headroom(self):
+        self.assertEqual(adaptive_serial_hop(50.3, 50, 200), 70)
+        self.assertEqual(adaptive_serial_hop(50.3, 70, 200), 70)
+        self.assertEqual(adaptive_serial_hop(1, 70, 200), 70)
+        self.assertEqual(adaptive_serial_hop(180, 70, 200), 200)
+        with self.assertRaisesRegex(ValueError, "sobrecarga.*ventana"):
+            adaptive_serial_hop(201, 50, 200)
+
+    def test_adaptive_spacing_preserves_all_raw_samples_and_fixed_feature_window(self):
+        buffer = WindowBuffer(1000, 8, 200, 50)
+        frames = []
+        for i in range(550):
+            completed = buffer.add([float(i)] * 8)
+            if completed:
+                frames.append(completed)
+                buffer.set_hop_ms(70)
+        self.assertEqual([f.sample_count for f in frames], [200, 270, 340, 410, 480, 550])
+        self.assertTrue(all(f.values.shape == (200, 8) for f in frames))
+        self.assertEqual([s["values"][0] for f in frames for s in f.samples], list(range(550)))
+        np.testing.assert_equal(frames[-1].values[:, 0], np.arange(350, 550))
 
     def test_custom_predictions_enforce_contract(self):
         self.assertEqual(validate_prediction({"gesture": "open"})["angles"], [0] * 5)
@@ -142,17 +164,78 @@ class StreamTests(unittest.IsolatedAsyncioTestCase):
                 received.append(value)
 
         def slow_predictor(window, sample_rate):
-            time.sleep(0.03)
+            time.sleep(0.08)
             return {"angles": [1, 2, 3, 4, 5], "gesture": "continuous"}
 
         connection = Connection()
         cfg = StreamConfig(source="serial", port="COM_TEST", window_ms=50, hop_ms=10, model="custom")
         with patch("backend.app.list_ports.comports", return_value=[SimpleNamespace(device="COM_TEST")]), \
                 patch("backend.app.serial.Serial", return_value=connection):
-            with self.assertRaisesRegex(ValueError, "sobrecarga.*salto"):
+            with self.assertRaisesRegex(ValueError, "sobrecarga.*ventana"):
                 await serial_stream(Socket(), cfg, slow_predictor)
         self.assertTrue(connection.closed)
         self.assertFalse(any(message["type"] == "frame" for message in received))
+
+    async def test_serial_send_overrun_adapts_without_disconnect_or_sample_loss(self):
+        received = []
+        clock = [0.0]
+
+        class Finished(Exception):
+            pass
+
+        class Connection:
+            data = b"".join((",".join([str(i)] * 8) + "\n").encode() for i in range(550))
+            closed = False
+
+            @property
+            def in_waiting(self):
+                return len(self.data)
+
+            def read(self, size):
+                result, self.data = self.data[:size], self.data[size:]
+                return result
+
+            def close(self):
+                self.closed = True
+
+        class Socket:
+            async def send_json(self, value):
+                if value["type"] == "frame":
+                    received.append(value)
+                    clock[0] += 0.0503
+                    if value["sample_count"] == 550:
+                        raise Finished()
+
+        connection = Connection()
+        cfg = StreamConfig(source="serial", port="COM_TEST")
+        with patch("backend.app.list_ports.comports", return_value=[SimpleNamespace(device="COM_TEST")]), \
+                patch("backend.app.serial.Serial", return_value=connection), \
+                patch("backend.app.time.perf_counter", side_effect=lambda: clock[0]):
+            with self.assertRaises(Finished):
+                await serial_stream(Socket(), cfg, None)
+        self.assertTrue(connection.closed)
+        self.assertEqual([f["sample_count"] for f in received], [200, 270, 340, 410, 480, 550])
+        self.assertEqual([f["hop_ms"] for f in received], [50, 70, 70, 70, 70, 70])
+        self.assertTrue(all(f["requested_hop_ms"] == 50 for f in received))
+        self.assertEqual([s["values"][0] for f in received for s in f["samples"]], list(range(550)))
+
+    async def test_serial_inference_overrun_smaller_than_window_still_emits(self):
+        received = []
+
+        class Socket:
+            async def send_json(self, value):
+                received.append(value)
+
+        cfg = StreamConfig(source="serial", port="COM_TEST", model="custom")
+        buffer = WindowBuffer(1000, 8, 200, 50)
+        for _ in range(200):
+            completed = buffer.add([0.1] * 8)
+        predictor = lambda window, rate: {"gesture": "open"}
+        with patch("backend.app.time.perf_counter", side_effect=[0, .0503, .0504]):
+            total_ms = await emit_window(Socket(), completed, cfg, predictor)
+        self.assertEqual(len(received), 1)
+        self.assertAlmostEqual(received[0]["latency_ms"], 50.3)
+        self.assertAlmostEqual(total_ms, 50.4)
 
     async def test_excess_serial_backlog_stops_without_discarding_and_continuing(self):
         class Connection:

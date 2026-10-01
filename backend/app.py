@@ -27,6 +27,7 @@ from .signal import (
     EMGProPacketDecoder,
     WindowBuffer,
     baseline_prediction,
+    adaptive_serial_hop,
     ensure_serial_backlog,
     ensure_serial_timing,
     extract_features,
@@ -163,7 +164,7 @@ async def expo_compare(request: ExpoTrainingRequest):
     return StreamingResponse(stream(), media_type="application/x-ndjson", headers={"Cache-Control": "no-store", "X-Accel-Buffering": "no"})
 
 
-async def emit_window(ws: WebSocket, completed, cfg: StreamConfig, predictor, source_unit: str | None = None):
+async def emit_window(ws: WebSocket, completed, cfg: StreamConfig, predictor, source_unit: str | None = None, effective_hop_ms: int | None = None):
     started = time.perf_counter()
     rms, mav = extract_features(completed.values)
     prediction = baseline_prediction(rms, cfg.rest, cfg.mvc)
@@ -173,7 +174,7 @@ async def emit_window(ws: WebSocket, completed, cfg: StreamConfig, predictor, so
         prediction.update(validate_prediction(result))
     processing_ms = (time.perf_counter() - started) * 1000
     if cfg.source == "serial":
-        ensure_serial_timing(processing_ms, cfg.hop_ms)
+        ensure_serial_timing(processing_ms, cfg.window_ms)
     await ws.send_json({
         "type": "frame",
         "timestamp": (completed.sample_count - 1) / cfg.sample_rate,
@@ -188,10 +189,13 @@ async def emit_window(ws: WebSocket, completed, cfg: StreamConfig, predictor, so
         "unit": source_unit or ("normalized" if cfg.source == "demo" else "raw"),
         "sample_rate": cfg.sample_rate,
         "window_ms": cfg.window_ms,
-        "hop_ms": cfg.hop_ms,
+        "hop_ms": effective_hop_ms if effective_hop_ms is not None else cfg.hop_ms,
+        "requested_hop_ms": cfg.hop_ms,
     })
+    total_ms = (time.perf_counter() - started) * 1000
     if cfg.source == "serial":
-        ensure_serial_timing((time.perf_counter() - started) * 1000, cfg.hop_ms)
+        ensure_serial_timing(total_ms, cfg.window_ms)
+    return total_ms
 
 
 async def demo_stream(ws: WebSocket, cfg: StreamConfig, predictor):
@@ -222,6 +226,7 @@ async def serial_stream(ws: WebSocket, cfg: StreamConfig, predictor):
     try:
         await ws.send_json({"type": "status", "message": f"Puerto {cfg.port} abierto; esperando muestras"})
         buffer = WindowBuffer(cfg.sample_rate, cfg.channels, cfg.window_ms, cfg.hop_ms)
+        effective_hop_ms = cfg.hop_ms
         pending = bytearray()
         binary_decoder = EMGProPacketDecoder()
         serial_format: Literal["text", "emg_pro"] | None = None
@@ -275,7 +280,9 @@ async def serial_stream(ws: WebSocket, cfg: StreamConfig, predictor):
                 completed = buffer.add(values)
                 if completed:
                     unit = "normalized-adc" if serial_format == "emg_pro" else "raw"
-                    await emit_window(ws, completed, cfg, predictor, unit)
+                    total_ms = await emit_window(ws, completed, cfg, predictor, unit, effective_hop_ms)
+                    effective_hop_ms = adaptive_serial_hop(total_ms, effective_hop_ms, cfg.window_ms)
+                    buffer.set_hop_ms(effective_hop_ms)
                     ensure_serial_backlog(
                         connection.in_waiting + len(pending) + binary_decoder.buffered_bytes
                     )

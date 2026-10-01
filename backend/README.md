@@ -79,11 +79,19 @@ La activación es `clip((mean(RMS_canales) - rest) / (mvc - rest), 0, 1)`.
 
 ### Detección de sobrecarga
 
+El salto solicitado (`hop_ms`) indica la frecuencia inicial de actualización. Si
+procesar y enviar una trama necesita más tiempo, el servicio aumenta automáticamente
+el salto en pasos de 10 ms, dejando un 25% de margen y hasta el tamaño de la ventana.
+Por ejemplo, 50,3 ms con un salto de 50 ms pasa a 70 ms sin desconectar el brazalete.
+El salto permanece adaptado hasta reconectar; la frecuencia del sensor, la ventana
+de características y todas las muestras crudas se conservan. Los mensajes incluyen
+`hop_ms` efectivo y `requested_hop_ms`; el modelo guardado no cambia.
+
 La adquisición serie se detiene con un error visible si los bytes pendientes en el
 driver más el buffer del servicio superan **32 KiB**, o si procesar/enviar una ventana
-supera su **salto (`hop_ms`)**. La comprobación de inferencia ocurre antes de enviar
-los ángulos, y se comprueba también el tiempo de envío. Cada lectura se limita a
-4096 bytes. Estas protecciones evitan continuar acumulando trabajo con datos cada
+supera la duración de la **ventana (`window_ms`)**. La comprobación de inferencia ocurre
+antes de enviar los ángulos, y se comprueba también el tiempo de envío. Cada lectura
+se limita a 4096 bytes. Estas protecciones evitan acumular trabajo con datos cada
 vez más antiguos; no descartan muestras para fingir que se sostiene el tiempo real.
 Un error termina el registro en la última trama recibida y cierra el puerto: las
 muestras todavía pendientes no se consideran registradas. Aumentar el salto o usar
@@ -207,7 +215,7 @@ Un módulo puede definir opcionalmente `prepare()` sin argumentos. El servicio l
 ejecuta en un hilo antes de abrir el puerto serie para cargar sus pesos. Las plantillas
 incluidas implementan esa función y mantienen una caché del modelo. No se llama a
 `predict` con datos ficticios para calentar un modelo con estado. Si el primer forward
-aún necesita compilación y excede el salto, la protección lo informa como sobrecarga.
+aún necesita compilación y excede la ventana, la protección lo informa como sobrecarga.
 
 ### Plantillas TensorFlow/Keras y PyTorch
 

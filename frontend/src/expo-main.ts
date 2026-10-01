@@ -11,7 +11,7 @@ import './expo-style.css';
 
 type View = 'channels' | 'training' | 'hand';
 type Sample = { t: number; values: number[] };
-type Frame = { type: 'frame'; timestamp: number; samples: Sample[]; rms: number[]; mav: number[]; angles: number[]; gesture: string; sample_count: number; unit: string; window_ms: number; source: string };
+type Frame = { type: 'frame'; timestamp: number; samples: Sample[]; rms: number[]; mav: number[]; angles: number[]; gesture: string; sample_count: number; unit: string; window_ms: number; source: string; hop_ms?: number; requested_hop_ms?: number };
 type Model = { id: string; name: string; algorithm: string; validation_accuracy: number; sample_rate: number; window_ms: number; hop_ms?: number; classes?: string[]; winner_key?: string };
 type TrainingPhase = 'idle' | 'waiting' | 'capture' | 'training' | 'complete';
 type Config = { source: 'demo' | 'serial'; port?: string; baudrate: number; sample_rate: number; channels: number; window_ms: number; hop_ms: number; rest: number; mvc: number; model: 'baseline' | 'expo'; model_id?: string };
@@ -178,7 +178,8 @@ async function connect() {
       if (data.rms.length !== 8 || data.mav.length !== 8) throw new Error('La exposición necesita los ocho canales.');
       lastFrame = data; lastReceived = performance.now(); sourceError = false;
       const frame = data as Frame;
-      status(frame.source === 'demo' ? 'Demostración · señal sintética' : 'Brazalete conectado · señal en tiempo real', true);
+      const adapted = frame.hop_ms && frame.hop_ms > (frame.requested_hop_ms ?? config.hop_ms);
+      status(frame.source === 'demo' ? 'Demostración · señal sintética' : adapted ? `Brazalete conectado · ${Math.round(1000 / frame.hop_ms!)} actualizaciones/s` : 'Brazalete conectado · señal en tiempo real', true);
       text('channel-unit', frame.source === 'demo' ? 'SEÑAL SINTÉTICA' : frame.unit === 'normalized-adc' ? 'ADC NORMALIZADO' : 'SEÑAL DEL SENSOR');
       raw.push(...frame.samples);
       const first = raw.findIndex(sample => sample.t >= frame.timestamp - 5);
